@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="קורס לק ג'ל למתחילות ללימודי ציפורניים והשתלמות למקצועיות שרוצות להתקרב לשלמות" />
+    <title>מדואלה</title>
+  </head>
+  <body>
+    <div id="root">
+      <p class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+        <div id="phoneAnimation" style="width: 40px; height: 40px; display: inline-block;"></div>
+        053-3353203
+      </p>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const animation = lottie.loadAnimation({
+          container: document.getElementById('phoneAnimation'),
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: '/icons/Animation - 1743493355245.json'
+        });
+
+        animation.addEventListener('error', function(error) {
+          console.error('שגיאה בטעינת האנימציה:', error);
+        });
+      });
+    </script>
+  </body>
+</html>
