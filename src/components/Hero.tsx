@@ -82,7 +82,6 @@ const StyledHero = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
-  // padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
 
@@ -165,7 +164,7 @@ const StyledHero = styled.section`
 
   .text {
     position: absolute;
-    bottom: -50%;
+    bottom: -100%;
     left: 0;
     width: 100%;
     padding: 2rem;
@@ -208,4 +207,4 @@ const StyledHero = styled.section`
   }
 `;
 
-export default Hero
+export default Hero;

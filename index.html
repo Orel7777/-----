@@ -15,7 +15,9 @@
       </p>
     </div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
+    <script type="module">
+      import lottie from 'lottie-web';
+
       document.addEventListener('DOMContentLoaded', function() {
         const animation = lottie.loadAnimation({
           container: document.getElementById('phoneAnimation'),
