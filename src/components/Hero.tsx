@@ -44,7 +44,7 @@ const Hero = () => {
           animate="visible"
           variants={fadeInRight}
         >
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">מרכז מרכז לרפואה משלימה ועיסויים לנשים</h1>
+          <h1 className="text-4xl font-bold mb-4 text-gray-800">מרכז  לרפואה משלימה ועיסויים לנשים</h1>
           <p className="text-xl mb-8 text-gray-600">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
           <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
         </motion.div>
