@@ -51,7 +51,7 @@ const Modaah = () => {
               </video>
             </div>
             <div className="text-overlay">
-              <h3 className="text-xl font-semibold">עיסוי הריון</h3>
+              <h3 className="text-xl font-semibold"> חוויה מרגיעה ומרפאת</h3>
               <p>טיפול עדין ומותאם במיוחד</p>
             </div>
           </div>

@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { FaWaze, FaWhatsapp, FaFacebook } from "react-icons/fa";
+import { FaWaze, FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { AiOutlineTikTok } from "react-icons/ai";
 import { RiMenuUnfoldFill, RiMenuUnfold4Fill } from "react-icons/ri";
 import Form from './Form';
 import Button from './Button';
 import { motion } from 'framer-motion';
-import { FaInstagram } from "react-icons/fa";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,16 +69,36 @@ const Header = () => {
               {/* Desktop Social Icons and CTA */}
               <div className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
                 <div className="flex space-x-3 rtl:space-x-reverse">
-                  <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">
+                  <a 
+                    href="https://waze.com/ul?q=נס ציונה, ישראל" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                  >
                     <FaWaze className="w-5 h-5" />
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">
+                  <a 
+                    href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                  >
                     <FaWhatsapp className="w-5 h-5" />
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">
+                  <a 
+                    href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                  >
                     <FaInstagram className="w-5 h-5" />
                   </a>
-                  <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=100058313266229&rdid=inUN24CvjFZ5IyNp&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BqgWnqVX3%2F#" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                  >
                     <FaFacebook className="w-5 h-5" />
                   </a>
                 </div>
@@ -169,16 +188,36 @@ const Header = () => {
               
               {/* Mobile Social Icons */}
               <div className="flex justify-center space-x-4 rtl:space-x-reverse">
-                <a href="#" className="text-gray-800 hover:text-gray-900 transition-colors">
+                <a 
+                  href="https://waze.com/ul?q=נס ציונה, ישראל" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-800 hover:text-gray-900 transition-colors"
+                >
                   <FaWaze className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-800 hover:text-gray-900 transition-colors">
+                <a 
+                  href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-800 hover:text-gray-900 transition-colors"
+                >
                   <FaWhatsapp className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-800 hover:text-gray-900 transition-colors">
+                <a 
+                  href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-800 hover:text-gray-900 transition-colors"
+                >
                   <FaInstagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-800 hover:text-gray-900 transition-colors">
+                <a 
+                  href="https://www.facebook.com/profile.php?id=100058313266229&rdid=inUN24CvjFZ5IyNp&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BqgWnqVX3%2F#" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-800 hover:text-gray-900 transition-colors"
+                >
                   <FaFacebook className="w-5 h-5" />
                 </a>
               </div>

@@ -44,10 +44,9 @@ const Hero = () => {
           animate="visible"
           variants={fadeInRight}
         >
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">מרכז לרפואה משלימה וטיפולי עור</h1>
-          <h3 className="text-2xl font-semibold mb-6">המרכז המוביל לטיפולי רפואה משלימה ועיסוי מקצועי</h3>
-          <p className="text-xl mb-8 text-gray-600">טיפולי עיסוי ופיסול פנים טבעי ברמה הגבוהה ביותר</p>
-          <Button onClick={handleOpenForm}>קביעת תור</Button>
+          <h1 className="text-4xl font-bold mb-4 text-gray-800">מרכז מרכז לרפואה משלימה ועיסויים לנשים</h1>
+          <p className="text-xl mb-8 text-gray-600">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
+          <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
         </motion.div>
         <motion.div 
           className="image-card"
@@ -68,8 +67,8 @@ const Hero = () => {
               </video>
             </div>
             <div className="text">
-              <span>טיפולי פנים</span>
-              <p>איכות ומקצועיות</p>
+              <span>מדאולה-דקלה שליט</span>  
+              <p>חוויית טיפול ייחודית לגוף ולנפש</p>
             </div>
           </div>
         </motion.div>
@@ -83,7 +82,7 @@ const StyledHero = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 6rem 2rem;
+  // padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
 

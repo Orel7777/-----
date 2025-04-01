@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
 import { FaBluesky, FaDove } from "react-icons/fa6";
+import Lottie from "lottie-react";
+import { TbMassage } from "react-icons/tb";
 
 declare global {
   namespace JSX {
@@ -15,6 +17,13 @@ declare global {
 
 const Services = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [serviceAnimation, setServiceAnimation] = useState(null);
+
+  useEffect(() => {
+    fetch('/icons/4.json')
+      .then(res => res.json())
+      .then(data => setServiceAnimation(data));
+  }, []);
 
   const handleOpenForm = () => {
     setIsFormOpen(true);
@@ -52,7 +61,7 @@ const Services = () => {
   };
 
   return (
-    <StyledServices className="py-16" id="services">
+    <StyledServices className="" id="services">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div 
           className="flex flex-col items-center gap-4 mb-12"
@@ -60,17 +69,14 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
-        >
+        > 
           <motion.div
             animate={floatAnimation}
-            className="text-gray-800"
+            className="text-gray-800 mb-4"
           >
-            <lord-icon
-              src="https://cdn.lordicon.com/aydxrkfl.json"
-              trigger="hover"
-              style={{ width: '65px', height: '65px' }}
-              colors="primary:#b5dacd,secondary:#b5dacd"
-            />
+            {serviceAnimation && (
+              <Lottie animationData={serviceAnimation} style={{ width: 200, height: 200 }} />
+            )}
           </motion.div>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800">
             שירותי הקליניקה
@@ -103,7 +109,7 @@ const Services = () => {
               </video>
             </div>
             <div className="text-overlay">
-              <h3 className="text-xl font-semibold">עיסוי הריון</h3>
+              <h3 className="text-xl font-semibold"> חוויה מרגיעה ומרפאת</h3>
               <p>טיפול עדין ומותאם במיוחד</p>
             </div>
           </motion.div>
@@ -115,7 +121,7 @@ const Services = () => {
               </video>
             </div>
             <div className="text-overlay">
-              <h3 className="text-xl font-semibold">פיסול פנים טבעי</h3>
+              <h3 className="text-xl font-semibold">חוויית טיפול ייחודית לגוף ולנפש</h3>
               <p>מיניליפט ויוגה פייס</p>
             </div>
           </motion.div>
@@ -160,7 +166,7 @@ const Services = () => {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי הריון
+                חוויה מרגיעה ומרפאת
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
@@ -289,6 +295,61 @@ const StyledServices = styled.section`
     }
   }
 
+  .service-image-container {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .type-item {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h4 {
+      margin: 16px 0 8px;
+    }
+
+    p {
+      color: #666;
+    }
+  }
+
+  .types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+    padding: 0 16px;
+  }
+
+  .type-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
   @media (max-width: 768px) {
     .video-card {
       height: 300px;
@@ -304,6 +365,15 @@ const StyledServices = styled.section`
       p {
         font-size: 1rem;
       }
+    }
+
+    .service-image-container {
+      height: 200px;
+    }
+
+    .types-grid {
+      grid-template-columns: 1fr;
+      padding: 0 8px;
     }
   }
 `;
