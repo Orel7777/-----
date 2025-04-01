@@ -63,7 +63,7 @@ const Hero = () => {
                 muted 
                 playsInline
               >
-                <source src="/video_9.mp4" type="video/mp4" />
+                <source src="/dd.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="text">
@@ -147,10 +147,10 @@ const StyledHero = styled.section`
     .hero-video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
       object-position: center;
       transition: all 0.5s ease;
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
   }
 

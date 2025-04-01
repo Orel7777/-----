@@ -229,6 +229,9 @@ const Services = () => {
 };
 
 const StyledServices = styled.section`
+  padding: 80px 0;
+  margin-bottom: 40px;
+
   .video-card {
     position: relative;
     height: 400px;
