@@ -313,14 +313,19 @@ const Testimonials = () => {
                 alt="המלצה מוגדלת" 
                 className="max-h-[90vh] max-w-full object-contain rounded-lg"
               />
-              <button 
-                className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 p-2 rounded-full transition-colors"
+              <motion.button 
+                className="absolute top-3 left-3 bg-[#b5dacd] hover:bg-[#a5cebd] p-3 rounded-full transition-colors shadow-md z-10"
                 onClick={closeImage}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#333" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-              </button>
+              </motion.button>
             </motion.div>
           </motion.div>
         )}
