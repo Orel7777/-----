@@ -235,7 +235,7 @@ const Stats = () => {
 
           {/* גלריית תעודות */}
           <motion.div 
-            className="bg-[#b5dacd]/20 rounded-xl p-4 md:p-8 mb-6 md:mb-8 overflow-hidden"
+            className="rounded-xl p-4 md:p-8 mb-6 md:mb-8 overflow-hidden"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
@@ -245,25 +245,25 @@ const Stats = () => {
             
             <div className="relative">
               <div className="mb-4">
-                <div className="relative aspect-[4/3] w-full max-w-md mx-auto">
+                <div className="relative aspect-[3/2] w-full max-w-[300px] md:max-w-[400px] mx-auto">
                   {imageLoading && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-100/20">
-                      <span className="text-base md:text-lg font-semibold text-gray-800">טוען תמונה...</span>
+                      <span className="text-sm font-semibold text-gray-800">טוען תמונה...</span>
                     </div>
                   )}
                   
                   {imageError ? (
-                    <div className="aspect-[4/3] w-full flex items-center justify-center bg-gray-100/10 text-center p-4">
+                    <div className="aspect-[3/2] w-full flex items-center justify-center bg-gray-100/10 text-center p-4">
                       <div>
-                        <p className="text-red-600 font-bold mb-2 text-sm md:text-base">שגיאה בטעינת התמונה</p>
-                        <p className="text-gray-700 text-sm md:text-base">לא ניתן לטעון את התעודה כרגע</p>
+                        <p className="text-red-600 font-bold mb-2 text-xs">שגיאה בטעינת התמונה</p>
+                        <p className="text-gray-700 text-xs">לא ניתן לטעון את התעודה כרגע</p>
                       </div>
                     </div>
                   ) : (
                     <img 
                       src={certificatePaths[currentCertificateIndex]} 
                       alt={`תעודת הסמכה ${currentCertificateIndex + 1}`} 
-                      className="w-full h-full object-contain cursor-pointer"
+                      className="w-full h-full object-contain cursor-pointer shadow-sm hover:shadow-md transition-all"
                       onClick={() => openCertificate(certificatePaths[currentCertificateIndex])}
                       onLoad={handleImageLoad}
                       onError={handleImageError}
@@ -272,22 +272,22 @@ const Stats = () => {
                 </div>
               </div>
               
-              <div className="flex justify-center gap-4 mt-4 mb-2">
+              <div className="flex justify-center gap-3 mt-3 mb-2">
                 <button 
                   onClick={prevCertificate}
-                  className="bg-[#b5dacd] hover:bg-[#a5cebd] p-2 rounded-full transition-all shadow-md"
+                  className="bg-[#b5dacd] hover:bg-[#a5cebd] p-1.5 rounded-full transition-all shadow-md"
                   aria-label="תעודה קודמת"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                   </svg>
                 </button>
                 <button 
                   onClick={nextCertificate}
-                  className="bg-[#b5dacd] hover:bg-[#a5cebd] p-2 rounded-full transition-all shadow-md"
+                  className="bg-[#b5dacd] hover:bg-[#a5cebd] p-1.5 rounded-full transition-all shadow-md"
                   aria-label="תעודה הבאה"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                   </svg>
                 </button>
@@ -341,14 +341,14 @@ const Stats = () => {
       <AnimatePresence>
         {selectedCertificate && (
           <motion.div 
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeCertificate}
           >
             <motion.div
-              className="relative max-w-4xl max-h-[90vh]"
+              className="relative max-w-xs md:max-w-sm max-h-[80vh]"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -358,18 +358,18 @@ const Stats = () => {
               <img 
                 src={selectedCertificate} 
                 alt="תעודת הסמכה מוגדלת" 
-                className="max-h-[90vh] max-w-full object-contain rounded-lg"
+                className="max-h-[70vh] w-full object-contain rounded-lg shadow-xl border-4 border-white/80"
               />
               <motion.button 
-                className="absolute top-3 left-3 bg-[#b5dacd] hover:bg-[#a5cebd] p-3 rounded-full transition-colors shadow-md z-10"
+                className="absolute top-2 left-2 bg-[#b5dacd] hover:bg-[#a5cebd] p-2 md:p-3 rounded-full transition-colors shadow-lg z-[10000] border-2 border-white/80"
                 onClick={closeCertificate}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.2 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#333" className="w-6 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="white" className="w-4 h-4 md:w-6 md:h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </motion.button>

@@ -211,8 +211,8 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
           </div>
           <div className="form-group">
             <label htmlFor="treatmentType">סוג הטיפול *</label>
-            <select id="treatmentType" name="treatmentType" required>
-              <option value="" disabled selected>בחר/י סוג טיפול</option>
+            <select id="treatmentType" name="treatmentType" required defaultValue="">
+              <option value="" disabled>בחר/י סוג טיפול</option>
               <option value="שוודי">עיסוי שוודי</option>
               <option value="תאילנדי">עיסוי תאילנדי</option>
               <option value="רקמות עמוק">עיסוי רקמות עמוק</option>
