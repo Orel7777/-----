@@ -147,7 +147,29 @@ const StyledWrapper = styled.div`
   @media (max-width: 768px) {
     .form-container {
       width: 92%;
-      padding: 18px;
+      padding: 16px;
+      max-height: 85vh;
+      overflow-y: auto;
+      margin-top: 60px;
+    }
+    
+    .close-button {
+      top: 12px;
+      left: 12px;
+      font-size: 18px;
+    }
+    
+    .form-group {
+      gap: 2px;
+    }
+    
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .logo-text {
+      font-size: 14px;
     }
   }
 
