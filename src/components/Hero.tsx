@@ -67,7 +67,7 @@ const Hero = () => {
               </video>
             </div>
             <div className="text">
-              <span>מדאולה-דקלה שליט</span>  
+              
               <p>חוויית טיפול ייחודית לגוף ולנפש</p>
             </div>
           </div>
