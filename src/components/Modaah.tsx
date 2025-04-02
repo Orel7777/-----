@@ -1,11 +1,44 @@
 import styled from 'styled-components';
 import { GrAchievement, GrDeploy } from "react-icons/gr";
 import Form from './Form';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Button from './Button';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// נתיבי התמונות למצגת
+const slideshowImages = [
+  '/סרטון מתנגן/3.1.jpeg',
+  '/סרטון מתנגן/3.2.jpeg',
+  '/סרטון מתנגן/3.3.jpeg',
+  '/סרטון מתנגן/3.4.jpeg',
+  '/סרטון מתנגן/3.5.jpeg',
+  '/סרטון מתנגן/3.7.jpeg',
+];
 
 const Modaah = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const timeoutRef = useRef<number | null>(null);
+
+  // פונקציה למעבר לתמונה הבאה
+  const nextImage = () => {
+    setCurrentImageIndex(prevIndex => 
+      prevIndex === slideshowImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // החלפת תמונות אוטומטית
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => {
+      nextImage();
+    }, 3000); // מעבר כל 3 שניות
+    
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [currentImageIndex]);
 
   const handleOpenForm = () => {
     setIsFormOpen(true);
@@ -21,16 +54,23 @@ const Modaah = () => {
         {/* Videos Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="video-card">
-            <div className="video-container">
-              <video
-                className="service-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src="/video_7.mp4" type="video/mp4" />
-              </video>
+            <div className="slideshow-wrapper">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="slideshow-image-wrapper"
+                >
+                  <img 
+                    src={slideshowImages[currentImageIndex]} 
+                    alt={`תמונה ${currentImageIndex + 1}`} 
+                    className="slideshow-image"
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
             <div className="text-overlay">
               <h3 className="text-xl font-semibold">עיסוי מקצועי</h3>
@@ -119,6 +159,105 @@ const Modaah = () => {
 };
 
 const StyledModaah = styled.section`
+  /* סגנון המצגת בתוך הקארד */
+  .slideshow-wrapper {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slideshow-image-wrapper {
+    width: 95%;
+    height: 95%;
+    margin: 2.5%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+  }
+
+  .slideshow-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 10;
+  }
+
+  .control-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.1);
+    }
+  }
+
+  .slideshow-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      background-color: white;
+      transform: scale(1.2);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slideshow-image-wrapper {
+      height: 300px;
+    }
+    
+    .control-button {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .indicator {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
   .video-card {
     position: relative;
     height: 400px;
@@ -134,7 +273,7 @@ const StyledModaah = styled.section`
       transform: translateY(-5px);
       box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
 
-      .service-video {
+      .service-video, .slideshow-image {
         transform: scale(1.03);
       }
 

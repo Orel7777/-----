@@ -5,6 +5,7 @@ import Testimonials from './components/Testimonials';
 import BabySteps from './components/BabySteps';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
+import Modaah from './components/Modaah';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <main className="container mx-auto px-4 py-8">
           <Hero />
           <Services />
+          <Modaah />
           <Testimonials />
           <BabySteps />
           <Stats />
