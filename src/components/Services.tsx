@@ -92,7 +92,7 @@ const Services = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -103,7 +103,7 @@ const Services = () => {
             variants={fadeInUp}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-4xl font-bold text-gray-800">סוגי עיסויים</h3>
+              <h3 className="text-4xl font-bold text-gray-800">עיסויים רפואיים וטיפוליים</h3>
               <motion.div
                 animate={floatAnimation}
                 className="text-gray-800"
@@ -114,11 +114,7 @@ const Services = () => {
             <ul className="space-y-6 text-2xl font-medium text-gray-700">
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי שוודי
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי תאילנדי
+                עיסוי רפואי
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
@@ -126,15 +122,24 @@ const Services = () => {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי רפואי
+                עיסוי לנשים בהריון
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                חוויה מרגיעה ומרפאת
+                עיסוי לאחר לידה
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי משולב
+                עיסוי לימפטי
+                <span className="text-xl text-gray-500 mr-2">(ניקוז לימפטי)</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-3xl text-[#b5dacd]">•</span>
+                עיסוי לספורטאיות
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-3xl text-[#b5dacd]">•</span>
+                עיסוי לכאבי גב וצוואר
               </li>
             </ul>
           </motion.div>
@@ -144,7 +149,7 @@ const Services = () => {
             variants={fadeInUp}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-4xl font-bold text-gray-800">עיסויים מיוחדים</h3>
+              <h3 className="text-4xl font-bold text-gray-800">עיסויים מסורתיים ומרגיעים</h3>
               <motion.div
                 animate={floatAnimation}
                 className="text-gray-800"
@@ -155,23 +160,64 @@ const Services = () => {
             <ul className="space-y-6 text-2xl font-medium text-gray-700">
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי אבנים חמות
+                עיסוי שוודי
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי ארומתרפי
+                עיסוי הוליסטי
               </li>
+              <li className="flex items-center gap-3">
+                <span className="text-3xl text-[#b5dacd]">•</span>
+                עיסוי באבנים חמות
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-3xl text-[#b5dacd]">•</span>
+                עיסוי תאילנדי עדין
+                <span className="text-xl text-gray-500 mr-2">(ללא מתיחות אגרסיביות)</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-3xl text-[#b5dacd]">•</span>
+                עיסוי לומי-לומי
+                <span className="text-xl text-gray-500 mr-2">(מהוואי)</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div 
+            className="backdrop-blur-sm bg-[#b5dacd]/20 rounded-xl p-12 shadow-lg hover:shadow-xl transition-all"
+            variants={fadeInUp}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <h3 className="text-4xl font-bold text-gray-800">שיטות מיוחדות ועיסויים משולבים</h3>
+              <motion.div
+                animate={floatAnimation}
+                className="text-gray-800"
+              >
+                <TbMassage size={32} />
+              </motion.div>
+            </div>
+            <ul className="space-y-6 text-2xl font-medium text-gray-700">
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
                 עיסוי כוסות רוח
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי רקמות עדין
+                רפלקסולוגיה
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-3xl text-[#b5dacd]">•</span>
-                עיסוי מפנק
+                עיסוי משולב
+                <span className="text-xl text-gray-500 mr-2">(לפי צרכי המטופלת)</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-3xl text-[#b5dacd]">•</span>
+                עיסוי קרקפת ופנים
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-3xl text-[#b5dacd]">•</span>
+                עיסוי בשיטת טריגר פוינט
+                <span className="text-xl text-gray-500 mr-2">(Trigger Point Therapy)</span>
               </li>
             </ul>
           </motion.div>
