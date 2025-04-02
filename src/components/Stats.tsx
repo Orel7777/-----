@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaBattleNet } from "react-icons/fa6";
 import Lottie from "lottie-react";
 
-// נתיבי התעודות - עם URL מלא
+// נתיבי התעודות - עם נתיבים יחסיים במקום מוחלטים
 const certificatePaths = [
-  'http://localhost:5173/images/תעודות/2.1.jpeg',
-  'http://localhost:5173/images/תעודות/2 (4).jpeg',
-  'http://localhost:5173/images/תעודות/2 (2).jpeg',
-  'http://localhost:5173/images/תעודות/2 (1).jpeg',
+  '/images/תעודות/2.1.jpeg',
+  '/images/תעודות/2 (4).jpeg',
+  '/images/תעודות/2 (2).jpeg',
+  '/images/תעודות/2 (1).jpeg',
 ];
 
 const Stats = () => {
@@ -23,7 +23,7 @@ const Stats = () => {
 
   useEffect(() => {
     // טעינת אנימציית טלפון
-    fetch('http://localhost:5173/icons/1.json')
+    fetch('/icons/1.json')
       .then(res => res.text())
       .then(text => {
         try {

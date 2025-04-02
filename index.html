@@ -22,7 +22,7 @@
         const animationContainer = document.getElementById('phoneAnimation');
         
         if (animationContainer) {
-          fetch('http://localhost:5173/icons/1.json')
+          fetch('/icons/1.json')
             .then(response => response.text())
             .then(text => {
               try {

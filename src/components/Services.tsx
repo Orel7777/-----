@@ -20,7 +20,7 @@ const Services = () => {
   const [serviceAnimation, setServiceAnimation] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5173/icons/4.json')
+    fetch('/icons/4.json')
       .then(res => res.text())
       .then(text => {
         try {

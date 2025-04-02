@@ -10,27 +10,27 @@ const BabySteps = () => {
 
   useEffect(() => {
     // טעינת אנימציית עיסוי
-    fetch('http://localhost:5173/icons/3.json')
+    fetch('/icons/3.json')
       .then(res => res.text())
       .then(text => {
         try {
           const jsonData = JSON.parse(text);
           setMassageAnimation(jsonData);
         } catch (error) {
-          console.error('Error parsing massage animation JSON:', error);
+          console.error('Error parsing JSON:', error);
         }
       })
       .catch(error => console.error('Error loading massage animation:', error));
       
     // טעינת אנימציית יוגה
-    fetch('http://localhost:5173/icons/2.json')
+    fetch('/icons/2.json')
       .then(res => res.text())
       .then(text => {
         try {
           const jsonData = JSON.parse(text);
           setYogaAnimation(jsonData);
         } catch (error) {
-          console.error('Error parsing yoga animation JSON:', error);
+          console.error('Error parsing JSON:', error);
         }
       })
       .catch(error => console.error('Error loading yoga animation:', error));
