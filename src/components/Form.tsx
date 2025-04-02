@@ -25,15 +25,15 @@ const StyledWrapper = styled.div`
   .form-container {
     position: relative;
     width: 90%;
-    max-width: 400px;
+    max-width: 380px;
     background: linear-gradient(165deg, rgb(181, 218, 205, 0.95) 15%, rgba(181, 218, 205, 0.3) 50%, rgba(245, 242, 240, 0.95) 85%);
     border-radius: 20px;
-    padding: 24px;
+    padding: 20px;
     font-family: inherit;
     color: #1a1a1a;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     box-sizing: border-box;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
     animation: slideIn 0.3s ease-out;
@@ -53,13 +53,13 @@ const StyledWrapper = styled.div`
   .form-container .form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
   .form-container .form-group {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
   }
 
   .close-button {
@@ -79,22 +79,25 @@ const StyledWrapper = styled.div`
 
   .form-group label {
     color: #1a1a1a;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .form-group input,
-  .form-group textarea {
+  .form-group textarea,
+  .form-group select {
     width: 100%;
-    padding: 10px 12px;
+    padding: 8px 10px;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: white;
-    font-size: 14px;
+    font-size: 13px;
+    text-align: right;
+    direction: rtl;
   }
 
   .form-group textarea {
     resize: none;
-    height: 120px;
+    height: 100px;
   }
 
   .form-group input::placeholder,
@@ -113,17 +116,17 @@ const StyledWrapper = styled.div`
     background: #69a88f;
     color: white;
     border: none;
-    padding: 12px;
+    padding: 10px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 6px;
     width: 100%;
   }
 
   .logo {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin: 0 auto;
     border-radius: 50%;
   }
@@ -136,22 +139,22 @@ const StyledWrapper = styled.div`
   }
 
   .logo-text {
-    margin-top: 8px;
-    font-size: 16px;
+    margin-top: 6px;
+    font-size: 15px;
     color: #1a1a1a;
   }
 
   @media (max-width: 768px) {
     .form-container {
-      width: 95%;
-      padding: 20px;
+      width: 92%;
+      padding: 18px;
     }
   }
 
   @media (min-width: 769px) {
     .form-container {
-      width: 80%;
-      max-width: 450px;
+      width: 75%;
+      max-width: 400px;
     }
   }
 `;
@@ -182,13 +185,30 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
             <input type="email" id="email" name="email" required placeholder="הכנס/י כתובת אימייל" />
           </div>
           <div className="form-group">
-            <label htmlFor="textarea">איך נוכל לעזור לך?</label>
+            <label htmlFor="treatmentType">סוג הטיפול</label>
+            <select id="treatmentType" name="treatmentType" required>
+              <option value="" disabled selected>בחר/י סוג טיפול</option>
+              <option value="שוודי">עיסוי שוודי</option>
+              <option value="תאילנדי">עיסוי תאילנדי</option>
+              <option value="רקמות עמוק">עיסוי רקמות עמוק</option>
+              <option value="רפואי">עיסוי רפואי</option>
+              <option value="חוויה מרגיעה ומרפאת">חוויה מרגיעה ומרפאת</option>
+              <option value="משולב">עיסוי משולב</option>
+              <option value="אבנים חמות">עיסוי אבנים חמות</option>
+              <option value="ארומתרפי">עיסוי ארומתרפי</option>
+              <option value="כוסות רוח">עיסוי כוסות רוח</option>
+              <option value="רקמות עדין">עיסוי רקמות עדין</option>
+              <option value="מפנק">עיסוי מפנק</option>
+              <option value="אחר">אחר</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="medicalIssues">האם יש בעיות רפואיות?</label>
             <textarea 
-              name="textarea" 
-              id="textarea" 
-              rows={5} 
-              required 
-              placeholder="ספר/י לנו במה נוכל לעזור..."
+              name="medicalIssues" 
+              id="medicalIssues" 
+              rows={4} 
+              placeholder="אנא פרט/י אם יש בעיות רפואיות שעלינו לדעת עליהן"
             />
           </div>
           <button className="form-submit-btn" type="submit">שליחה</button>
