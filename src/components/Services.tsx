@@ -20,9 +20,17 @@ const Services = () => {
   const [serviceAnimation, setServiceAnimation] = useState(null);
 
   useEffect(() => {
-    fetch('/icons/4.json')
-      .then(res => res.json())
-      .then(data => setServiceAnimation(data));
+    fetch('http://localhost:5173/icons/4.json')
+      .then(res => res.text())
+      .then(text => {
+        try {
+          const jsonData = JSON.parse(text);
+          setServiceAnimation(jsonData);
+        } catch (error) {
+          console.error('Error parsing JSON:', error);
+        }
+      })
+      .catch(error => console.error('Error loading animation:', error));
   }, []);
 
   const handleOpenForm = () => {

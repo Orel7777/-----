@@ -8,28 +8,40 @@
     <title>מדואלה</title>
   </head>
   <body>
-    <div id="root">
-      <p class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-        <div id="phoneAnimation" style="width: 40px; height: 40px; display: inline-block;"></div>
-        053-3353203
-      </p>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script type="module">
       import lottie from 'lottie-web';
 
       document.addEventListener('DOMContentLoaded', function() {
-        const animation = lottie.loadAnimation({
-          container: document.getElementById('phoneAnimation'),
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          path: '/icons/Animation - 1743493355245.json'
-        });
-
-        animation.addEventListener('error', function(error) {
-          console.error('שגיאה בטעינת האנימציה:', error);
-        });
+        const animationContainer = document.getElementById('phoneAnimation');
+        
+        if (animationContainer) {
+          fetch('http://localhost:5173/icons/1.json')
+            .then(response => response.text())
+            .then(text => {
+              try {
+                const animationData = JSON.parse(text);
+                
+                const animation = lottie.loadAnimation({
+                  container: animationContainer,
+                  renderer: 'svg',
+                  loop: true,
+                  autoplay: true,
+                  animationData: animationData
+                });
+                
+                animation.addEventListener('error', function(error) {
+                  console.error('שגיאה בטעינת האנימציה:', error);
+                });
+              } catch (error) {
+                console.error('שגיאה בעיבוד קובץ האנימציה:', error);
+              }
+            })
+            .catch(error => {
+              console.error('שגיאה בטעינת קובץ האנימציה:', error);
+            });
+        }
       });
     </script>
   </body>

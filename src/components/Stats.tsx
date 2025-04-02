@@ -1,16 +1,63 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from './Form';
 import Button from './Button';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaBattleNet } from "react-icons/fa6";
 import Lottie from "lottie-react";
-import animationData from "../assets/phone-animation.json";
+
+// נתיבי התעודות - עם URL מלא
+const certificatePaths = [
+  'http://localhost:5173/images/תעודות/2.1.jpeg',
+  'http://localhost:5173/images/תעודות/2 (4).jpeg',
+  'http://localhost:5173/images/תעודות/2 (2).jpeg',
+  'http://localhost:5173/images/תעודות/2 (1).jpeg',
+];
 
 const Stats = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [currentCertificateIndex, setCurrentCertificateIndex] = useState(0);
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
+  const [phoneAnimation, setPhoneAnimation] = useState(null);
+  const [imageError, setImageError] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
+
+  useEffect(() => {
+    // טעינת אנימציית טלפון
+    fetch('http://localhost:5173/icons/1.json')
+      .then(res => res.text())
+      .then(text => {
+        try {
+          const jsonData = JSON.parse(text);
+          setPhoneAnimation(jsonData);
+        } catch (error) {
+          console.error('Error parsing phone animation JSON:', error);
+        }
+      })
+      .catch(error => console.error('Error loading phone animation:', error));
+  }, []);
 
   const handleOpenForm = () => {
     setIsFormOpen(true);
+  };
+
+  const nextCertificate = () => {
+    setCurrentCertificateIndex((prevIndex) => 
+      prevIndex === certificatePaths.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevCertificate = () => {
+    setCurrentCertificateIndex((prevIndex) => 
+      prevIndex === 0 ? certificatePaths.length - 1 : prevIndex - 1
+    );
+  };
+
+  const openCertificate = (src: string) => {
+    setSelectedCertificate(src);
+  };
+
+  const closeCertificate = () => {
+    setSelectedCertificate(null);
   };
 
   const fadeInUp = {
@@ -44,9 +91,24 @@ const Stats = () => {
     }
   };
 
+  // טיפול בשגיאות טעינת תמונה
+  const handleImageError = () => {
+    console.error("Failed to load certificate image");
+    setImageError(true);
+    setImageLoading(false);
+  };
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+    setImageError(false);
+  };
+
   return (
-    <section className="py-16" id="stats">
-      <div className="max-w-4xl mx-auto px-4">
+    <section className="py-16 relative bg-gradient-to-b from-white/10 to-[#e8f5e9]/30" id="stats">
+      <div className="absolute top-0 left-0 right-0 h-16 bg-[#b5dacd]/20 text-center flex items-center justify-center">
+        <h2 className="text-2xl font-bold text-gray-800">אודות</h2>
+      </div>
+      <div className="max-w-4xl mx-auto px-4 pt-12">
         <motion.div 
           className="mb-12"
           initial="hidden"
@@ -69,72 +131,191 @@ const Stats = () => {
             עם למעלה מעשור של ניסיון מקצועי ועשייה אינטנסיבית בתחום הקוסמטיקה והרפואה המשלימה, אני כאן כדי להעניק לך טיפולים מותאמים אישית שיחדשו את העור, ירגיעו את הנפש ויעניקו לגוף תחושה נפלאה של איזון ובריאות.
           </p>
 
-          <div className="bg-[#b5dacd]/20 rounded-xl p-8 mb-8">
-            <h4 className="text-2xl font-bold mb-4 text-gray-800">ההשכלה שלי</h4>
-            <ul className="space-y-4 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-[#b5dacd] font-bold">✔️</span>
-                למדתי עיסויים ושיטות הוליסטיות ורפואיות במכללת משה מורנו – קורס מעמיק ורחב מס' שנים.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#b5dacd] font-bold">✔️</span>
-                בוגרת לימודי קוסמטיקה רפואית מתקדמת מטעם בתי הספר המובילים בעולם:
-                <ul className="mt-2 space-y-1">
-                  <li>• Cidesco International</li>
-                  <li>• P.M.E בהנחיית חוה זינגבוים</li>
-                </ul>
-              </li>
-            </ul>
+          <div className="bg-gradient-to-r from-[#e8f5e9] to-[#b5dacd]/20 rounded-xl p-8 mb-8 shadow-md">
+            <h4 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3 border-b border-[#b5dacd] pb-3">
+              <span className="text-[#b5dacd] text-3xl">💼</span>
+              הניסיון שלי
+            </h4>
+            
+            <div className="space-y-6">
+              <div className="bg-white/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-1">
+                <div className="flex items-start gap-3">
+                  <div className="bg-[#b5dacd] rounded-full p-2 mt-1 flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 className="text-lg font-semibold text-gray-800 mb-2">בעלים של קליניקה פרטית</h5>
+                    <p className="text-gray-700 leading-relaxed">
+                      כיום אני הבעלים הגאה של <span className="font-medium text-gray-900">קליניקה פרטית בנס ציונה</span> – מרכז מתקדם לטיפולי מגע, קוסמטיקה רפואית וטיפוח העור.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-1">
+                <div className="flex items-start gap-3">
+                  <div className="bg-[#b5dacd] rounded-full p-2 mt-1 flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 className="text-lg font-semibold text-gray-800 mb-2">ניסיון במוסדות המובילים בתחום</h5>
+                    <p className="text-gray-700 leading-relaxed mb-3">
+                      עבדתי כמנהלת וכמטפלת בקוסמטיקה רפואית במכונים המובילים:
+                    </p>
+                    <ul className="space-y-2 pl-2">
+                      <li className="flex items-center gap-2 bg-[#e8f5e9] rounded-md p-2 shadow-sm">
+                        <span className="text-[#b5dacd] text-xl">•</span>
+                        <span className="font-medium">The Spa במלון אינטרקונטיננטל תל אביב</span>
+                      </li>
+                      <li className="flex items-center gap-2 bg-[#e8f5e9] rounded-md p-2 shadow-sm">
+                        <span className="text-[#b5dacd] text-xl">•</span>
+                        <span className="font-medium">Alokino בראשון לציון</span>
+                      </li>
+                      <li className="flex items-center gap-2 bg-[#e8f5e9] rounded-md p-2 shadow-sm">
+                        <span className="text-[#b5dacd] text-xl">•</span>
+                        <span className="font-medium">מרכזי היוקרה Mediclinic ו-Desheli</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-[#b5dacd]/20 rounded-xl p-8 mb-8">
-            <h4 className="text-2xl font-bold mb-4 text-gray-800">הניסיון שלי</h4>
-            <ul className="space-y-4 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-[#b5dacd] font-bold">✅</span>
-                כיום אני הבעלים הגאה של קליניקה פרטית בנס ציונה – מרכז מתקדם לטיפולי מגע, קוסמטיקה רפואית וטיפוח העור.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#b5dacd] font-bold">✅</span>
-                עבדתי כמנהלת וכמטפלת בקוסמטיקה רפואית במכונים המובילים:
-                <ul className="mt-2 space-y-1">
-                  <li>• The Spa במלון אינטרקונטיננטל תל אביב</li>
-                  <li>• Alokino בראשון לציון</li>
-                  <li>• מרכזי היוקרה Mediclinic ו-Desheli</li>
-                </ul>
-              </li>
-            </ul>
+          <div className="bg-gradient-to-r from-[#e8f5e9] to-[#b5dacd]/20 rounded-xl p-8 mb-8 shadow-md">
+            <h4 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3 border-b border-[#b5dacd] pb-3">
+              <span className="text-[#b5dacd] text-3xl">✨</span>
+              מה אני מציעה לך?
+            </h4>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="bg-white/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-2">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="text-4xl text-[#b5dacd]">👩‍⚕️</div>
+                  <h5 className="font-semibold text-lg text-gray-800">טיפולים מותאמים אישית</h5>
+                  <p className="text-gray-700">
+                    טיפולים מותאמים אישית עם דגש על צרכים רפואיים ואסתטיים.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-2">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="text-4xl text-[#b5dacd]">🌿</div>
+                  <h5 className="font-semibold text-lg text-gray-800">טכניקות ריפוי מתקדמות</h5>
+                  <p className="text-gray-700">
+                    שילוב טכניקות ריפוי מתקדמות עם מגע מקצועי ומרגיע.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-2">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="text-4xl text-[#b5dacd]">✨</div>
+                  <h5 className="font-semibold text-lg text-gray-800">תוצאות ברמה הגבוהה ביותר</h5>
+                  <p className="text-gray-700">
+                    תוצאות ניכרות לעין ותהליך טיפולי ברמה הגבוהה ביותר.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/60 rounded-lg p-5 mt-5 shadow-sm text-center">
+              <p className="text-gray-700 italic font-medium">
+                הלקוחות שלי מספרים על חוויות טיפול מעשירות ומשנות חיים, ואני כאן כדי להציע לך את אותה החוויה המיוחדת.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#b5dacd]/20 rounded-xl p-8 mb-8">
-            <h4 className="text-2xl font-bold mb-4 text-gray-800">מה אני מציעה לך?</h4>
-            <ul className="space-y-4 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-2xl">👩‍⚕️</span>
-                טיפולים מותאמים אישית עם דגש על צרכים רפואיים ואסתטיים.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-2xl">🌿</span>
-                שילוב טכניקות ריפוי מתקדמות עם מגע מקצועי ומרגיע.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-2xl">✨</span>
-                תוצאות ניכרות לעין ותהליך טיפולי ברמה הגבוהה ביותר.
-              </li>
-            </ul>
-          </div>
-
-          <p className="text-lg mb-8 leading-relaxed text-gray-700">
-            הלקוחות שלי מספרים על חוויות טיפול מעשירות ומשנות חיים, ואני כאן כדי להציע לך את אותה החוויה המיוחדת.
-          </p>
+          {/* גלריית תעודות */}
+          <motion.div 
+            className="bg-[#b5dacd]/20 rounded-xl p-8 mb-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <h4 className="text-2xl font-bold mb-6 text-gray-800 text-center">תעודות הסמכה מקצועיות</h4>
+            
+            <div className="relative">
+              <div className="mb-4">
+                <div className="relative aspect-[4/3] w-full max-w-md mx-auto border rounded-lg p-2 bg-white/50">
+                  {imageLoading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100/70">
+                      <span className="text-lg font-semibold text-gray-800">טוען תמונה...</span>
+                    </div>
+                  )}
+                  
+                  {imageError ? (
+                    <div className="aspect-[4/3] w-full flex items-center justify-center bg-gray-100 text-center p-4">
+                      <div>
+                        <p className="text-red-600 font-bold mb-2">שגיאה בטעינת התמונה</p>
+                        <p className="text-gray-700">לא ניתן לטעון את התעודה כרגע</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <img 
+                      src={certificatePaths[currentCertificateIndex]} 
+                      alt={`תעודת הסמכה ${currentCertificateIndex + 1}`} 
+                      className="w-full h-full object-contain cursor-pointer"
+                      onClick={() => openCertificate(certificatePaths[currentCertificateIndex])}
+                      onLoad={handleImageLoad}
+                      onError={handleImageError}
+                    />
+                  )}
+                </div>
+              </div>
+              
+              <div className="flex justify-center gap-4 mt-4 mb-2">
+                <button 
+                  onClick={prevCertificate}
+                  className="bg-[#b5dacd] hover:bg-[#a5cebd] p-2 rounded-full transition-all shadow-md"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
+                <button 
+                  onClick={nextCertificate}
+                  className="bg-[#b5dacd] hover:bg-[#a5cebd] p-2 rounded-full transition-all shadow-md"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+              </div>
+              
+              <div className="flex justify-center gap-2">
+                {certificatePaths.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      currentCertificateIndex === index ? 'bg-[#b5dacd] scale-125' : 'bg-gray-300'
+                    }`}
+                    onClick={() => setCurrentCertificateIndex(index)}
+                  />
+                ))}
+              </div>
+              
+              <div className="text-center mt-4 text-gray-700">
+                <p>לחץ/י על התעודה להגדלה • {currentCertificateIndex + 1} מתוך {certificatePaths.length}</p>
+              </div>
+            </div>
+          </motion.div>
 
           <div className="text-center bg-[#b5dacd]/20 rounded-xl p-8">
             <h4 className="text-2xl font-bold mb-4 text-gray-800">צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!</h4>
             <p className="text-xl mb-2 text-gray-700">טלפון/וואטסאפ:</p>
-            <p className="text-2xl font-bold text-gray-800 mb-6 flex items-center justify-center gap-2">
+            <div className="text-2xl font-bold text-gray-800 mb-6 flex items-center justify-center gap-2">
               053-3353203
-              <Lottie animationData={animationData} style={{ width: 40, height: 40 }} />
-            </p>
+              {phoneAnimation && (
+                <Lottie animationData={phoneAnimation} style={{ width: 40, height: 40 }} />
+              )}
+            </div>
             <p className="text-lg text-gray-700">אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי.</p>
           </div>
         </motion.div>
@@ -150,6 +331,47 @@ const Stats = () => {
         </motion.div>
       </div>
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+
+      {/* הוספת פופאפ להצגת תעודה בגודל מלא */}
+      <AnimatePresence>
+        {selectedCertificate && (
+          <motion.div 
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeCertificate}
+          >
+            <motion.div
+              className="relative max-w-4xl max-h-[90vh]"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={selectedCertificate} 
+                alt="תעודת הסמכה מוגדלת" 
+                className="max-h-[90vh] max-w-full object-contain rounded-lg"
+              />
+              <motion.button 
+                className="absolute top-3 left-3 bg-[#b5dacd] hover:bg-[#a5cebd] p-3 rounded-full transition-colors shadow-md z-10"
+                onClick={closeCertificate}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#333" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
