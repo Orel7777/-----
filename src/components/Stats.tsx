@@ -104,40 +104,42 @@ const Stats = () => {
   };
 
   return (
-    <section className="py-16 relative bg-gradient-to-b from-white/10 to-[#e8f5e9]/30" id="stats">
-      <div className="absolute top-0 left-0 right-0 h-16 bg-[#b5dacd]/20 text-center flex items-center justify-center">
-        <h2 className="text-2xl font-bold text-gray-800">אודות</h2>
+    <section className="py-16 relative bg-gradient-to-b from-white/10 to-[#e8f5e9]/30 md:mt-0 mt-4 overflow-visible z-20" id="stats">
+      {/* כותרת סקשן עם רקע ירוק - יותר בולטת */}
+      <div className="sticky top-0 left-0 right-0 h-16 bg-[#b5dacd]/50 text-center flex items-center justify-center shadow-md z-50 mb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800">אודות</h2>
       </div>
-      <div className="max-w-4xl mx-auto px-4 pt-12">
+      
+      <div className="max-w-4xl mx-auto px-2 md:px-4 pt-20 md:pt-12">
         <motion.div 
-          className="mb-12"
+          className="mb-8 md:mb-12"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }} /* הקטנת מספר האלמנטים שצריכים להיות בתצוגה */
           variants={fadeInUp}
         >
-          <div className="flex flex-col items-center gap-4 mb-8">
+          <div className="flex flex-col items-center gap-2 md:gap-4 mb-4 md:mb-8">
             <motion.div
               animate={floatAnimation}
               className="text-gray-800"
             >
-              <FaBattleNet size={65} />
+              <FaBattleNet size={40} className="md:w-[65px] md:h-[65px] w-[40px] h-[40px]" />
             </motion.div>
-            <h2 className="text-4xl font-bold text-center text-gray-800">נעים להכיר – מדואלה דקלה</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-center text-gray-800">נעים להכיר – מדואלה דקלה</h2>
           </div>
-          <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">מומחית בטיפולי מגע, קוסמטיקה רפואית ורפואה משלימה</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-center mb-4 md:mb-6 text-gray-700">מומחית בטיפולי מגע, קוסמטיקה רפואית ורפואה משלימה</h3>
 
-          <p className="text-lg mb-8 leading-relaxed text-gray-700">
+          <p className="text-base md:text-lg mb-6 md:mb-8 leading-relaxed text-gray-700">
             עם למעלה מעשור של ניסיון מקצועי ועשייה אינטנסיבית בתחום הקוסמטיקה והרפואה המשלימה, אני כאן כדי להעניק לך טיפולים מותאמים אישית שיחדשו את העור, ירגיעו את הנפש ויעניקו לגוף תחושה נפלאה של איזון ובריאות.
           </p>
 
-          <div className="bg-gradient-to-r from-[#e8f5e9] to-[#b5dacd]/20 rounded-xl p-8 mb-8 shadow-md">
-            <h4 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3 border-b border-[#b5dacd] pb-3">
-              <span className="text-[#b5dacd] text-3xl">💼</span>
+          <div className="bg-gradient-to-r from-[#e8f5e9] to-[#b5dacd]/20 rounded-xl p-4 md:p-8 mb-6 md:mb-8 shadow-md">
+            <h4 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800 flex items-center gap-2 md:gap-3 border-b border-[#b5dacd] pb-2 md:pb-3">
+              <span className="text-[#b5dacd] text-2xl md:text-3xl">💼</span>
               הניסיון שלי
             </h4>
             
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <div className="bg-white/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-1">
                 <div className="flex items-start gap-3">
                   <div className="bg-[#b5dacd] rounded-full p-2 mt-1 flex-shrink-0">
@@ -233,28 +235,28 @@ const Stats = () => {
 
           {/* גלריית תעודות */}
           <motion.div 
-            className="bg-[#b5dacd]/20 rounded-xl p-8 mb-8"
+            className="bg-[#b5dacd]/20 rounded-xl p-4 md:p-8 mb-6 md:mb-8 overflow-hidden"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={fadeInUp}
           >
-            <h4 className="text-2xl font-bold mb-6 text-gray-800 text-center">תעודות הסמכה מקצועיות</h4>
+            <h4 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800 text-center">תעודות הסמכה מקצועיות</h4>
             
             <div className="relative">
               <div className="mb-4">
-                <div className="relative aspect-[4/3] w-full max-w-md mx-auto border rounded-lg p-2 bg-white/50">
+                <div className="relative aspect-[4/3] w-full max-w-md mx-auto">
                   {imageLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100/70">
-                      <span className="text-lg font-semibold text-gray-800">טוען תמונה...</span>
+                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100/20">
+                      <span className="text-base md:text-lg font-semibold text-gray-800">טוען תמונה...</span>
                     </div>
                   )}
                   
                   {imageError ? (
-                    <div className="aspect-[4/3] w-full flex items-center justify-center bg-gray-100 text-center p-4">
+                    <div className="aspect-[4/3] w-full flex items-center justify-center bg-gray-100/10 text-center p-4">
                       <div>
-                        <p className="text-red-600 font-bold mb-2">שגיאה בטעינת התמונה</p>
-                        <p className="text-gray-700">לא ניתן לטעון את התעודה כרגע</p>
+                        <p className="text-red-600 font-bold mb-2 text-sm md:text-base">שגיאה בטעינת התמונה</p>
+                        <p className="text-gray-700 text-sm md:text-base">לא ניתן לטעון את התעודה כרגע</p>
                       </div>
                     </div>
                   ) : (
@@ -274,16 +276,18 @@ const Stats = () => {
                 <button 
                   onClick={prevCertificate}
                   className="bg-[#b5dacd] hover:bg-[#a5cebd] p-2 rounded-full transition-all shadow-md"
+                  aria-label="תעודה קודמת"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                   </svg>
                 </button>
                 <button 
                   onClick={nextCertificate}
                   className="bg-[#b5dacd] hover:bg-[#a5cebd] p-2 rounded-full transition-all shadow-md"
+                  aria-label="תעודה הבאה"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                   </svg>
                 </button>
@@ -293,41 +297,42 @@ const Stats = () => {
                 {certificatePaths.map((_, index) => (
                   <button
                     key={index}
-                    className={`w-3 h-3 rounded-full transition-all ${
+                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
                       currentCertificateIndex === index ? 'bg-[#b5dacd] scale-125' : 'bg-gray-300'
                     }`}
                     onClick={() => setCurrentCertificateIndex(index)}
+                    aria-label={`תעודה ${index + 1}`}
                   />
                 ))}
               </div>
               
-              <div className="text-center mt-4 text-gray-700">
+              <div className="text-center mt-4 text-gray-700 text-xs md:text-sm">
                 <p>לחץ/י על התעודה להגדלה • {currentCertificateIndex + 1} מתוך {certificatePaths.length}</p>
               </div>
             </div>
           </motion.div>
 
-          <div className="text-center bg-[#b5dacd]/20 rounded-xl p-8">
-            <h4 className="text-2xl font-bold mb-4 text-gray-800">צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!</h4>
-            <p className="text-xl mb-2 text-gray-700">טלפון/וואטסאפ:</p>
-            <div className="text-2xl font-bold text-gray-800 mb-6 flex items-center justify-center gap-2">
+          <div className="text-center bg-[#b5dacd]/20 rounded-xl p-4 md:p-8 z-10 relative shadow-sm">
+            <h4 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-800">צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!</h4>
+            <p className="text-lg md:text-xl mb-1 md:mb-2 text-gray-700">טלפון/וואטסאפ:</p>
+            <div className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 flex items-center justify-center gap-2">
               053-3353203
               {phoneAnimation && (
-                <Lottie animationData={phoneAnimation} style={{ width: 40, height: 40 }} />
+                <Lottie animationData={phoneAnimation} style={{ width: 30, height: 30 }} className="md:w-[40px] md:h-[40px] w-[30px] h-[30px]" />
               )}
             </div>
-            <p className="text-lg text-gray-700">אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי.</p>
+            <p className="text-base md:text-lg text-gray-700">אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי.</p>
           </div>
         </motion.div>
 
         <motion.div 
-          className="text-center mt-12"
+          className="text-center mt-6 md:mt-12"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={fadeInUp}
         >
-          <Button onClick={handleOpenForm}>קביעת תור לייעוץ</Button>
+          <Button onClick={handleOpenForm} className="px-4 py-2 md:px-6 md:py-3 text-base md:text-lg">קביעת תור לייעוץ</Button>
         </motion.div>
       </div>
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
