@@ -173,19 +173,44 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
         </div>
         <form className="form">
           <div className="form-group">
-            <label htmlFor="name">שם מלא</label>
-            <input type="text" id="name" name="name" required placeholder="הכנס/י את שמך המלא" />
+            <label htmlFor="name">שם מלא *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              placeholder="הכנס/י את שמך המלא" 
+              minLength={2}
+              pattern="^[\u0590-\u05FF\u200f\u200e a-zA-Z\s]+$"
+              title="אנא הכנס/י שם תקין (אותיות בלבד)"
+            />
           </div>
           <div className="form-group">
-            <label htmlFor="phone">מספר טלפון</label>
-            <input type="tel" id="phone" name="phone" required placeholder="הכנס/י מספר טלפון" />
+            <label htmlFor="phone">מספר טלפון *</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              required 
+              placeholder="הכנס/י מספר טלפון (לדוגמה: 0501234567)" 
+              pattern="^0(5[0-9]|[2-4]|[8-9]|7[0-9])[0-9]{7}$"
+              title="אנא הכנס/י מספר טלפון ישראלי תקין (10 ספרות)"
+            />
           </div>
           <div className="form-group">
-            <label htmlFor="email">אימייל</label>
-            <input type="email" id="email" name="email" required placeholder="הכנס/י כתובת אימייל" />
+            <label htmlFor="email">אימייל *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="הכנס/י כתובת אימייל" 
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              title="אנא הכנס/י כתובת אימייל תקינה"
+            />
           </div>
           <div className="form-group">
-            <label htmlFor="treatmentType">סוג הטיפול</label>
+            <label htmlFor="treatmentType">סוג הטיפול *</label>
             <select id="treatmentType" name="treatmentType" required>
               <option value="" disabled selected>בחר/י סוג טיפול</option>
               <option value="שוודי">עיסוי שוודי</option>
@@ -203,13 +228,18 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="medicalIssues">האם יש בעיות רפואיות?</label>
+            <label htmlFor="medicalIssues">האם יש בעיות רפואיות? *</label>
             <textarea 
               name="medicalIssues" 
               id="medicalIssues" 
               rows={4} 
-              placeholder="אנא פרט/י אם יש בעיות רפואיות שעלינו לדעת עליהן"
+              required
+              placeholder="אנא פרט/י אם יש בעיות רפואיות שעלינו לדעת עליהן. אם אין, אנא כתוב/י 'אין' או 'לא'"
+              minLength={2}
             />
+          </div>
+          <div className="form-note">
+            <small>* שדות חובה</small>
           </div>
           <button className="form-submit-btn" type="submit">שליחה</button>
         </form>
