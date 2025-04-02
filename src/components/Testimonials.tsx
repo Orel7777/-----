@@ -88,8 +88,8 @@ const Testimonials = () => {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       y: 0,
       transition: {
         duration: 0.6,
@@ -104,7 +104,7 @@ const Testimonials = () => {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: {
+    transition: {
         duration: 0.6,
         ease: "easeOut",
         delay: 0.2 * index
@@ -123,7 +123,7 @@ const Testimonials = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-[#b5dacd]/30 to-[#b5dacd]/10" id="testimonials" ref={ref}>
       <div className="max-w-6xl mx-auto px-4">
-        <motion.div
+        <motion.div 
           className="flex flex-col items-center gap-4 mb-8"
           initial="hidden"
           animate={controls}
@@ -180,7 +180,7 @@ const Testimonials = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </motion.button>
-        </div>
+            </div>
 
         <div 
           className="embla overflow-hidden relative mb-8" 
@@ -248,7 +248,7 @@ const Testimonials = () => {
               </motion.div>
             ))}
           </div>
-          
+
           {/* Pagination dots */}
           <div className="flex justify-center gap-2 mt-2">
             {imageUrls.map((_, index) => (
@@ -285,7 +285,7 @@ const Testimonials = () => {
            >
              הדרך שלנו מתחילה בלחיצה כאן!
            </motion.button>
-         </div>
+        </div>
       </div>
 
       {/* הוספת הטופס */}

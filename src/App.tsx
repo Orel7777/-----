@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -6,24 +5,8 @@ import Testimonials from './components/Testimonials';
 import BabySteps from './components/BabySteps';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
-import Loader from './components/Loader';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // דימוי טעינת תוכן
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // טעינה למשך 2.5 שניות
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <div 
       className="min-h-screen text-foreground font-assistant"
