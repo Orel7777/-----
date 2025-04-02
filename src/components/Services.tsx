@@ -92,50 +92,6 @@ const Services = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-        >
-          <motion.div className="video-card" variants={fadeInUp}>
-            <div className="video-container">
-              <video className="service-video" autoPlay loop muted playsInline>
-                <source src="/video_7.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="text-overlay">
-              <h3 className="text-xl font-semibold">עיסוי מקצועי</h3>
-              <p>מגוון טיפולי עיסוי מותאמים אישית</p>
-            </div>
-          </motion.div>
-
-          <motion.div className="video-card" variants={fadeInUp}>
-            <div className="video-container">
-              <video className="service-video" autoPlay loop muted playsInline>
-                <source src="/video_2.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="text-overlay">
-              <h3 className="text-xl font-semibold"> חוויה מרגיעה ומרפאת</h3>
-              <p>טיפול עדין ומותאם במיוחד</p>
-            </div>
-          </motion.div>
-
-          <motion.div className="video-card" variants={fadeInUp}>
-            <div className="video-container">
-              <video className="service-video" autoPlay loop muted playsInline>
-                <source src="/video_10.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="text-overlay">
-              <h3 className="text-xl font-semibold">חוויית טיפול ייחודית לגוף ולנפש</h3>
-              <p>מיניליפט ויוגה פייס</p>
-            </div>
-          </motion.div>
-        </motion.div>
-        
-        <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           initial="hidden"
           whileInView="visible"
