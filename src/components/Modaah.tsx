@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { GrAchievement, GrDeploy } from "react-icons/gr";
+import { GrDeploy } from "react-icons/gr";
+import { GiMuscleUp } from "react-icons/gi";
 import Form from './Form';
 import { useState, useEffect, useRef } from 'react';
 import Button from './Button';
@@ -136,56 +137,6 @@ const Modaah = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
-            padding: '20px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-            transition: 'transform 0.3s ease',
-            textAlign: 'center',
-            border: '1px solid #8B4513'
-          }}>
-            <div className="flex items-center gap-4 mb-4">
-              <h3 className="text-xl font-semibold text-[#8B4513]">עיסויים</h3>
-              <div className="icon-container text-[#8B4513]">
-                <GrDeploy className="achievement-icon" />
-              </div>
-            </div>
-            <ul className="space-y-3 text-[#8B4513]">
-              <li>• עיסוי רקמות-עמוק</li>
-              <li>• עיסוי שוודי/משולב</li>
-              <li>• עיסוי תאילנדי</li>
-              <li>• עיסוי הריון</li>
-              <li>• עיסוי רפואי</li>
-            </ul>
-          </div>
-
-          <div style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
-            padding: '20px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-            transition: 'transform 0.3s ease',
-            textAlign: 'center',
-            border: '1px solid #8B4513'
-          }} className="relative">
-            <div className="flex items-center gap-4 mb-4">
-              <h3 className="text-xl font-semibold text-[#8B4513]">פיסול פנים טבעי</h3>
-              <div className="icon-container text-[#8B4513]">
-                <GrAchievement className="achievement-icon" />
-              </div>
-            </div>
-            <ul className="space-y-3 text-[#8B4513]">
-              <li>• עיסוי פנים מיניליפט</li>
-              <li>• יוגה פייס</li>
-              <li>• טיפול פנים הוליסטי</li>
-              <li>• עיסוי פנים מפנק</li>
-              <li>• טיפול זוהר טבעי</li>
-            </ul>
-          </div>
-        </div>
-
         <div className="text-center mt-12">
           <Button onClick={handleOpenForm}>לתיאום תור</Button>
         </div>
@@ -367,6 +318,13 @@ const StyledModaah = styled.section`
   }
 
   .achievement-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    filter: invert(1);
+  }
+
+  .muscle-icon {
     width: 24px;
     height: 24px;
     color: white;
