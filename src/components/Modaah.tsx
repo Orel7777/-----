@@ -47,7 +47,7 @@ const Modaah = () => {
   return (
     <StyledModaah className="py-16" id="services">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#dcc1a6]">
           שירותי הקליניקה
         </h2>
 
@@ -116,14 +116,14 @@ const Modaah = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="backdrop-blur-sm bg-white/10 rounded-xl p-8 shadow-sm hover:bg-white/20 transition-all">
+          <div className="backdrop-blur-sm bg-[#dcc1a6]/10 rounded-xl p-8 shadow-sm hover:bg-[#dcc1a6]/20 transition-all">
             <div className="flex items-center gap-4 mb-4">
-              <h3 className="text-xl font-semibold text-white">עיסויים</h3>
-              <div className="icon-container">
+              <h3 className="text-xl font-semibold text-[#dcc1a6]">עיסויים</h3>
+              <div className="icon-container text-[#dcc1a6]">
                 <GrDeploy className="achievement-icon" />
               </div>
             </div>
-            <ul className="space-y-3 text-white/90">
+            <ul className="space-y-3 text-[#b9aea5]">
               <li>• עיסוי רקמות-עמוק</li>
               <li>• עיסוי שוודי/משולב</li>
               <li>• עיסוי תאילנדי</li>
@@ -132,14 +132,14 @@ const Modaah = () => {
             </ul>
           </div>
 
-          <div className="backdrop-blur-sm bg-white/10 rounded-xl p-8 shadow-sm hover:bg-white/20 transition-all relative">
+          <div className="backdrop-blur-sm bg-[#dcc1a6]/10 rounded-xl p-8 shadow-sm hover:bg-[#dcc1a6]/20 transition-all relative">
             <div className="flex items-center gap-4 mb-4">
-              <h3 className="text-xl font-semibold text-white">פיסול פנים טבעי</h3>
-              <div className="icon-container">
+              <h3 className="text-xl font-semibold text-[#dcc1a6]">פיסול פנים טבעי</h3>
+              <div className="icon-container text-[#dcc1a6]">
                 <GrAchievement className="achievement-icon" />
               </div>
             </div>
-            <ul className="space-y-3 text-white/90">
+            <ul className="space-y-3 text-[#b9aea5]">
               <li>• עיסוי פנים מיניליפט</li>
               <li>• יוגה פייס</li>
               <li>• טיפול פנים הוליסטי</li>

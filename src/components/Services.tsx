@@ -86,7 +86,7 @@ const Services = () => {
               <Lottie animationData={serviceAnimation} style={{ width: 200, height: 200 }} />
             )}
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#8B4513]">
             שירותי הקליניקה
           </h2>
         </motion.div>
@@ -99,84 +99,84 @@ const Services = () => {
           variants={staggerContainer}
         >
           <motion.div 
-            className="backdrop-blur-sm bg-[#b5dacd]/20 rounded-xl p-12 shadow-lg hover:shadow-xl transition-all"
+            className="backdrop-blur-sm bg-[#dcc1a6]/20 rounded-xl p-12 shadow-lg hover:shadow-xl transition-all"
             variants={fadeInUp}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-4xl font-bold text-gray-800">עיסויים רפואיים וטיפוליים</h3>
+              <h3 className="text-4xl font-bold text-[#8B4513]">עיסויים רפואיים וטיפוליים</h3>
               <motion.div
                 animate={floatAnimation}
-                className="text-gray-800"
+                className="text-[#8B4513]"
               >
                 <FaDove size={32} />
               </motion.div>
             </div>
-            <ul className="space-y-6 text-2xl font-medium text-gray-700">
+            <ul className="space-y-6 text-2xl font-medium text-[#5C4033]">
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי רפואי
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי רקמות עמוק
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי לנשים בהריון
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי לאחר לידה
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי לימפטי
                 <span className="text-xl text-gray-500 mr-2">(ניקוז לימפטי)</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי לספורטאיות
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי לכאבי גב וצוואר
               </li>
             </ul>
           </motion.div>
 
           <motion.div 
-            className="backdrop-blur-sm bg-[#b5dacd]/20 rounded-xl p-12 shadow-lg hover:shadow-xl transition-all"
+            className="backdrop-blur-sm bg-[#dcc1a6]/20 rounded-xl p-12 shadow-lg hover:shadow-xl transition-all"
             variants={fadeInUp}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-4xl font-bold text-gray-800">עיסויים מסורתיים ומרגיעים</h3>
+              <h3 className="text-4xl font-bold text-[#8B4513]">עיסויים מסורתיים ומרגיעים</h3>
               <motion.div
                 animate={floatAnimation}
-                className="text-gray-800"
+                className="text-[#8B4513]"
               >
                 <FaBluesky size={32} />
               </motion.div>
             </div>
-            <ul className="space-y-6 text-2xl font-medium text-gray-700">
+            <ul className="space-y-6 text-2xl font-medium text-[#5C4033]">
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי שוודי
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי הוליסטי
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי באבנים חמות
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי תאילנדי עדין
                 <span className="text-xl text-gray-500 mr-2">(ללא מתיחות אגרסיביות)</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי לומי-לומי
                 <span className="text-xl text-gray-500 mr-2">(מהוואי)</span>
               </li>
@@ -184,38 +184,38 @@ const Services = () => {
           </motion.div>
 
           <motion.div 
-            className="backdrop-blur-sm bg-[#b5dacd]/20 rounded-xl p-12 shadow-lg hover:shadow-xl transition-all"
+            className="backdrop-blur-sm bg-[#dcc1a6]/20 rounded-xl p-12 shadow-lg hover:shadow-xl transition-all"
             variants={fadeInUp}
           >
             <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-4xl font-bold text-gray-800">שיטות מיוחדות ועיסויים משולבים</h3>
+              <h3 className="text-4xl font-bold text-[#8B4513]">שיטות מיוחדות ועיסויים משולבים</h3>
               <motion.div
                 animate={floatAnimation}
-                className="text-gray-800"
+                className="text-[#8B4513]"
               >
                 <TbMassage size={32} />
               </motion.div>
             </div>
-            <ul className="space-y-6 text-2xl font-medium text-gray-700">
+            <ul className="space-y-6 text-2xl font-medium text-[#5C4033]">
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי כוסות רוח
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 רפלקסולוגיה
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי משולב
                 <span className="text-xl text-gray-500 mr-2">(לפי צרכי המטופלת)</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי קרקפת ופנים
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-3xl text-[#b5dacd]">•</span>
+                <span className="text-3xl text-[#dcc1a6]">•</span>
                 עיסוי בשיטת טריגר פוינט
                 <span className="text-xl text-gray-500 mr-2">(Trigger Point Therapy)</span>
               </li>
@@ -241,6 +241,7 @@ const Services = () => {
 const StyledServices = styled.section`
   padding: 80px 0;
   margin-bottom: 40px;
+  background-color: #dcc1a6;
 
   .video-card {
     position: relative;
@@ -251,7 +252,7 @@ const StyledServices = styled.section`
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     padding: 8px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(220, 193, 166, 0.05);
 
     &:hover {
       transform: translateY(-5px);
@@ -292,8 +293,8 @@ const StyledServices = styled.section`
     left: 0;
     right: 0;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
-    color: white;
+    background: linear-gradient(to top, rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.1));
+    color: #fff;
     transition: all 0.3s ease;
 
     h3 {

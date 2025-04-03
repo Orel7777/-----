@@ -12,7 +12,7 @@ function App() {
     <div 
       className="min-h-screen text-foreground font-assistant"
       style={{
-        background: 'linear-gradient(165deg, rgb(181, 218, 205, 0.95) 15%, rgba(181, 218, 205, 0.3) 50%, rgba(245, 242, 240, 0.95) 85%)'
+        background: 'linear-gradient(165deg, rgb(220, 193, 166, 0.5) 15%, rgba(181, 218, 205, 0.3) 50%, rgba(245, 242, 240, 0.95) 85%)'
       }}
     >
       <div className="relative">

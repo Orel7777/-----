@@ -27,7 +27,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(165deg, rgb(181, 218, 205, 0.95) 15%, rgba(181, 218, 205, 0.3) 50%, rgba(245, 242, 240, 0.95) 85%);
+  background: linear-gradient(165deg, rgba(220, 193, 166, 0.95) 15%, rgba(185, 174, 165, 0.3) 50%, rgba(92, 79, 71, 0.95) 85%);
   
   .content {
     display: flex;
@@ -37,9 +37,9 @@ const StyledWrapper = styled.div`
     gap: 2rem;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(220, 193, 166, 0.1);
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(92, 79, 71, 0.1);
     max-width: 90%;
   }
   
@@ -55,8 +55,8 @@ const StyledWrapper = styled.div`
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(92, 79, 71, 0.15);
+    border: 3px solid rgba(220, 193, 166, 0.4);
   }
   
   .loader-container {
@@ -66,7 +66,7 @@ const StyledWrapper = styled.div`
   
   .title {
     text-align: center;
-    color: #1a1a1a;
+    color: #5c4f47;
   }
   
   .title h1 {

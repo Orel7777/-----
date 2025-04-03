@@ -17,22 +17,22 @@ const Loader = () => {
         <div className="pl__dot" />
         <div className="pl__dot" />
         <div className="pl__dot" />
-        <div className="pl__text">Loading…</div>
+        <div className="pl__text">טוען...</div>
       </div>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled.div`
-  --primary1: #b5dacd;
-  --primary2: #69a88f;
-  --bg: #1a1a1a;
-  --fg: #ffffff;
-  --fg-t: rgba(255, 255, 255, 0.1);
+  --primary1: #dcc1a6;
+  --primary2: #b9aea5;
+  --bg: #5c4f47;
+  --fg: #dcc1a6;
+  --fg-t: rgba(220, 193, 166, 0.1);
   --trans-dur: 0.3s;
   
   .pl {
-    box-shadow: 2em 0 2em rgba(0, 0, 0, 0.2) inset, -2em 0 2em rgba(255, 255, 255, 0.1) inset;
+    box-shadow: 2em 0 2em rgba(92, 79, 71, 0.2) inset, -2em 0 2em rgba(220, 193, 166, 0.1) inset;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@ const StyledWrapper = styled.div`
     transform: rotateX(30deg) rotateZ(45deg);
     width: 14em;
     height: 14em;
-    color: white;
+    color: #dcc1a6;
   }
 
   .pl, .pl__dot {

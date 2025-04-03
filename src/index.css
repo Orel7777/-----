@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #f5f2f0;
-  --foreground: #232223;
-  --primary: #b5dacd;
-  --secondary: #b5dacd;
-  --accent: #b5dacd;
+  --background: #dcc1a6;
+  --foreground: #8B4513;
+  --primary: #dcc1a6;
+  --secondary: #dcc1a6;
+  --accent: #5C4033;
 }
 
 html {

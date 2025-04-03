@@ -44,8 +44,8 @@ const Hero = () => {
           animate="visible"
           variants={fadeInRight}
         >
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">מרכז  לרפואה משלימה ועיסויים לנשים</h1>
-          <p className="text-xl mb-8 text-gray-600">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
+          <h1 className="text-4xl font-bold mb-4 text-[#8B4513]">מרכז  לרפואה משלימה ועיסויים לנשים</h1>
+          <p className="text-xl mb-8 text-[#5C4033]">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
           <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
         </motion.div>
         <motion.div 
@@ -84,6 +84,7 @@ const StyledHero = styled.section`
   align-items: center;
   position: relative;
   overflow: hidden;
+  background-color: #dcc1a6;
 
   .hero-content {
     max-width: 1200px;
@@ -108,14 +109,14 @@ const StyledHero = styled.section`
 
   .card {
     position: relative;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(220, 193, 166, 0.8);
     width: 400px;
     height: 400px;
     border-radius: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 15px 45px rgba(139, 69, 19, 0.2);
 
     &:hover {
       transform: rotateY(10deg) translateY(-10px);
@@ -128,7 +129,7 @@ const StyledHero = styled.section`
       left: 0;
       width: 100%;
       height: 100%;
-      box-shadow: inset 0px 0px 50px 10px rgba(255, 255, 255, 0.5);
+      box-shadow: inset 0px 0px 50px 10px rgba(220, 193, 166, 0.5);
       z-index: 1;
       pointer-events: none;
     }
@@ -168,7 +169,7 @@ const StyledHero = styled.section`
     left: 0;
     width: 100%;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    background: linear-gradient(to top, rgba(139, 69, 19, 0.8), transparent);
     color: white;
     transition: all 0.3s ease;
     text-align: center;

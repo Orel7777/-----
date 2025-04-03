@@ -26,7 +26,7 @@ const StyledWrapper = styled.div`
     position: relative;
     width: 90%;
     max-width: 380px;
-    background: linear-gradient(165deg, rgb(181, 218, 205, 0.95) 15%, rgba(181, 218, 205, 0.3) 50%, rgba(245, 242, 240, 0.95) 85%);
+    background: linear-gradient(165deg, rgba(220, 193, 166, 0.95) 15%, rgba(220, 193, 166, 0.3) 50%, rgba(139, 69, 19, 0.95) 85%);
     border-radius: 20px;
     padding: 20px;
     font-family: inherit;
@@ -35,7 +35,7 @@ const StyledWrapper = styled.div`
     flex-direction: column;
     gap: 14px;
     box-sizing: border-box;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 24px rgba(139, 69, 19, 0.2);
     animation: slideIn 0.3s ease-out;
   }
 
@@ -108,12 +108,12 @@ const StyledWrapper = styled.div`
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: #69a88f;
-    box-shadow: 0 0 0 2px rgba(105, 168, 143, 0.2);
+    border-color: #8B4513;
+    box-shadow: 0 0 0 2px rgba(220, 193, 166, 0.3);
   }
 
   .form-submit-btn {
-    background: #69a88f;
+    background: #8B4513;
     color: white;
     border: none;
     padding: 10px;
@@ -122,6 +122,11 @@ const StyledWrapper = styled.div`
     cursor: pointer;
     margin-top: 6px;
     width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .form-submit-btn:hover {
+    background: #5C4033;
   }
 
   .logo {

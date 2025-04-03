@@ -23,42 +23,16 @@ const StyledWrapper = styled.div`
     padding: 12px 17px;
     border: 0;
     border-radius: 7px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    background: radial-gradient(
-      ellipse at bottom,
-      rgba(71, 81, 92, 1) 0%,
-      rgba(11, 21, 30, 1) 45%
-    );
-    color: rgb(255, 255, 255, 0.9);
-    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+    background: #8B4513;
+    color: white;
+    transition: all 0.3s ease;
     font-weight: 500;
   }
 
-  .button::before {
-    content: "";
-    width: 70%;
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    left: 15%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0.2;
-    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
-  }
-
   .button:hover {
-    color: rgb(255, 255, 255, 1);
-    transform: scale(1.1) translateY(-3px);
-  }
-
-  .button:hover::before {
-    opacity: 1;
+    color: white;
+    transform: scale(1.05);
+    background: #5C4033;
   }
 `;
 

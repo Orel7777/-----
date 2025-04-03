@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed w-full top-0 z-40">
-        <div className="bg-white/10 backdrop-blur-md shadow-sm">
+        <div className="bg-[#dcc1a6]/10 backdrop-blur-md shadow-sm">
           <div className="max-w-6xl mx-auto">
             <nav className="flex items-center justify-between px-4 py-2 md:py-2 lg:px-0">
               {/* Logo */}
@@ -27,23 +27,23 @@ const Header = () => {
                 <img 
                   src="/logo.jpeg" 
                   alt="דקלה מדואלה" 
-                  className="h-12 w-auto rounded-full bg-white/40 backdrop-blur-sm p-1"
+                  className="h-12 w-auto rounded-full bg-[#dcc1a6]/40 backdrop-blur-sm p-1"
                 />
-                <span className="text-sm text-gray-700 mt-0.5">מדואלה - דקלה שליט</span>
+                <span className="text-sm text-[#8B4513] mt-0.5">מדואלה - דקלה שליט</span>
               </div>
 
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center gap-8">
-                <a href="#services" className="transition-colors text-gray-700 hover:text-gray-900">
+                <a href="#services" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
                   שירותים
                 </a>
-                <a href="#testimonials" className="transition-colors text-gray-700 hover:text-gray-900">
+                <a href="#testimonials" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
                   המלצות
                 </a>
-                <a href="#methodology" className="transition-colors text-gray-700 hover:text-gray-900">
+                <a href="#methodology" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
                   שיטת הטיפול
                 </a>
-                <a href="#stats" className="transition-colors text-gray-700 hover:text-gray-900">
+                <a href="#stats" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
                   אודות
                 </a>
               </div>
@@ -73,7 +73,7 @@ const Header = () => {
                     href="https://waze.com/ul?q=נס ציונה, ישראל" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
                   >
                     <FaWaze className="w-5 h-5" />
                   </a>
@@ -81,7 +81,7 @@ const Header = () => {
                     href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
                   >
                     <FaWhatsapp className="w-5 h-5" />
                   </a>
@@ -89,15 +89,15 @@ const Header = () => {
                     href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
                   >
                     <FaInstagram className="w-5 h-5" />
                   </a>
                   <a 
-                    href="https://www.facebook.com/profile.php?id=100058313266229&rdid=inUN24CvjFZ5IyNp&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BqgWnqVX3%2F#" 
+                    href="https://www.facebook.com/profile.php?id=100058313266229" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
                   >
                     <FaFacebook className="w-5 h-5" />
                   </a>
@@ -116,11 +116,11 @@ const Header = () => {
               : 'opacity-0 pointer-events-none'
           }`}
           style={{
-            background: 'linear-gradient(to bottom, rgba(105, 168, 143, 0.95), rgba(250, 237, 219, 0.95), rgba(245, 242, 240, 0.95))'
+            background: 'linear-gradient(to bottom, rgba(220, 193, 166, 0.95), rgba(139, 69, 19, 0.95), rgba(92, 64, 51, 0.95))'
           }}
         >
           <div className="flex flex-col items-center justify-center min-h-screen px-4 py-2">
-            <div className="text-center space-y-4 bg-white/30 backdrop-blur-md p-3 pt-2 rounded-2xl border border-white/50 shadow-xl max-w-md w-full relative">
+            <div className="text-center space-y-4 bg-[#dcc1a6]/30 backdrop-blur-md p-3 pt-2 rounded-2xl border border-[#dcc1a6]/50 shadow-xl max-w-md w-full relative">
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="absolute top-1 right-1 p-1.5 text-gray-800 hover:text-gray-900 transition-all duration-300 hover:scale-110 bg-white/50 rounded-full shadow-lg backdrop-blur-sm"
@@ -213,7 +213,7 @@ const Header = () => {
                   <FaInstagram className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://www.facebook.com/profile.php?id=100058313266229&rdid=inUN24CvjFZ5IyNp&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BqgWnqVX3%2F#" 
+                  href="https://www.facebook.com/profile.php?id=100058313266229" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-gray-800 hover:text-gray-900 transition-colors"

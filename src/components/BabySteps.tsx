@@ -173,7 +173,7 @@ const BabySteps = () => {
 
 const StyledBabySteps = styled.div`
   padding: 40px 0;
-  background-color: #e8f5e9;
+  background-color: #dcc1a6;
 
   .container {
     max-width: 1200px;
@@ -204,7 +204,7 @@ const StyledBabySteps = styled.div`
   }
 
   .step {
-    background-color: #e8f5e9;
+    background-color: #dcc1a6/30;
     padding: 24px;
     border-radius: 16px;
     text-align: center;
@@ -220,8 +220,8 @@ const StyledBabySteps = styled.div`
   .step-number {
     width: 40px;
     height: 40px;
-    background: #b5dacd;
-    color: #4a5568;
+    background: #5c4f47;
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -264,7 +264,7 @@ const StyledBabySteps = styled.div`
   }
 
   .type-item {
-    background-color: #e8f5e9;
+    background-color: #dcc1a6/30;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -281,7 +281,7 @@ const StyledBabySteps = styled.div`
     }
 
     p {
-      color: #4a5568;
+      color: #5c4f47;
     }
   }
 
