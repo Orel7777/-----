@@ -141,7 +141,7 @@ const Services = () => {
                 <li>
                   <span className="service-bullet"></span>
                   עיסוי לימפטי
-                  <span className="service-note">(ניקוז לימפטי)</span>
+              
                 </li>
                 <li>
                   <span className="service-bullet"></span>
@@ -180,11 +180,14 @@ const Services = () => {
                   <span className="service-bullet"></span>
                   עיסוי באבנים חמות
                 </li>
-              
                 <li>
                   <span className="service-bullet"></span>
                   עיסוי לומי-לומי
                   <span className="service-note">(מהוואי)</span>
+                </li>
+                <li>
+                  <span className="service-bullet"></span>
+                  עיסוי תאילנדי
                 </li>
               </ul>
             </div>
@@ -214,7 +217,7 @@ const Services = () => {
                 <li>
                   <span className="service-bullet"></span>
                   עיסוי משולב
-                  <span className="service-note">(לפי צרכי המטופלת)</span>
+                
                 </li>
                 <li>
                   <span className="service-bullet"></span>

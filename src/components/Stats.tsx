@@ -10,7 +10,6 @@ const certificatePaths = [
   '/images/תעודות/2.1.jpeg',
   '/images/תעודות/2 (4).jpeg',
   '/images/תעודות/2 (2).jpeg',
-  '/images/תעודות/2 (1).jpeg',
 ];
 
 const Stats = () => {

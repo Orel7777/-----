@@ -275,12 +275,12 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
         <form className="form">
           <div className="form-group">
             <label className="form-group-label" htmlFor="name">שם מלא *</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              required 
-              placeholder="הכנס/י את שמך המלא" 
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="הכנס/י את שמך המלא"
               minLength={2}
               pattern="^[\u0590-\u05FF\u200f\u200e a-zA-Z\s]+$"
               title="אנא הכנס/י שם תקין (אותיות בלבד)"
@@ -288,24 +288,24 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
           </div>
           <div className="form-group">
             <label htmlFor="phone">מספר טלפון *</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              required 
-              placeholder="הכנס/י מספר טלפון (לדוגמה: 0501234567)" 
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="הכנס/י מספר טלפון (לדוגמה: 0501234567)"
               pattern="^0(5[0-9]|[2-4]|[8-9]|7[0-9])[0-9]{7}$"
               title="אנא הכנס/י מספר טלפון ישראלי תקין (10 ספרות)"
             />
           </div>
           <div className="form-group">
             <label htmlFor="email">אימייל *</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required 
-              placeholder="הכנס/י כתובת אימייל" 
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="הכנס/י כתובת אימייל"
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               title="אנא הכנס/י כתובת אימייל תקינה"
             />
@@ -318,28 +318,30 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
               <option value="עיסוי רקמות עמוק">עיסוי רקמות עמוק</option>
               <option value="עיסוי לנשים בהריון">עיסוי לנשים בהריון</option>
               <option value="עיסוי לאחר לידה">עיסוי לאחר לידה</option>
-              <option value="עיסוי לימפטי">עיסוי לימפטי (ניקוז לימפטי)</option>
+              <option value="עיסוי לימפטי">עיסוי לימפטי </option>
               <option value="עיסוי לספורטאיות">עיסוי לספורטאיות</option>
               <option value="עיסוי לכאבי גב וצוואר">עיסוי לכאבי גב וצוואר</option>
               <option value="עיסוי שוודי">עיסוי שוודי</option>
               <option value="עיסוי הוליסטי">עיסוי הוליסטי</option>
               <option value="עיסוי באבנים חמות">עיסוי באבנים חמות</option>
-             
+              <option value="עיסוי באבנים חמות">עיסוי תאילנדי </option>
+
               <option value="עיסוי לומי-לומי">עיסוי לומי-לומי (מהוואי)</option>
               <option value="עיסוי כוסות רוח">עיסוי כוסות רוח</option>
               <option value="רפלקסולוגיה">רפלקסולוגיה</option>
-              <option value="עיסוי משולב">עיסוי משולב (לפי צרכי המטופלת)</option>
+              <option value="עיסוי משולב">עיסוי משולב </option>
               <option value="עיסוי קרקפת ופנים">עיסוי קרקפת ופנים</option>
-              <option value="עיסוי בשיטת טריגר פוינט">עיסוי בשיטת טריגר פוינט (Trigger Point Therapy)</option>
+              <option value="עיסוי קרקפת ופנים">פיסול פנים טבעי</option>
+              
               <option value="אחר">אחר</option>
             </select>
           </div>
           <div className="form-group">
             <label htmlFor="medicalIssues">האם יש בעיות רפואיות? *</label>
-            <textarea 
-              name="medicalIssues" 
-              id="medicalIssues" 
-              rows={4} 
+            <textarea
+              name="medicalIssues"
+              id="medicalIssues"
+              rows={4}
               required
               placeholder="אנא פרט/י אם יש בעיות רפואיות שעלינו לדעת עליהן. אם אין, אנא כתוב/י 'אין' או 'לא'"
               minLength={2}
