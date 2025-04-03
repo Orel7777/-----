@@ -82,7 +82,7 @@ const Modaah = () => {
             </div>
             <div className="text-overlay">
               <h3 className="text-xl font-semibold">עיסוי מקצועי</h3>
-              <p>מגוון טיפולי עיסוי מותאמים אישית</p>
+              <p>מגוון טיפולי עיסוי מותאמים אישית, כולל עיסוי מותאם לנשים בהריון</p>
             </div>
           </div>
 
