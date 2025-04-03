@@ -180,11 +180,7 @@ const Services = () => {
                   <span className="service-bullet"></span>
                   עיסוי באבנים חמות
                 </li>
-                <li>
-                  <span className="service-bullet"></span>
-                  עיסוי תאילנדי עדין
-                  <span className="service-note">(ללא מתיחות אגרסיביות)</span>
-                </li>
+              
                 <li>
                   <span className="service-bullet"></span>
                   עיסוי לומי-לומי

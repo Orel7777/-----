@@ -324,7 +324,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
               <option value="עיסוי שוודי">עיסוי שוודי</option>
               <option value="עיסוי הוליסטי">עיסוי הוליסטי</option>
               <option value="עיסוי באבנים חמות">עיסוי באבנים חמות</option>
-              <option value="עיסוי תאילנדי עדין">עיסוי תאילנדי עדין (ללא מתיחות אגרסיביות)</option>
+             
               <option value="עיסוי לומי-לומי">עיסוי לומי-לומי (מהוואי)</option>
               <option value="עיסוי כוסות רוח">עיסוי כוסות רוח</option>
               <option value="רפלקסולוגיה">רפלקסולוגיה</option>
