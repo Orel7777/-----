@@ -5,7 +5,20 @@ import Loader from './Loader';
 const LoadingWithLogo = () => {
   return (
     <StyledWrapper>
-      <div className="content">
+      <div className="content" style={{
+        backgroundColor: 'rgba(220, 193, 166, 0.3)',
+        padding: '20px',
+        borderRadius: '12px',
+        boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+        transition: 'transform 0.3s ease',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '2rem',
+        maxWidth: '90%',
+        border: '1px solid #8B4513'
+      }}>
         <div className="logo-container">
           <img src="/logo.jpeg" alt="דקלה מדואלה" className="logo" />
         </div>
@@ -27,21 +40,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(165deg, rgba(220, 193, 166, 0.95) 15%, rgba(185, 174, 165, 0.3) 50%, rgba(92, 79, 71, 0.95) 85%);
-  
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: rgba(220, 193, 166, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(92, 79, 71, 0.1);
-    max-width: 90%;
-  }
+  background: #dcc1a6;
   
   .logo-container {
     display: flex;
@@ -55,8 +54,8 @@ const StyledWrapper = styled.div`
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 20px rgba(92, 79, 71, 0.15);
-    border: 3px solid rgba(220, 193, 166, 0.4);
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.2);
+    border: 3px solid #8B4513;
   }
   
   .loader-container {
@@ -66,7 +65,7 @@ const StyledWrapper = styled.div`
   
   .title {
     text-align: center;
-    color: #5c4f47;
+    color: #8B4513;
   }
   
   .title h1 {

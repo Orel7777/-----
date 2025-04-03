@@ -18,36 +18,47 @@ const StyledWrapper = styled.div`
   .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
   }
 
-  .form-container {
-    position: relative;
-    width: 90%;
-    max-width: 380px;
-    background: linear-gradient(165deg, rgba(220, 193, 166, 0.95) 15%, rgba(220, 193, 166, 0.3) 50%, rgba(139, 69, 19, 0.95) 85%);
-    border-radius: 20px;
-    padding: 20px;
-    font-family: inherit;
-    color: #1a1a1a;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 24px rgba(139, 69, 19, 0.2);
-    animation: slideIn 0.3s ease-out;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideIn {
     from {
-      transform: translateY(20px);
+      transform: translateY(30px);
       opacity: 0;
     }
     to {
       transform: translateY(0);
       opacity: 1;
     }
+  }
+
+  .form-container {
+    position: relative;
+    width: 90%;
+    max-width: 380px;
+    background: rgba(92, 64, 51, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+    border: 1px solid #8B4513;
   }
 
   .form-container .form {
@@ -64,35 +75,59 @@ const StyledWrapper = styled.div`
 
   .close-button {
     position: absolute;
-    top: 16px;
-    left: 16px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: #1a1a1a;
+    top: 10px;
+    left: 10px;
+    background: rgba(139, 69, 19, 0.8);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 22px;
+    color: white;
     cursor: pointer;
-    padding: 4px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    z-index: 10;
+  }
+
+  .close-button:hover {
+    background: #8B4513;
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
   }
 
   .form-group label {
-    color: #1a1a1a;
+    color: white;
     font-size: 13px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
 
   .form-group input,
   .form-group textarea,
   .form-group select {
     width: 100%;
-    padding: 8px 10px;
+    padding: 10px 12px;
     border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: white;
-    font-size: 13px;
+    border: 1px solid #8B4513;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
     text-align: right;
     direction: rtl;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    color: #000000;
+  }
+
+  .form-group input:hover,
+  .form-group textarea:hover,
+  .form-group select:hover {
+    border-color: #5C4033;
+    background: #fff;
   }
 
   .form-group textarea {
@@ -101,32 +136,63 @@ const StyledWrapper = styled.div`
   }
 
   .form-group input::placeholder,
-  .form-group textarea::placeholder {
-    color: #717171;
+  .form-group textarea::placeholder,
+  .form-group select::placeholder {
+    color: #5C4033;
+    opacity: 1;
+    font-weight: 500;
   }
 
   .form-group input:focus,
-  .form-group textarea:focus {
+  .form-group textarea:focus,
+  .form-group select:focus {
     outline: none;
     border-color: #8B4513;
-    box-shadow: 0 0 0 2px rgba(220, 193, 166, 0.3);
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: #fff;
+  }
+
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238B4513' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    padding-left: 30px;
+    color: #8B4513;
+    font-weight: 500;
+  }
+
+  .form-group select option {
+    color: #8B4513;
+    font-weight: 500;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .form-group select option:hover,
+  .form-group select option:focus {
+    background-color: rgba(220, 193, 166, 0.3);
   }
 
   .form-submit-btn {
     background: #8B4513;
     color: white;
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     padding: 10px;
     border-radius: 8px;
     font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 6px;
+    margin-top: 10px;
     width: 100%;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   .form-submit-btn:hover {
     background: #5C4033;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 
   .logo {
@@ -134,6 +200,7 @@ const StyledWrapper = styled.div`
     height: 50px;
     margin: 0 auto;
     border-radius: 50%;
+    border: 2px solid #8B4513;
   }
 
   .logo-container {
@@ -146,7 +213,14 @@ const StyledWrapper = styled.div`
   .logo-text {
     margin-top: 6px;
     font-size: 15px;
-    color: #1a1a1a;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-note {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
@@ -200,7 +274,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
         </div>
         <form className="form">
           <div className="form-group">
-            <label htmlFor="name">שם מלא *</label>
+            <label className="form-group-label" htmlFor="name">שם מלא *</label>
             <input 
               type="text" 
               id="name" 
@@ -240,17 +314,23 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
             <label htmlFor="treatmentType">סוג הטיפול *</label>
             <select id="treatmentType" name="treatmentType" required defaultValue="">
               <option value="" disabled>בחר/י סוג טיפול</option>
-              <option value="שוודי">עיסוי שוודי</option>
-              <option value="תאילנדי">עיסוי תאילנדי</option>
-              <option value="רקמות עמוק">עיסוי רקמות עמוק</option>
-              <option value="רפואי">עיסוי רפואי</option>
-              <option value="חוויה מרגיעה ומרפאת">חוויה מרגיעה ומרפאת</option>
-              <option value="משולב">עיסוי משולב</option>
-              <option value="אבנים חמות">עיסוי אבנים חמות</option>
-              <option value="ארומתרפי">עיסוי ארומתרפי</option>
-              <option value="כוסות רוח">עיסוי כוסות רוח</option>
-              <option value="רקמות עדין">עיסוי רקמות עדין</option>
-              <option value="מפנק">עיסוי מפנק</option>
+              <option value="עיסוי רפואי">עיסוי רפואי</option>
+              <option value="עיסוי רקמות עמוק">עיסוי רקמות עמוק</option>
+              <option value="עיסוי לנשים בהריון">עיסוי לנשים בהריון</option>
+              <option value="עיסוי לאחר לידה">עיסוי לאחר לידה</option>
+              <option value="עיסוי לימפטי">עיסוי לימפטי (ניקוז לימפטי)</option>
+              <option value="עיסוי לספורטאיות">עיסוי לספורטאיות</option>
+              <option value="עיסוי לכאבי גב וצוואר">עיסוי לכאבי גב וצוואר</option>
+              <option value="עיסוי שוודי">עיסוי שוודי</option>
+              <option value="עיסוי הוליסטי">עיסוי הוליסטי</option>
+              <option value="עיסוי באבנים חמות">עיסוי באבנים חמות</option>
+              <option value="עיסוי תאילנדי עדין">עיסוי תאילנדי עדין (ללא מתיחות אגרסיביות)</option>
+              <option value="עיסוי לומי-לומי">עיסוי לומי-לומי (מהוואי)</option>
+              <option value="עיסוי כוסות רוח">עיסוי כוסות רוח</option>
+              <option value="רפלקסולוגיה">רפלקסולוגיה</option>
+              <option value="עיסוי משולב">עיסוי משולב (לפי צרכי המטופלת)</option>
+              <option value="עיסוי קרקפת ופנים">עיסוי קרקפת ופנים</option>
+              <option value="עיסוי בשיטת טריגר פוינט">עיסוי בשיטת טריגר פוינט (Trigger Point Therapy)</option>
               <option value="אחר">אחר</option>
             </select>
           </div>

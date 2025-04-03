@@ -15,17 +15,6 @@ const imageUrls = [
   '/1.10.jpeg',
 ];
 
-// שמות הממליצים
-const testimonialNames = [
-  'רוני כהן - לקוחה מרוצה',
-  'יעל לוי - מטופלת קבועה',
-  'מיכל אברהם - ממליצה בחום',
-  'נועה שמעוני - מטופלת',
-  'שירה גולן - לקוחה קבועה',
-  'דנה רובין - ממליצה',
-  'אילנית מזרחי - מטופלת מרוצה',
-];
-
 const Testimonials = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true,
@@ -121,7 +110,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-[#dcc1a6]/30 to-[#dcc1a6]/10" id="testimonials" ref={ref}>
+    <section className="py-16 bg-[#dcc1a6]" id="testimonials" ref={ref}>
       <div className="max-w-6xl mx-auto px-4">
         <motion.div 
           className="flex flex-col items-center gap-4 mb-8"
@@ -165,8 +154,16 @@ const Testimonials = () => {
             className="bg-[#dcc1a6]/20 p-2 rounded-full hover:bg-[#dcc1a6]/40 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '10px',
+              borderRadius: '50%',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'all 0.3s ease',
+              border: '1px solid #8B4513'
+            }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#8B4513" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           </motion.button>
@@ -175,8 +172,16 @@ const Testimonials = () => {
             className="bg-[#dcc1a6]/20 p-2 rounded-full hover:bg-[#dcc1a6]/40 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '10px',
+              borderRadius: '50%',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'all 0.3s ease',
+              border: '1px solid #8B4513'
+            }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#8B4513" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </motion.button>
@@ -187,6 +192,14 @@ const Testimonials = () => {
           ref={emblaRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          style={{
+            backgroundColor: 'rgba(220, 193, 166, 0.3)',
+            padding: '20px',
+            borderRadius: '12px',
+            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+            transition: 'transform 0.3s ease',
+            border: '1px solid #8B4513'
+          }}
         >
           <div className="embla__container flex pt-4 pb-8">
             {imageUrls.map((src, index) => (
@@ -234,16 +247,6 @@ const Testimonials = () => {
                       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
                     </motion.div>
                   </motion.div>
-                  
-                  {/* Phone label */}
-                  <motion.p 
-                    className="mt-6 text-xl font-semibold text-[#5c4f47]"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8, duration: 0.5 }}
-                  >
-                    {testimonialNames[index]}
-                  </motion.p>
                 </motion.div>
               </motion.div>
             ))}
@@ -254,7 +257,7 @@ const Testimonials = () => {
             {imageUrls.map((_, index) => (
               <motion.button
                 key={index}
-                className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#dcc1a6]' : 'bg-gray-300'}`}
+                className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#8B4513]' : 'bg-gray-300'}`}
                 onClick={() => emblaApi?.scrollTo(index)}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}

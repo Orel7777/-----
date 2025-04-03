@@ -104,7 +104,7 @@ const Stats = () => {
   };
 
   return (
-    <section className="py-16 relative bg-gradient-to-b from-[#dcc1a6]/10 to-[#dcc1a6]/30 md:mt-0 mt-4 overflow-visible z-20" id="stats">
+    <section className="py-16 relative bg-[#dcc1a6] md:mt-0 mt-4 overflow-visible z-20" id="stats">
       {/* כותרת סקשן עם רקע חום - יותר בולטת */}
       <div className="sticky top-0 left-0 right-0 h-16 bg-[#dcc1a6]/50 text-center flex items-center justify-center shadow-md z-50 mb-4">
         <h2 className="text-xl md:text-2xl font-bold text-[#8B4513]">אודות</h2>
@@ -133,14 +133,30 @@ const Stats = () => {
             עם למעלה מעשור של ניסיון מקצועי ועשייה אינטנסיבית בתחום הקוסמטיקה והרפואה המשלימה, אני כאן כדי להעניק לך טיפולים מותאמים אישית שיחדשו את העור, ירגיעו את הנפש ויעניקו לגוף תחושה נפלאה של איזון ובריאות.
           </p>
 
-          <div className="bg-gradient-to-r from-[#dcc1a6] to-[#dcc1a6]/20 rounded-xl p-4 md:p-8 mb-6 md:mb-8 shadow-md">
+          <div style={{
+            backgroundColor: 'rgba(220, 193, 166, 0.3)',
+            padding: '20px',
+            borderRadius: '12px',
+            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+            transition: 'transform 0.3s ease',
+            textAlign: 'center',
+            marginBottom: '2rem',
+            border: '1px solid #8B4513'
+          }}>
             <h4 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#8B4513] flex items-center gap-2 md:gap-3 border-b border-[#8B4513] pb-2 md:pb-3">
               <span className="text-[#8B4513] text-2xl md:text-3xl">💼</span>
               הניסיון שלי
             </h4>
             
             <div className="space-y-4 md:space-y-6">
-              <div className="bg-[#dcc1a6]/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-1">
+              <div style={{
+                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                padding: '20px',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #8B4513'
+              }}>
                 <div className="flex items-start gap-3">
                   <div className="bg-[#8B4513] rounded-full p-2 mt-1 flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -156,7 +172,14 @@ const Stats = () => {
                 </div>
               </div>
               
-              <div className="bg-[#dcc1a6]/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-1">
+              <div style={{
+                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                padding: '20px',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #8B4513'
+              }}>
                 <div className="flex items-start gap-3">
                   <div className="bg-[#8B4513] rounded-full p-2 mt-1 flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -169,33 +192,67 @@ const Stats = () => {
                       עבדתי כמנהלת וכמטפלת בקוסמטיקה רפואית במכונים המובילים:
                     </p>
                     <ul className="space-y-2 pl-2">
-                      <li className="flex items-center gap-2 bg-[#dcc1a6]/40 rounded-md p-2 shadow-sm">
+                      <li style={{
+                        backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                        padding: '10px',
+                        borderRadius: '8px',
+                        boxShadow: '0 2px 4px rgba(139, 69, 19, 0.2)',
+                        border: '1px solid #8B4513'
+                      }} className="flex items-center gap-2">
                         <span className="text-[#8B4513] text-xl">•</span>
                         <span className="font-medium text-[#5C4033]">The Spa במלון אינטרקונטיננטל תל אביב</span>
                       </li>
-                      <li className="flex items-center gap-2 bg-[#dcc1a6]/40 rounded-md p-2 shadow-sm">
+                      <li style={{
+                        backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                        padding: '10px',
+                        borderRadius: '8px',
+                        boxShadow: '0 2px 4px rgba(139, 69, 19, 0.2)',
+                        border: '1px solid #8B4513'
+                      }} className="flex items-center gap-2">
                         <span className="text-[#8B4513] text-xl">•</span>
                         <span className="font-medium text-[#5C4033]">Alokino בראשון לציון</span>
-              </li>
-                      <li className="flex items-center gap-2 bg-[#dcc1a6]/40 rounded-md p-2 shadow-sm">
+                      </li>
+                      <li style={{
+                        backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                        padding: '10px',
+                        borderRadius: '8px',
+                        boxShadow: '0 2px 4px rgba(139, 69, 19, 0.2)',
+                        border: '1px solid #8B4513'
+                      }} className="flex items-center gap-2">
                         <span className="text-[#8B4513] text-xl">•</span>
                         <span className="font-medium text-[#5C4033]">מרכזי היוקרה Mediclinic ו-Desheli</span>
-              </li>
-            </ul>
-          </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-[#dcc1a6] to-[#dcc1a6]/20 rounded-xl p-8 mb-8 shadow-md">
+          <div style={{
+            backgroundColor: 'rgba(220, 193, 166, 0.3)',
+            padding: '20px',
+            borderRadius: '12px',
+            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+            transition: 'transform 0.3s ease',
+            textAlign: 'center',
+            marginBottom: '2rem',
+            border: '1px solid #8B4513'
+          }}>
             <h4 className="text-2xl font-bold mb-6 text-[#8B4513] flex items-center gap-3 border-b border-[#8B4513] pb-3">
               <span className="text-[#8B4513] text-3xl">✨</span>
               מה אני מציעה לך?
             </h4>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="bg-[#dcc1a6]/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-2">
+              <div style={{
+                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                padding: '20px',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #8B4513'
+              }}>
                 <div className="flex flex-col items-center text-center gap-4">
                   <div className="text-4xl text-[#8B4513]">👩‍⚕️</div>
                   <h5 className="font-semibold text-lg text-[#8B4513]">טיפולים מותאמים אישית</h5>
@@ -205,7 +262,14 @@ const Stats = () => {
                 </div>
               </div>
               
-              <div className="bg-[#dcc1a6]/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-2">
+              <div style={{
+                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                padding: '20px',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #8B4513'
+              }}>
                 <div className="flex flex-col items-center text-center gap-4">
                   <div className="text-4xl text-[#8B4513]">🌿</div>
                   <h5 className="font-semibold text-lg text-[#8B4513]">טכניקות ריפוי מתקדמות</h5>
@@ -215,7 +279,14 @@ const Stats = () => {
                 </div>
               </div>
               
-              <div className="bg-[#dcc1a6]/60 rounded-lg p-5 shadow-sm transform transition-all hover:shadow-md hover:-translate-y-2">
+              <div style={{
+                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                padding: '20px',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #8B4513'
+              }}>
                 <div className="flex flex-col items-center text-center gap-4">
                   <div className="text-4xl text-[#8B4513]">✨</div>
                   <h5 className="font-semibold text-lg text-[#8B4513]">תוצאות ברמה הגבוהה ביותר</h5>
@@ -224,12 +295,19 @@ const Stats = () => {
                   </p>
                 </div>
               </div>
-          </div>
+            </div>
 
-            <div className="bg-[#dcc1a6]/60 rounded-lg p-5 mt-5 shadow-sm text-center">
+            <div style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              margin: '20px 0',
+              border: '1px solid #8B4513'
+            }}>
               <p className="text-[#5C4033] italic font-medium">
             הלקוחות שלי מספרים על חוויות טיפול מעשירות ומשנות חיים, ואני כאן כדי להציע לך את אותה החוויה המיוחדת.
-          </p>
+              </p>
             </div>
           </div>
 

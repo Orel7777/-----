@@ -54,7 +54,14 @@ const Hero = () => {
           animate="visible"
           variants={fadeInUp}
         >
-          <div className="card">
+          <div className="card" style={{
+            backgroundColor: 'rgba(220, 193, 166, 0.3)',
+            padding: '20px',
+            borderRadius: '12px',
+            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+            transition: 'transform 0.3s ease',
+            border: '1px solid #8B4513'
+          }}>
             <div className="video-container">
               <video 
                 className="hero-video" 

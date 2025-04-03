@@ -25,7 +25,7 @@ const Loader = () => {
 
 const StyledWrapper = styled.div`
   --primary1: #dcc1a6;
-  --primary2: #b9aea5;
+  --primary2: #5c4f47;
   --bg: #5c4f47;
   --fg: #dcc1a6;
   --fg-t: rgba(220, 193, 166, 0.1);

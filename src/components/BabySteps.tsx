@@ -92,10 +92,19 @@ const BabySteps = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
+            style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'transform 0.3s ease',
+              textAlign: 'center',
+              border: '1px solid #8B4513'
+            }}
           >
             <div className="step-number">1</div>
-            <h3 className="text-xl font-bold text-gray-800">אבחון ראשוני</h3>
-            <p className="text-gray-700 font-medium">הבנת הצרכים והמטרות שלך</p>
+            <h3 className="text-xl font-bold text-[#8B4513]">אבחון ראשוני</h3>
+            <p className="text-[#5C4033] font-medium">הבנת הצרכים והמטרות שלך</p>
           </motion.div>
           <motion.div 
             className="step"
@@ -104,10 +113,19 @@ const BabySteps = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ delay: 0.2 }}
+            style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'transform 0.3s ease',
+              textAlign: 'center',
+              border: '1px solid #8B4513'
+            }}
           >
             <div className="step-number">2</div>
-            <h3 className="text-xl font-bold text-gray-800">תכנית טיפול</h3>
-            <p className="text-gray-700 font-medium">התאמה אישית של הטיפול</p>
+            <h3 className="text-xl font-bold text-[#8B4513]">תכנית טיפול</h3>
+            <p className="text-[#5C4033] font-medium">התאמה אישית של הטיפול</p>
           </motion.div>
           <motion.div 
             className="step"
@@ -116,10 +134,19 @@ const BabySteps = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ delay: 0.4 }}
+            style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'transform 0.3s ease',
+              textAlign: 'center',
+              border: '1px solid #8B4513'
+            }}
           >
             <div className="step-number">3</div>
-            <h3 className="text-xl font-bold text-gray-800">טיפול מקצועי</h3>
-            <p className="text-gray-700 font-medium">ביצוע הטיפול בקפידה</p>
+            <h3 className="text-xl font-bold text-[#8B4513]">טיפול מקצועי</h3>
+            <p className="text-[#5C4033] font-medium">ביצוע הטיפול בקפידה</p>
           </motion.div>
           <motion.div 
             className="step"
@@ -128,10 +155,19 @@ const BabySteps = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ delay: 0.6 }}
+            style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'transform 0.3s ease',
+              textAlign: 'center',
+              border: '1px solid #8B4513'
+            }}
           >
             <div className="step-number">4</div>
-            <h3 className="text-xl font-bold text-gray-800">מעקב והתאמה</h3>
-            <p className="text-gray-700 font-medium">התאמת הטיפול לפי הצורך</p>
+            <h3 className="text-xl font-bold text-[#8B4513]">מעקב והתאמה</h3>
+            <p className="text-[#5C4033] font-medium">התאמת הטיפול לפי הצורך</p>
           </motion.div>
         </div>
         <motion.div 
@@ -141,28 +177,52 @@ const BabySteps = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">מגוון רחב של טיפולים מקצועיים בהתאמה אישית</h3>
+          <h3 className="text-2xl font-bold text-[#8B4513] mb-6">מגוון רחב של טיפולים מקצועיים בהתאמה אישית</h3>
           <div className="types-grid">
-            <div className="type-item">
+            <div className="type-item" style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'transform 0.3s ease',
+              textAlign: 'center',
+              border: '1px solid #8B4513'
+            }}>
               <div className="service-image-container">
                 <img src="/3.6.jpeg" alt="עיסוי רפואי" className="service-image" />
               </div>
-              <h4 className="text-lg font-bold text-gray-800">עיסוי רפואי</h4>
-              <p className="text-gray-700 font-medium">טיפול מקצועי להקלה על כאבים</p>
+              <h4 className="text-lg font-bold text-[#8B4513]">עיסוי רפואי</h4>
+              <p className="text-[#5C4033] font-medium">טיפול מקצועי להקלה על כאבים</p>
             </div>
-            <div className="type-item">
+            <div className="type-item" style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'transform 0.3s ease',
+              textAlign: 'center',
+              border: '1px solid #8B4513'
+            }}>
               <div className="service-image-container">
                 <img src="/3.3.jpeg" alt="עיסוי ספורטאים" className="service-image" />
               </div>
-              <h4 className="text-lg font-bold text-gray-800">עיסוי ספורטאים</h4>
-              <p className="text-gray-700 font-medium">שיפור ביצועים והתאוששות</p>
+              <h4 className="text-lg font-bold text-[#8B4513]">עיסוי ספורטאים</h4>
+              <p className="text-[#5C4033] font-medium">שיפור ביצועים והתאוששות</p>
             </div>
-            <div className="type-item">
+            <div className="type-item" style={{
+              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              padding: '20px',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
+              transition: 'transform 0.3s ease',
+              textAlign: 'center',
+              border: '1px solid #8B4513'
+            }}>
               <div className="service-image-container">
                 <img src="/3.5.jpeg" alt="עיסוי רקמות עמוק" className="service-image" />
               </div>
-              <h4 className="text-lg font-bold text-gray-800">עיסוי רקמות עמוק</h4>
-              <p className="text-gray-700 font-medium">טיפול בכאבים כרוניים</p>
+              <h4 className="text-lg font-bold text-[#8B4513]">עיסוי רקמות עמוק</h4>
+              <p className="text-[#5C4033] font-medium">טיפול בכאבים כרוניים</p>
             </div>
           </div>
         </motion.div>
@@ -189,11 +249,12 @@ const StyledBabySteps = styled.div`
   h2 {
     font-size: 2.5rem;
     margin-bottom: 12px;
+    color: #8B4513;
   }
 
   .subtitle {
     font-size: 1.25rem;
-    color: #4a5568;
+    color: #8B4513;
   }
 
   .steps-container {
@@ -208,19 +269,20 @@ const StyledBabySteps = styled.div`
     padding: 24px;
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(139, 69, 19, 0.2);
     transition: transform 0.3s ease;
+    border: 1px solid #8B4513;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 15px rgba(139, 69, 19, 0.3);
     }
   }
 
   .step-number {
     width: 40px;
     height: 40px;
-    background: #5c4f47;
+    background: #8B4513;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -241,7 +303,8 @@ const StyledBabySteps = styled.div`
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(139, 69, 19, 0.2);
+    border: 1px solid #8B4513;
   }
 
   .service-image {
@@ -267,17 +330,19 @@ const StyledBabySteps = styled.div`
     background-color: #dcc1a6/30;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(139, 69, 19, 0.2);
     transition: transform 0.3s ease;
     text-align: center;
+    border: 1px solid #8B4513;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 15px rgba(139, 69, 19, 0.3);
     }
 
     h4 {
       margin: 12px 0 6px;
+      color: #8B4513;
     }
 
     p {
