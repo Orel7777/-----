@@ -46,7 +46,7 @@ const Footer = () => {
             <ul className="space-y-2 text-[#5C4033]">
               <li className="hover:text-[#8B4513] transition-colors">א' - ה' 10:00 - 20:00</li>
               <li className="hover:text-[#8B4513] transition-colors font-bold">בתיאום מראש!</li>
-              <li className={isOpen ? "text-[#8B4513] font-bold" : "text-red-600 font-bold"}>
+              <li className={isOpen ? "text-green-600 font-bold" : "text-red-600 font-bold"}>
                 {isOpen ? "פתוח עכשיו" : "סגור"} ({currentTime})
               </li>
             </ul>
