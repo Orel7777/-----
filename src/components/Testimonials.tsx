@@ -3,12 +3,14 @@ import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useInView } from 'react-intersection-observer';
 import Form from './Form';
+import { FaStar } from 'react-icons/fa';
 
 // Image paths
 const imageUrls = [
-  '/1.1.jpeg',
+  '/1.1change.png',
   '/1.2.jpeg',
   '/1.3.jpeg',
+  '/1.4change.png',
   '/1.5.jpeg',
   '/1.7.jpeg',
   '/1.9.jpeg',
@@ -97,6 +99,25 @@ const Testimonials = () => {
         duration: 0.6,
         ease: "easeOut",
         delay: 0.2 * index
+      }
+    })
+  };
+
+  const starAnimation = {
+    hidden: { opacity: 0.7, y: 0 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: [-2, 2, -2],
+      transition: {
+        y: {
+          repeat: Infinity,
+          duration: 2,
+          ease: "easeInOut",
+          delay: 0.1 * index
+        },
+        opacity: {
+          duration: 0.3
+        }
       }
     })
   };
@@ -246,6 +267,30 @@ const Testimonials = () => {
                       {/* Simple reflection effect */}
                       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
                     </motion.div>
+                  </motion.div>
+                  
+                  {/* כרטיס דירוג וביקורת מתחת לכל תמונה */}
+                  <motion.div 
+                    className="mt-4 rounded-lg p-3 w-full max-w-[250px] relative z-10"
+                    initial="hidden"
+                    animate={controls}
+                    variants={fadeInUp}
+                  >
+                    {/* דירוג כוכבים עם אנימציה - תיקון להצגת 5 כוכבים מלאים תמיד */}
+                    <div className="flex items-center justify-center">
+                      {[0, 1, 2, 3, 4].map((starIndex) => (
+                        <motion.div
+                          key={starIndex}
+                          custom={starIndex}
+                          initial="hidden"
+                          animate={controls}
+                          variants={starAnimation}
+                          whileHover={{ scale: 1.1, color: "#FFD700", transition: { duration: 0.2 } }}
+                        >
+                          <FaStar className="w-6 h-6 text-yellow-500 mx-1 drop-shadow-md" />
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
                 </motion.div>
               </motion.div>
