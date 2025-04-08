@@ -5,7 +5,7 @@ import { AiOutlineTikTok } from "react-icons/ai";
 import { RiMenuUnfoldFill, RiMenuUnfold4Fill } from "react-icons/ri";
 import Form from './Form';
 import Button from './Button';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,111 +19,185 @@ const Header = () => {
   return (
     <>
       <header className="fixed w-full top-0 z-40">
-        <div className="bg-[#dcc1a6]/10 backdrop-blur-md shadow-sm">
+        <div className="backdrop-blur-md shadow-md" style={{
+          background: 'linear-gradient(to bottom, rgba(254, 251, 232, 0.95), rgba(206, 172, 147, 0.9))'
+        }}>
           <div className="max-w-6xl mx-auto">
-            <nav className="flex items-center justify-between px-4 py-2 md:py-2 lg:px-0">
+            <nav className="flex items-center justify-between px-4 py-3 md:py-2 lg:px-0">
               {/* Logo */}
-              <div className="flex flex-col items-center">
-                <img 
+              <motion.div 
+                className="flex flex-col items-center"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.img 
                   src="/logo.jpeg" 
                   alt="דקלה מדואלה" 
-                  className="h-12 w-auto rounded-full bg-[#dcc1a6]/40 backdrop-blur-sm p-1"
+                  className="h-14 w-auto rounded-full p-1"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  style={{
+                    boxShadow: '0 8px 20px rgba(173, 139, 114, 0.3)',
+                    border: '2px solid rgba(254, 251, 232, 0.9)',
+                    background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))'
+                  }}
                 />
-                <span className="text-sm text-[#8B4513] mt-0.5">מדואלה - דקלה שליט</span>
-              </div>
+                <span className="text-sm font-semibold text-[#ad8b72] mt-1">מדואלה - דקלה שליט</span>
+              </motion.div>
 
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center gap-8">
-                <a href="#services" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
-                  שירותים
-                </a>
-                <a href="#testimonials" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
-                  המלצות
-                </a>
-                <a href="#methodology" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
-                  שיטת הטיפול
-                </a>
-                <a href="#stats" className="transition-colors text-[#8B4513] hover:text-[#5C4033]">
-                  אודות
-                </a>
+                {["שירותים", "המלצות", "שיטת הטיפול", "אודות"].map((item, index) => (
+                  <motion.a 
+                    key={item}
+                    href={`#${item === "שירותים" ? "services" : item === "המלצות" ? "testimonials" : item === "שיטת הטיפול" ? "methodology" : "stats"}`}
+                    className="relative text-[#ad8b72] font-medium text-lg"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 * index }}
+                    whileHover="hover"
+                  >
+                    {item}
+                    <motion.span 
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#ad8b72] to-[#ceac93] rounded-full"
+                      initial={{ width: 0 }}
+                      variants={{
+                        hover: { width: "100%" }
+                      }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.a>
+                ))}
               </div>
 
               {/* Mobile Menu Button */}
-              <button
-                className="lg:hidden relative w-10 h-10 text-gray-700 hover:text-gray-900"
+              <motion.button
+                className="md:hidden relative w-10 h-10 text-[#ad8b72]"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <span className={`absolute left-1/2 top-1/2 block w-5 transform -translate-x-1/2 -translate-y-1/2 ${isMenuOpen ? 'hidden' : ''}`}>
-                  <span 
-                    className={`absolute top-0 left-0 w-5 h-0.5 bg-current transform transition duration-500 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}
+                <span className="absolute left-1/2 top-1/2 block w-5 transform -translate-x-1/2 -translate-y-1/2">
+                  <motion.span 
+                    className="absolute top-0 left-0 w-5 h-0.5 bg-current transform"
+                    animate={{ 
+                      rotate: isMenuOpen ? 45 : 0, 
+                      translateY: isMenuOpen ? 8 : 0 
+                    }}
+                    transition={{ duration: 0.3 }}
                   />
-                  <span 
-                    className={`absolute top-1.5 left-0 w-5 h-0.5 bg-current transform transition duration-500 ease-in-out ${isMenuOpen ? 'opacity-0' : ''}`}
+                  <motion.span 
+                    className="absolute top-1.5 left-0 w-5 h-0.5 bg-current transform"
+                    animate={{ 
+                      opacity: isMenuOpen ? 0 : 1
+                    }}
+                    transition={{ duration: 0.3 }}
                   />
-                  <span 
-                    className={`absolute top-3 left-0 w-5 h-0.5 bg-current transform transition duration-500 ease-in-out ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+                  <motion.span 
+                    className="absolute top-3 left-0 w-5 h-0.5 bg-current transform"
+                    animate={{ 
+                      rotate: isMenuOpen ? -45 : 0, 
+                      translateY: isMenuOpen ? -8 : 0 
+                    }}
+                    transition={{ duration: 0.3 }}
                   />
                 </span>
-              </button>
+              </motion.button>
 
               {/* Desktop Social Icons and CTA */}
-              <div className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
-                <div className="flex space-x-3 rtl:space-x-reverse">
-                  <a 
-                    href="https://waze.com/ul?q=נס ציונה, ישראל" 
+              <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+                <div className="flex space-x-4 rtl:space-x-reverse">
+                  {[
+                    { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
+                    { Icon: FaWhatsapp, href: "https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" },
+                    { Icon: FaInstagram, href: "https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" },
+                    { Icon: FaFacebook, href: "https://www.facebook.com/profile.php?id=100058313266229" }
+                  ].map(({ Icon, href }, index) => (
+                    <motion.a 
+                      key={href}
+                      href={href} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: 500, 
+                        damping: 15,
+                        delay: 0.5 + (index * 0.1)
+                      }}
+                      whileHover={{ 
+                        scale: 1.2, 
+                        rotate: 10,
+                        color: "#ceac93" 
+                      }}
+                      className="text-[#ad8b72] transition-all p-2 bg-[#fefbe8]/40 rounded-full shadow-md"
+                      style={{
+                        boxShadow: '0 4px 12px rgba(173, 139, 114, 0.2)',
+                        border: '1px solid rgba(254, 251, 232, 0.8)'
+                      }}
                   >
-                    <FaWaze className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
-                  >
-                    <FaWhatsapp className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
-                  >
-                    <FaInstagram className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://www.facebook.com/profile.php?id=100058313266229" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-[#8B4513] hover:text-[#5C4033] transition-colors"
-                  >
-                    <FaFacebook className="w-5 h-5" />
-                  </a>
+                      <Icon className="w-5 h-5" />
+                    </motion.a>
+                  ))}
                 </div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 500, 
+                    damping: 15,
+                    delay: 0.9
+                  }}
+                >
                 <Button onClick={handleOpenForm}>קביעת תור</Button>
+                </motion.div>
               </div>
             </nav>
           </div>
         </div>
 
         {/* Mobile Menu Fullscreen */}
-        <div
-          className={`fixed inset-0 z-40 transition-all duration-500 ease-in-out lg:hidden ${
-            isMenuOpen 
-              ? 'opacity-100 pointer-events-auto' 
-              : 'opacity-0 pointer-events-none'
-          }`}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="fixed inset-0 z-40 md:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
           style={{
-            background: 'linear-gradient(to bottom, rgba(220, 193, 166, 0.95), rgba(139, 69, 19, 0.95), rgba(92, 64, 51, 0.95))'
+                background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.95), rgba(206, 172, 147, 0.95), rgba(173, 139, 114, 0.95))'
           }}
         >
-          <div className="flex flex-col items-center justify-center min-h-screen px-4 py-2">
-            <div className="text-center space-y-4 bg-[#dcc1a6]/30 backdrop-blur-md p-3 pt-2 rounded-2xl border border-[#dcc1a6]/50 shadow-xl max-w-md w-full relative">
-              <button
+              <motion.div 
+                className="flex flex-col items-center justify-center min-h-screen px-4 py-2"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div 
+                  className="text-center space-y-5 p-6 rounded-2xl w-full max-w-md relative"
+                  style={{
+                    background: 'linear-gradient(to bottom, rgba(254, 251, 232, 0.5), rgba(206, 172, 147, 0.5))',
+                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(254, 251, 232, 0.7)',
+                    border: '2px solid rgba(254, 251, 232, 0.7)',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                >
+                  <motion.button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-1 right-1 p-1.5 text-gray-800 hover:text-gray-900 transition-all duration-300 hover:scale-110 bg-white/50 rounded-full shadow-lg backdrop-blur-sm"
+                    className="absolute top-3 right-3 p-2 rounded-full shadow-lg text-[#ad8b72]"
+                    whileHover={{ scale: 1.1, rotate: 90 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                      border: '1px solid rgba(254, 251, 232, 0.7)'
+                    }}
               >
                 <svg 
                   className="w-5 h-5" 
@@ -138,102 +212,107 @@ const Header = () => {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
-              </button>
+                  </motion.button>
 
-              <div className="flex flex-col items-center justify-center pb-1 border-b border-gray-200/50">
-                <img 
+                  <div className="flex flex-col items-center justify-center mb-6">
+                    <motion.img 
                   src="/logo.jpeg" 
                   alt="דקלה מדואלה" 
-                  className="w-10 h-10 rounded-full bg-white/40 backdrop-blur-sm p-1"
+                      className="w-16 h-16 rounded-full p-1"
+                      whileHover={{ scale: 1.1 }}
+                      style={{
+                        boxShadow: '0 8px 20px rgba(173, 139, 114, 0.3)',
+                        border: '2px solid rgba(254, 251, 232, 0.9)',
+                        background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))'
+                      }}
                 />
-                <span className="text-sm text-gray-800 mt-0.5">מדואלה - דקלה שליט</span>
+                    <span className="text-base font-semibold text-[#ad8b72] mt-2">מדואלה - דקלה שליט</span>
               </div>
 
-              <div className="flex items-center justify-center gap-2 pb-2 border-b border-gray-200/50">
-                <RiMenuUnfold4Fill className="w-5 h-5 text-gray-800 hover:scale-110 transition-all duration-300" style={{ animation: 'verticalFloat 120s ease-in-out infinite' }} />
-                <div className="text-2xl font-bold text-gray-800">תפריט</div>
-                <RiMenuUnfoldFill className="w-5 h-5 text-gray-800 hover:scale-110 transition-all duration-300" style={{ animation: 'verticalFloat 120s ease-in-out infinite', animationDelay: '4s' }} />
+                  <div className="flex items-center justify-center gap-2 mb-6">
+                    <RiMenuUnfold4Fill className="w-6 h-6 text-[#ad8b72]" />
+                    <div className="text-2xl font-bold text-[#ad8b72]">תפריט</div>
+                    <RiMenuUnfoldFill className="w-6 h-6 text-[#ad8b72]" />
               </div>
 
-              <div className="space-y-2">
-                <a 
-                  href="#services" 
-                  className="block text-lg font-semibold transition-all text-gray-800 hover:text-gray-900 hover:scale-105 py-1.5 px-3 rounded-xl hover:bg-white/50"
+                  <div className="space-y-4 mb-8">
+                    {[
+                      { name: "שירותים", href: "#services" },
+                      { name: "המלצות", href: "#testimonials" },
+                      { name: "שיטת הטיפול", href: "#methodology" },
+                      { name: "אודות", href: "#stats" }
+                    ].map((item, index) => (
+                      <motion.a 
+                        key={item.name}
+                        href={item.href} 
+                        className="block text-xl font-semibold transition-all text-[#ad8b72] py-2.5 px-4 rounded-xl"
                   onClick={() => setIsMenuOpen(false)}
-                >
-                  שירותים
-                </a>
-                <a 
-                  href="#testimonials" 
-                  className="block text-lg font-semibold transition-all text-gray-800 hover:text-gray-900 hover:scale-105 py-1.5 px-3 rounded-xl hover:bg-white/50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  המלצות
-                </a>
-                <a 
-                  href="#methodology" 
-                  className="block text-lg font-semibold transition-all text-gray-800 hover:text-gray-900 hover:scale-105 py-1.5 px-3 rounded-xl hover:bg-white/50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  שיטת הטיפול
-                </a>
-                <a 
-                  href="#stats" 
-                  className="block text-lg font-semibold transition-all text-gray-800 hover:text-gray-900 hover:scale-105 py-1.5 px-3 rounded-xl hover:bg-white/50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  אודות
-                </a>
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 * index, duration: 0.3 }}
+                        whileHover={{ 
+                          scale: 1.05, 
+                          backgroundColor: 'rgba(254, 251, 232, 0.7)',
+                          boxShadow: '0 4px 10px rgba(173, 139, 114, 0.2)'
+                        }}
+                        style={{
+                          border: '1px solid rgba(254, 251, 232, 0.5)'
+                        }}
+                      >
+                        {item.name}
+                      </motion.a>
+                    ))}
               </div>
               
               {/* Mobile Social Icons */}
-              <div className="flex justify-center space-x-4 rtl:space-x-reverse">
-                <a 
-                  href="https://waze.com/ul?q=נס ציונה, ישראל" 
+                  <div className="flex justify-center space-x-6 rtl:space-x-reverse mb-6">
+                    {[
+                      { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
+                      { Icon: FaWhatsapp, href: "https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" },
+                      { Icon: FaInstagram, href: "https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" },
+                      { Icon: FaFacebook, href: "https://www.facebook.com/profile.php?id=100058313266229" }
+                    ].map(({ Icon, href }, index) => (
+                      <motion.a 
+                        key={href}
+                        href={href} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-800 hover:text-gray-900 transition-colors"
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ 
+                          type: "spring", 
+                          stiffness: 500, 
+                          damping: 15,
+                          delay: 0.3 + (index * 0.1)
+                        }}
+                        whileHover={{ 
+                          scale: 1.2, 
+                          rotate: 10,
+                          color: "#ceac93" 
+                        }}
+                        className="text-[#ad8b72] transition-all p-2.5 bg-[#fefbe8]/40 rounded-full shadow-md"
+                        style={{
+                          boxShadow: '0 4px 12px rgba(173, 139, 114, 0.2)',
+                          border: '1px solid rgba(254, 251, 232, 0.8)'
+                        }}
                 >
-                  <FaWaze className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-800 hover:text-gray-900 transition-colors"
-                >
-                  <FaWhatsapp className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-800 hover:text-gray-900 transition-colors"
-                >
-                  <FaInstagram className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://www.facebook.com/profile.php?id=100058313266229" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-800 hover:text-gray-900 transition-colors"
-                >
-                  <FaFacebook className="w-5 h-5" />
-                </a>
+                        <Icon className="w-5 h-5" />
+                      </motion.a>
+                    ))}
               </div>
 
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 }}
+                  >
               <Button onClick={handleOpenForm}>קביעת תור</Button>
-
-              <style>{`
-                @keyframes verticalFloat {
-                  0% { transform: translateY(-2px); }
-                  50% { transform: translateY(2px); }
-                  100% { transform: translateY(-2px); }
-                }
-              `}</style>
-            </div>
-          </div>
-        </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </>

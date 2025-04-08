@@ -91,7 +91,7 @@ const StyledHero = styled.section`
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #dcc1a6;
+  // background-color: #dcc1a6;
 
   .hero-content {
     max-width: 1200px;

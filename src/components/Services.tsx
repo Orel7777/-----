@@ -76,7 +76,15 @@ const Services = () => {
 
   return (
     <StyledServices className="" id="services">
-      <div className="service-bg-pattern"></div>
+      <div className="service-bg-pattern">
+        <div className="gradient-overlay"></div>
+        <div className="pattern-dots"></div>
+        <div className="pattern-lines"></div>
+        <div className="decorative-shape shape-1"></div>
+        <div className="decorative-shape shape-2"></div>
+        <div className="decorative-shape shape-3"></div>
+        <div className="decorative-shape shape-4"></div>
+      </div>
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div 
           className="flex flex-col items-center gap-4 mb-12"
@@ -240,7 +248,7 @@ const Services = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
-          <Button onClick={handleOpenForm} className="cta-button">לתיאום תור</Button>
+          <Button onClick={handleOpenForm}>לתיאום תור</Button>
         </motion.div>
       </div>
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
@@ -250,8 +258,8 @@ const Services = () => {
 
 const StyledServices = styled.section`
   padding: 100px 0;
-  margin-bottom: 40px;
-  background-color: #dcc1a6;
+  // margin-bottom: 40px;
+  // background: linear-gradient(135deg, #fefbe8 0%, #ceac93 50%, #ad8b72 100%);
   position: relative;
   overflow: hidden;
 
@@ -261,11 +269,108 @@ const StyledServices = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(#8B4513 0.5px, transparent 0.5px), radial-gradient(#8B4513 0.5px, #dcc1a6 0.5px);
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(254, 251, 232, 0.8) 0%, rgba(206, 172, 147, 0.6) 50%, rgba(173, 139, 114, 0.5) 100%);
+    z-index: 1;
+  }
+
+  .pattern-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(#ad8b72 0.5px, transparent 0.5px), radial-gradient(#ad8b72 0.5px, transparent 0.5px);
     background-size: 20px 20px;
     background-position: 0 0, 10px 10px;
-    opacity: 0.1;
-    z-index: 0;
+    opacity: 0.15;
+    z-index: 2;
+  }
+
+  .pattern-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(173, 139, 114, 0.03) 20px,
+      rgba(173, 139, 114, 0.03) 40px
+    );
+    z-index: 3;
+  }
+
+  .decorative-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(254, 251, 232, 0.3), rgba(206, 172, 147, 0.2));
+    z-index: 2;
+    filter: blur(50px);
+  }
+
+  .shape-1 {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+    animation: float 20s infinite ease-in-out;
+  }
+
+  .shape-2 {
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    right: -100px;
+    animation: float 25s infinite ease-in-out reverse;
+    background: linear-gradient(135deg, rgba(173, 139, 114, 0.2), rgba(206, 172, 147, 0.15));
+  }
+
+  .shape-3 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    right: 15%;
+    animation: float 18s infinite ease-in-out 2s;
+    background: linear-gradient(135deg, rgba(254, 251, 232, 0.15), rgba(206, 172, 147, 0.1));
+  }
+
+  .shape-4 {
+    width: 250px;
+    height: 250px;
+    bottom: 30%;
+    left: 10%;
+    animation: float 15s infinite ease-in-out 1s;
+    background: linear-gradient(135deg, rgba(173, 139, 114, 0.15), rgba(206, 172, 147, 0.1));
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(10px, 15px) rotate(2deg);
+    }
+    50% {
+      transform: translate(5px, -5px) rotate(1deg);
+    }
+    75% {
+      transform: translate(-10px, 10px) rotate(-1deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
   }
 
   .cta-button {

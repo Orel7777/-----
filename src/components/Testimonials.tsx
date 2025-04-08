@@ -131,16 +131,25 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 bg-[#dcc1a6]" id="testimonials" ref={ref}>
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-16 relative" id="testimonials" ref={ref}>
+      {/* רקע גרדיאנט */}
+      <div className="absolute inset-0  opacity-40"></div>
+      
+      {/* עיטורים */}
+      <div className="absolute top-0 left-0 right-0 h-10 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] opacity-30"
+             style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 75% 0, 50% 100%, 25% 0, 0 100%)' }}></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <motion.div 
-          className="flex flex-col items-center gap-4 mb-8"
+          className="flex flex-col items-center gap-4 mb-12"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
         >
           <motion.div
-            className="inline-block p-2 rounded-full bg-[#dcc1a6]/40 mb-2"
+            className="inline-block p-3 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] mb-4 shadow-lg"
             animate={{ y: [-5, 5, -5] }}
             transition={{ 
               duration: 3, 
@@ -152,74 +161,71 @@ const Testimonials = () => {
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 24 24" 
               fill="currentColor" 
-              className="w-8 h-8 text-gray-700"
+              className="w-8 h-8 text-[#fefbe8]"
             >
               <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
             </svg>
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#5c4f47] relative">
-            המלצות מלקוחות מרוצים
+          <div className="relative">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#ad8b72] relative mb-6">
+              המלצות מלקוחות מרוצים
+            </h2>
             <motion.span 
-              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#dcc1a6] rounded-full"
+              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-2 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] rounded-full"
               initial={{ width: 0 }}
-              animate={{ width: 96 }}
+              animate={{ width: 200 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             />
-          </h2>
+          </div>
+          <p className="text-[#ad8b72] text-lg max-w-3xl mx-auto text-center mb-8">
+            לקוחותינו מספרים על החוויה המיוחדת שחוו בקליניקה, על התוצאות המרשימות והטיפול המסור שקיבלו
+          </p>
         </motion.div>
 
         {/* כפתורי ניווט */}
-        <div className="flex justify-center gap-4 mb-6">
+        <div className="flex justify-center gap-4 mb-8">
           <motion.button
             onClick={scrollPrev}
-            className="bg-[#dcc1a6]/20 p-2 rounded-full hover:bg-[#dcc1a6]/40 transition-colors"
+            className="p-3 rounded-full transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             style={{
-              backgroundColor: 'rgba(220, 193, 166, 0.3)',
-              padding: '10px',
-              borderRadius: '50%',
-              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-              transition: 'all 0.3s ease',
-              border: '1px solid #8B4513'
+              background: 'linear-gradient(135deg, #ceac93, #ad8b72)',
+              boxShadow: '0 4px 10px rgba(173, 139, 114, 0.3)',
+              border: '2px solid rgba(254, 251, 232, 0.5)'
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#8B4513" className="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#fefbe8" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           </motion.button>
           <motion.button
             onClick={scrollNext}
-            className="bg-[#dcc1a6]/20 p-2 rounded-full hover:bg-[#dcc1a6]/40 transition-colors"
+            className="p-3 rounded-full transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             style={{
-              backgroundColor: 'rgba(220, 193, 166, 0.3)',
-              padding: '10px',
-              borderRadius: '50%',
-              boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-              transition: 'all 0.3s ease',
-              border: '1px solid #8B4513'
+              background: 'linear-gradient(135deg, #ceac93, #ad8b72)',
+              boxShadow: '0 4px 10px rgba(173, 139, 114, 0.3)',
+              border: '2px solid rgba(254, 251, 232, 0.5)'
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#8B4513" className="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#fefbe8" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </motion.button>
         </div>
 
         <div 
-          className="embla overflow-hidden relative mb-8" 
+          className="embla overflow-hidden relative mb-12 rounded-xl" 
           ref={emblaRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
-            padding: '20px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-            transition: 'transform 0.3s ease',
-            border: '1px solid #8B4513'
+            background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.7), rgba(206, 172, 147, 0.5))',
+            padding: '30px 20px',
+            boxShadow: '0 10px 30px rgba(173, 139, 114, 0.2), inset 0 0 20px rgba(254, 251, 232, 0.5)',
+            border: '1px solid rgba(254, 251, 232, 0.7)'
           }}
         >
           <div className="embla__container flex pt-4 pb-8">
@@ -238,7 +244,10 @@ const Testimonials = () => {
                 >
                   <motion.div 
                     className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[500px] w-[250px] shadow-xl hover:shadow-2xl transition-all cursor-pointer"
-                    whileHover={{ y: -8 }}
+                    whileHover={{ 
+                      y: -8,
+                      boxShadow: '0 20px 40px rgba(173, 139, 114, 0.4)'
+                    }}
                     transition={{ type: "spring", stiffness: 300 }}
                     onClick={() => openImage(src)}
                   >
@@ -275,9 +284,15 @@ const Testimonials = () => {
                     initial="hidden"
                     animate={controls}
                     variants={fadeInUp}
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(206, 172, 147, 0.9), rgba(173, 139, 114, 0.9))',
+                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                      border: '2px solid rgba(254, 251, 232, 0.7)',
+                      borderRadius: '12px'
+                    }}
                   >
-                    {/* דירוג כוכבים עם אנימציה - תיקון להצגת 5 כוכבים מלאים תמיד */}
-                    <div className="flex items-center justify-center">
+                    {/* דירוג כוכבים עם אנימציה */}
+                    <div className="flex items-center justify-center mb-2">
                       {[0, 1, 2, 3, 4].map((starIndex) => (
                         <motion.div
                           key={starIndex}
@@ -285,12 +300,13 @@ const Testimonials = () => {
                           initial="hidden"
                           animate={controls}
                           variants={starAnimation}
-                          whileHover={{ scale: 1.1, color: "#FFD700", transition: { duration: 0.2 } }}
+                          whileHover={{ scale: 1.2, color: "#FFD700", transition: { duration: 0.2 } }}
                         >
-                          <FaStar className="w-6 h-6 text-yellow-500 mx-1 drop-shadow-md" />
+                          <FaStar className="w-6 h-6 text-[#fefbe8] mx-1 drop-shadow-md" />
                         </motion.div>
                       ))}
                     </div>
+                    <p className="text-sm text-center text-[#fefbe8] font-medium">המלצה מ{index + 1} מתוך {imageUrls.length}</p>
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -298,17 +314,23 @@ const Testimonials = () => {
           </div>
 
           {/* Pagination dots */}
-          <div className="flex justify-center gap-2 mt-2">
+          <div className="flex justify-center gap-3 mt-6">
             {imageUrls.map((_, index) => (
               <motion.button
                 key={index}
-                className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#8B4513]' : 'bg-gray-300'}`}
+                className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#ad8b72]' : 'bg-[#ceac93]/40'}`}
                 onClick={() => emblaApi?.scrollTo(index)}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
+                style={{
+                  boxShadow: currentIndex === index ? 
+                    '0 0 5px rgba(173, 139, 114, 0.5)' : 
+                    '0 0 0 rgba(0, 0, 0, 0)',
+                  border: '1px solid rgba(254, 251, 232, 0.7)'
+                }}
               />
             ))}
           </div>
@@ -317,9 +339,13 @@ const Testimonials = () => {
         {/* Call to action button */}
         <div className="text-center mt-10">
            <motion.button
-             whileHover={{ scale: 1.05 }}
+             whileHover={{ 
+               scale: 1.05, 
+               boxShadow: '0 10px 30px rgba(173, 139, 114, 0.4)',
+               backgroundPosition: '100%'
+             }}
              whileTap={{ scale: 0.95 }}
-             className="bg-[#8B4513] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 text-lg"
+             className="text-white font-semibold py-4 px-10 rounded-full shadow-lg transition-all duration-300 text-lg"
              initial={{ opacity: 0, y: 20 }}
              animate={controls}
              variants={{
@@ -330,6 +356,12 @@ const Testimonials = () => {
                }
              }}
              onClick={handleOpenForm}
+             style={{
+               background: 'linear-gradient(90deg, #ad8b72, #ceac93, #ad8b72)',
+               backgroundSize: '200% auto',
+               border: '2px solid rgba(254, 251, 232, 0.7)',
+               transition: 'all 0.3s ease'
+             }}
            >
              הדרך שלנו מתחילה בלחיצה כאן!
            </motion.button>
@@ -338,6 +370,12 @@ const Testimonials = () => {
 
       {/* הוספת הטופס */}
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+
+      {/* עיטורים בתחתית */}
+      <div className="absolute bottom-0 left-0 right-0 h-10 overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] opacity-30"
+             style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 75% 100%, 50% 0, 25% 100%, 0 0)' }}></div>
+      </div>
 
       <AnimatePresence>
         {selectedImage && (
@@ -359,18 +397,22 @@ const Testimonials = () => {
               <img 
                 src={selectedImage} 
                 alt="המלצה מוגדלת" 
-                className="max-h-[90vh] max-w-full object-contain rounded-lg"
+                className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl border-4 border-[#ceac93]"
               />
               <motion.button 
-                className="absolute top-3 left-3 bg-[#dcc1a6] hover:bg-[#b9aea5] p-3 rounded-full transition-colors shadow-md z-10"
+                className="absolute top-3 left-3 p-3 rounded-full transition-colors shadow-md z-10"
                 onClick={closeImage}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
+                style={{
+                  background: 'linear-gradient(135deg, #ceac93, #ad8b72)',
+                  border: '2px solid rgba(254, 251, 232, 0.7)'
+                }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#333" className="w-6 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#fefbe8" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </motion.button>

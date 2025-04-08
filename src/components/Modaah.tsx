@@ -46,22 +46,48 @@ const Modaah = () => {
   };
 
   return (
-    <StyledModaah className="py-16 bg-[#dcc1a6]" id="services">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#dcc1a6]">
+    <StyledModaah className="relative py-16" id="services">
+      {/* רקע גרדיאנט יפה */}
+      <div className="absolute inset-0  to-[#ad8b72] opacity-50"></div>
+      
+      <div className="relative z-10 max-w-6xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-block relative"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-[#ad8b72] mb-4 relative z-10">
           שירותי הקליניקה
         </h2>
+            <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] rounded-full transform translate-y-2"></div>
+          </motion.div>
+          <p className="text-[#ad8b72] text-lg max-w-2xl mx-auto mt-3">
+            מגוון טיפולים מותאמים אישית לצרכים שלך, בסביבה מרגיעה ומקצועית
+          </p>
+        </div>
 
         {/* Videos Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="video-card" style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
-            padding: '20px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-            transition: 'transform 0.3s ease',
-            border: '1px solid #8B4513'
-          }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            className="video-card"
+            style={{
+              backgroundColor: '#8B4513',
+              padding: '20px',
+              borderRadius: '16px',
+              boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '2px solid #5C4033',
+              overflow: 'hidden'
+            }}
+          >
             <div className="slideshow-wrapper">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -80,20 +106,31 @@ const Modaah = () => {
                 </motion.div>
               </AnimatePresence>
             </div>
-            <div className="text-overlay">
+            <div className="text-overlay" style={{
+              background: 'linear-gradient(to top, rgba(173, 139, 114, 0.95), rgba(173, 139, 114, 0.5), transparent)',
+            }}>
               <h3 className="text-xl font-semibold">עיסוי מקצועי</h3>
               <p>מגוון טיפולי עיסוי מותאמים אישית, כולל עיסוי מותאם לנשים בהריון</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="video-card" style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
-            padding: '20px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-            transition: 'transform 0.3s ease',
-            border: '1px solid #8B4513'
-          }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            className="video-card"
+            style={{
+              backgroundColor: '#8B4513',
+              padding: '20px',
+              borderRadius: '16px',
+              boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '2px solid #5C4033',
+              overflow: 'hidden'
+            }}
+          >
             <div className="video-container">
               <video
                 className="service-video"
@@ -105,20 +142,31 @@ const Modaah = () => {
                 <source src="/video_2.mp4" type="video/mp4" />
               </video>
             </div>
-            <div className="text-overlay">
-              <h3 className="text-xl font-semibold"> חוויה מרגיעה ומרפאת</h3>
+            <div className="text-overlay" style={{
+              background: 'linear-gradient(to top, rgba(173, 139, 114, 0.95), rgba(173, 139, 114, 0.5), transparent)',
+            }}>
+              <h3 className="text-xl font-semibold">חוויה מרגיעה ומרפאת</h3>
               <p>טיפול עדין ומותאם במיוחד</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="video-card" style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
-            padding: '20px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-            transition: 'transform 0.3s ease',
-            border: '1px solid #8B4513'
-          }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            className="video-card"
+            style={{
+              backgroundColor: '#8B4513',
+              padding: '20px',
+              borderRadius: '16px',
+              boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '2px solid #5C4033',
+              overflow: 'hidden'
+            }}
+          >
             <div className="video-container">
               <video
                 className="service-video"
@@ -130,18 +178,30 @@ const Modaah = () => {
                 <source src="/video_10.mp4" type="video/mp4" />
               </video>
             </div>
-            <div className="text-overlay">
+            <div className="text-overlay" style={{
+              background: 'linear-gradient(to top, rgba(173, 139, 114, 0.95), rgba(173, 139, 114, 0.5), transparent)',
+            }}>
               <h3 className="text-xl font-semibold">פיסול פנים טבעי</h3>
               <p>מיניליפט ויוגה פייס</p>
             </div>
-          </div>
+          </motion.div>
         </div>
-        
+
         <div className="text-center mt-12">
-          <Button onClick={handleOpenForm}>לתיאום תור</Button>
+          <Button 
+            onClick={handleOpenForm}
+          >
+            לתיאום תור
+          </Button>
         </div>
       </div>
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+      
+      {/* יצירת אפקט של עיטורים */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] opacity-20"
+             style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 75% 100%, 50% 0, 25% 100%, 0 0)' }}></div>
+      </div>
     </StyledModaah>
   );
 };
@@ -151,7 +211,7 @@ const StyledModaah = styled.section`
   .slideshow-wrapper {
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(254, 251, 232, 0.3);
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -186,7 +246,7 @@ const StyledModaah = styled.section`
   }
 
   .control-button {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(173, 139, 114, 0.5);
     color: white;
     border: none;
     width: 32px;
@@ -200,7 +260,7 @@ const StyledModaah = styled.section`
     z-index: 20;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(173, 139, 114, 0.8);
       transform: scale(1.1);
     }
   }
@@ -219,13 +279,13 @@ const StyledModaah = styled.section`
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(254, 251, 232, 0.3);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
 
     &.active {
-      background-color: white;
+      background-color: #fefbe8;
       transform: scale(1.2);
     }
   }
@@ -252,22 +312,20 @@ const StyledModaah = styled.section`
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 30px rgba(173, 139, 114, 0.2);
     transition: all 0.3s ease;
     padding: 8px;
-    background: rgba(255, 255, 255, 0.05);
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 15px 35px rgba(173, 139, 114, 0.4);
 
       .service-video, .slideshow-image {
         transform: scale(1.03);
       }
 
       .text-overlay {
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
-        padding-bottom: 2rem;
+        padding-bottom: 2.5rem;
       }
     }
   }
@@ -275,7 +333,7 @@ const StyledModaah = styled.section`
   .video-container {
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(254, 251, 232, 0.3);
     border-radius: 12px;
     overflow: hidden;
 
@@ -296,7 +354,6 @@ const StyledModaah = styled.section`
     left: 0;
     right: 0;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
     color: white;
     transition: all 0.3s ease;
 
@@ -304,11 +361,13 @@ const StyledModaah = styled.section`
       font-size: 1.5rem;
       margin-bottom: 0.75rem;
       font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     p {
       font-size: 1.1rem;
       opacity: 0.95;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
   }
 

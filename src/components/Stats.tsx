@@ -103,10 +103,10 @@ const Stats = () => {
   };
 
   return (
-    <section className="py-16 relative bg-[#dcc1a6] md:mt-0 mt-4 overflow-visible z-20" id="stats">
+    <section className="py-16 relative bg-[#fefbe8] md:mt-0 mt-4 overflow-visible z-20" id="stats">
       {/* כותרת סקשן עם רקע חום - יותר בולטת */}
-      <div className="sticky top-0 left-0 right-0 h-16 bg-[#dcc1a6]/50 text-center flex items-center justify-center shadow-md z-50 mb-4">
-        <h2 className="text-xl md:text-2xl font-bold text-[#8B4513]">אודות</h2>
+      <div className="sticky top-0 left-0 right-0 h-16 bg-[#8B4513]/50 text-center flex items-center justify-center shadow-md z-50 mb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-white">אודות</h2>
       </div>
       
       <div className="max-w-4xl mx-auto px-2 md:px-4 pt-20 md:pt-12">
@@ -133,7 +133,7 @@ const Stats = () => {
           </p>
 
           <div style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
+            backgroundColor: 'rgba(139, 69, 19, 0.15)',
             padding: '20px',
             borderRadius: '12px',
             boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -149,7 +149,7 @@ const Stats = () => {
             
             <div className="space-y-4 md:space-y-6">
               <div style={{
-                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                backgroundColor: 'rgba(139, 69, 19, 0.1)',
                 padding: '20px',
                 borderRadius: '12px',
                 boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -172,7 +172,7 @@ const Stats = () => {
               </div>
               
               <div style={{
-                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                backgroundColor: 'rgba(139, 69, 19, 0.1)',
                 padding: '20px',
                 borderRadius: '12px',
                 boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -192,7 +192,7 @@ const Stats = () => {
                     </p>
                     <ul className="space-y-2 pl-2">
                       <li style={{
-                        backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                        backgroundColor: 'rgba(139, 69, 19, 0.08)',
                         padding: '10px',
                         borderRadius: '8px',
                         boxShadow: '0 2px 4px rgba(139, 69, 19, 0.2)',
@@ -202,7 +202,7 @@ const Stats = () => {
                         <span className="font-medium text-[#5C4033]">The Spa במלון אינטרקונטיננטל תל אביב</span>
                       </li>
                       <li style={{
-                        backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                        backgroundColor: 'rgba(139, 69, 19, 0.08)',
                         padding: '10px',
                         borderRadius: '8px',
                         boxShadow: '0 2px 4px rgba(139, 69, 19, 0.2)',
@@ -212,7 +212,7 @@ const Stats = () => {
                         <span className="font-medium text-[#5C4033]">Alokino בראשון לציון</span>
                       </li>
                       <li style={{
-                        backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                        backgroundColor: 'rgba(139, 69, 19, 0.08)',
                         padding: '10px',
                         borderRadius: '8px',
                         boxShadow: '0 2px 4px rgba(139, 69, 19, 0.2)',
@@ -229,7 +229,7 @@ const Stats = () => {
           </div>
 
           <div style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
+            backgroundColor: 'rgba(139, 69, 19, 0.15)',
             padding: '20px',
             borderRadius: '12px',
             boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -245,7 +245,7 @@ const Stats = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div style={{
-                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                backgroundColor: 'rgba(139, 69, 19, 0.1)',
                 padding: '20px',
                 borderRadius: '12px',
                 boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -262,7 +262,7 @@ const Stats = () => {
               </div>
               
               <div style={{
-                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                backgroundColor: 'rgba(139, 69, 19, 0.1)',
                 padding: '20px',
                 borderRadius: '12px',
                 boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -279,7 +279,7 @@ const Stats = () => {
               </div>
               
               <div style={{
-                backgroundColor: 'rgba(220, 193, 166, 0.3)',
+                backgroundColor: 'rgba(139, 69, 19, 0.1)',
                 padding: '20px',
                 borderRadius: '12px',
                 boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -297,7 +297,7 @@ const Stats = () => {
             </div>
 
             <div style={{
-              backgroundColor: 'rgba(220, 193, 166, 0.3)',
+              backgroundColor: 'rgba(139, 69, 19, 0.1)',
               padding: '20px',
               borderRadius: '12px',
               boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
@@ -324,7 +324,7 @@ const Stats = () => {
               <div className="mb-4">
                 <div className="relative aspect-[3/2] w-full max-w-[300px] md:max-w-[400px] mx-auto">
                   {imageLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-[#dcc1a6]/20">
+                    <div className="absolute inset-0 flex items-center justify-center bg-[#8B4513]/20">
                       <span className="text-sm font-semibold text-gray-800">טוען תמונה...</span>
                     </div>
                   )}
@@ -352,7 +352,7 @@ const Stats = () => {
               <div className="flex justify-center gap-3 mt-3 mb-2">
                 <button 
                   onClick={prevCertificate}
-                  className="bg-[#dcc1a6] hover:bg-[#c1a585] p-1.5 rounded-full transition-all shadow-md"
+                  className="bg-[#8B4513] hover:bg-[#5C4033] p-1.5 rounded-full transition-all shadow-md text-white"
                   aria-label="תעודה קודמת"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5">
@@ -361,7 +361,7 @@ const Stats = () => {
                 </button>
                 <button 
                   onClick={nextCertificate}
-                  className="bg-[#dcc1a6] hover:bg-[#c1a585] p-1.5 rounded-full transition-all shadow-md"
+                  className="bg-[#8B4513] hover:bg-[#5C4033] p-1.5 rounded-full transition-all shadow-md text-white"
                   aria-label="תעודה הבאה"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5">
@@ -375,7 +375,7 @@ const Stats = () => {
                   <button
                     key={index}
                     className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
-                      currentCertificateIndex === index ? 'bg-[#dcc1a6] scale-125' : 'bg-gray-300'
+                      currentCertificateIndex === index ? 'bg-[#8B4513] scale-125' : 'bg-gray-300'
                     }`}
                     onClick={() => setCurrentCertificateIndex(index)}
                     aria-label={`תעודה ${index + 1}`}
@@ -389,16 +389,16 @@ const Stats = () => {
             </div>
           </motion.div>
 
-          <div className="text-center bg-[#dcc1a6]/20 rounded-xl p-4 md:p-8 z-10 relative shadow-sm">
-            <h4 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-800">צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!</h4>
-            <p className="text-lg md:text-xl mb-1 md:mb-2 text-gray-700">טלפון/וואטסאפ:</p>
-            <div className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 flex items-center justify-center gap-2">
+          <div className="text-center bg-[#8B4513]/10 rounded-xl p-4 md:p-8 z-10 relative shadow-sm">
+            <h4 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#8B4513]">צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!</h4>
+            <p className="text-lg md:text-xl mb-1 md:mb-2 text-[#5C4033]">טלפון/וואטסאפ:</p>
+            <div className="text-xl md:text-2xl font-bold text-[#8B4513] mb-4 md:mb-6 flex items-center justify-center gap-2">
               053-3353203
               {phoneAnimation && (
                 <Lottie animationData={phoneAnimation} style={{ width: 30, height: 30 }} className="md:w-[40px] md:h-[40px] w-[30px] h-[30px]" />
               )}
             </div>
-            <p className="text-base md:text-lg text-gray-700">אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי.</p>
+            <p className="text-base md:text-lg text-[#5C4033]">אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי.</p>
           </div>
         </motion.div>
 
@@ -409,7 +409,7 @@ const Stats = () => {
           viewport={{ once: true, amount: 0.1 }}
           variants={fadeInUp}
         >
-          <Button onClick={handleOpenForm} className="px-4 py-2 md:px-6 md:py-3 text-base md:text-lg">קביעת תור לייעוץ</Button>
+          <Button onClick={handleOpenForm}>קביעת תור לייעוץ</Button>
         </motion.div>
       </div>
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
@@ -438,7 +438,7 @@ const Stats = () => {
                 className="max-h-[70vh] w-full object-contain rounded-lg shadow-xl border-4 border-white/80"
               />
               <motion.button 
-                className="absolute top-2 left-2 bg-[#dcc1a6] hover:bg-[#c1a585] p-2 md:p-3 rounded-full transition-colors shadow-lg z-[10000] border-2 border-white/80"
+                className="absolute top-2 left-2 bg-[#8B4513] hover:bg-[#5C4033] p-2 md:p-3 rounded-full transition-colors shadow-lg z-[10000] border-2 border-white/80"
                 onClick={closeCertificate}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
