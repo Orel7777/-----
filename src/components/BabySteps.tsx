@@ -68,7 +68,7 @@ const BabySteps = () => {
   };
 
   return (
-    <StyledBabySteps>
+    <StyledBabySteps id="methodology">
       <div className="container text-center">
         <div className="flex justify-center mb-8">
           {massageAnimation && (
