@@ -48,7 +48,7 @@ function App() {
         ))}
       </div>
 
-      <style jsx global>{`
+      <style>{`
         .snow-container {
           position: fixed;
           width: 100%;
