@@ -51,12 +51,12 @@ const StyledWrapper = styled.div`
     max-width: 420px;
     background: linear-gradient(135deg, rgba(173, 139, 114, 0.95), rgba(92, 64, 51, 0.95));
     border-radius: 16px;
-    padding: 24px;
+    padding: 16px;
     font-family: inherit;
     color: white;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     box-sizing: border-box;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     animation: slideIn 0.3s ease-out;
@@ -90,13 +90,13 @@ const StyledWrapper = styled.div`
   .form-container .form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
   }
 
   .form-container .form-group {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
 
   .close-button {
@@ -137,11 +137,11 @@ const StyledWrapper = styled.div`
   .form-group textarea,
   .form-group select {
     width: 100%;
-    padding: 12px 14px;
-    border-radius: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
     border: 2px solid rgba(254, 251, 232, 0.3);
     background: rgba(254, 251, 232, 0.95);
-    font-size: 15px;
+    font-size: 14px;
     text-align: right;
     direction: rtl;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -159,7 +159,7 @@ const StyledWrapper = styled.div`
 
   .form-group textarea {
     resize: none;
-    height: 110px;
+    height: 80px;
   }
 
   .form-group input::placeholder,
@@ -206,12 +206,12 @@ const StyledWrapper = styled.div`
     background-size: 200% auto;
     color: white;
     border: 2px solid rgba(254, 251, 232, 0.7);
-    padding: 12px;
+    padding: 10px;
     border-radius: 50px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 12px;
+    margin-top: 8px;
     width: 100%;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -224,8 +224,8 @@ const StyledWrapper = styled.div`
   }
 
   .logo {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     margin: 0 auto;
     border-radius: 50%;
     border: 3px solid rgba(254, 251, 232, 0.8);
@@ -242,12 +242,12 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .logo-text {
-    margin-top: 8px;
-    font-size: 18px;
+    margin-top: 4px;
+    font-size: 16px;
     color: #fefbe8;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -263,24 +263,55 @@ const StyledWrapper = styled.div`
   @media (max-width: 768px) {
     .form-container {
       width: 92%;
-      padding: 20px;
-      max-height: 85vh;
+      padding: 14px;
+      max-height: 80vh;
       overflow-y: auto;
-      margin-top: 40px;
+      margin-top: 20px;
+    }
+    
+    .form-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .form-container::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    
+    .form-container::-webkit-scrollbar-thumb {
+      background: rgba(254, 251, 232, 0.3);
+      border-radius: 10px;
     }
     
     .close-button {
-      top: 12px;
-      left: 12px;
+      top: 8px;
+      left: 8px;
+      width: 32px;
+      height: 32px;
     }
     
     .logo {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
     }
     
     .logo-text {
-      font-size: 16px;
+      font-size: 14px;
+    }
+    
+    .form-group label {
+      font-size: 13px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+    
+    .form-submit-btn {
+      padding: 8px;
     }
   }
 
