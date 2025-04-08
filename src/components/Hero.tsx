@@ -37,52 +37,51 @@ const Hero = () => {
 
   return (
     <StyledHero>
-      <div className="hero-content">
-        <motion.div 
-          className="text-content"
-          initial="hidden"
-          animate="visible"
-          variants={fadeInRight}
-        >
-          <h1 className="text-4xl font-bold mb-4 text-[#8B4513]">מרכז  לרפואה משלימה ועיסויים לנשים</h1>
-          <p className="text-xl mb-8 text-[#5C4033]">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
-          <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
-        </motion.div>
-        <motion.div 
-          className="image-card"
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-        >
-          <div className="card" style={{
-            backgroundColor: 'rgba(220, 193, 166, 0.3)',
-            padding: '20px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(139, 69, 19, 0.2)',
-            transition: 'transform 0.3s ease',
-            border: '1px solid #8B4513'
-          }}>
-            <div className="video-container">
-              <video 
-                className="hero-video" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-              >
-                <source src="/dd.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="text">
-              
-              <p>חוויית טיפול ייחודית לגוף ולנפש</p>
-            </div>
+    <div className="hero-content">
+      <motion.div 
+        className="text-content"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{
+          fontFamily: "'Assistant', sans-serif",
+          color: '#ad8b72',
+          textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          lineHeight: '1.2'
+        }}>
+          מרכז לרפואה משלימה ועיסויים לנשים
+        </h1>
+        <p className="text-xl mb-8 text-[#5C4033]">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
+        <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
+      </motion.div>
+      <motion.div 
+        className="image-card"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="card">
+          <div className="video-container">
+            <video 
+              className="hero-video" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            >
+              <source src="/dd.mp4" type="video/mp4" />
+            </video>
           </div>
-        </motion.div>
-      </div>
-      <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
-    </StyledHero>
-  );
+          <div className="text">
+            <p>חוויית טיפול ייחודית לגוף ולנפש</p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+    <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+  </StyledHero>
+);
 }
 
 const StyledHero = styled.section`
@@ -199,18 +198,35 @@ const StyledHero = styled.section`
   }
 
   @media (max-width: 768px) {
+    padding-top: 120px;
+    min-height: calc(100vh - 50px);
+    
     .hero-content {
       flex-direction: column;
       text-align: center;
+      padding: 0 16px;
     }
 
     .text-content {
       text-align: center;
+      width: 100%;
+      
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 10px;
+        margin-bottom: 16px;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
     }
 
     .card {
       width: 280px;
       height: 320px;
+      margin-top: 20px;
     }
   }
 `;
