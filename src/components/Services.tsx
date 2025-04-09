@@ -273,51 +273,42 @@ const StyledServices = styled.section`
 
   .service-bg-pattern {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
     overflow: hidden;
-    z-index: 0;
   }
 
   .gradient-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(254, 251, 232, 0.8) 0%, rgba(206, 172, 147, 0.6) 50%, rgba(173, 139, 114, 0.5) 100%);
-    z-index: 1;
+    inset: 0;
+    width: 100vw;
+    background: linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(220, 193, 166, 0.9));
+    z-index: 2;
   }
 
   .pattern-dots {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(#ad8b72 0.5px, transparent 0.5px), radial-gradient(#ad8b72 0.5px, transparent 0.5px);
+    inset: 0;
+    width: 100vw;
+    background-image: radial-gradient(rgba(139, 69, 19, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    opacity: 0.15;
-    z-index: 2;
+    z-index: 1;
   }
 
   .pattern-lines {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
+    inset: 0;
+    width: 100vw;
+    background-image: repeating-linear-gradient(
       -45deg,
-      transparent,
-      transparent 20px,
-      rgba(173, 139, 114, 0.03) 20px,
-      rgba(173, 139, 114, 0.03) 40px
+      rgba(139, 69, 19, 0.05) 0px,
+      rgba(139, 69, 19, 0.05) 1px,
+      transparent 1px,
+      transparent 10px
     );
-    z-index: 3;
+    z-index: 1;
   }
 
   .decorative-shape {

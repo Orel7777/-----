@@ -1,14 +1,63 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Form from './Form';
 import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBattleNet } from "react-icons/fa6";
 import Lottie from "lottie-react";
 import styled from 'styled-components';
+import useEmblaCarousel from 'embla-carousel-react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 const Stats = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [phoneAnimation, setPhoneAnimation] = useState(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: 'center',
+    containScroll: false,
+    dragFree: false,
+    direction: 'rtl'
+  });
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [isImageOpen, setIsImageOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState('');
+
+  const certificates = [
+    {
+      src: "/images/תעודות/2 (2).jpeg",
+      alt: "תעודת הסמכה 1"
+    },
+    {
+      src: "/images/תעודות/2 (4).jpeg",
+      alt: "תעודת הסמכה 2"
+    },
+    {
+      src: "/images/תעודות/2.1.jpeg",
+      alt: "תעודת הסמכה 3"
+    }
+  ];
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   useEffect(() => {
     fetch('/icons/1.json')
@@ -26,6 +75,16 @@ const Stats = () => {
 
   const handleOpenForm = () => {
     setIsFormOpen(true);
+  };
+
+  const openImage = (src: string) => {
+    setCurrentImage(src);
+    setIsImageOpen(true);
+  };
+
+  const closeImage = () => {
+    setIsImageOpen(false);
+    setCurrentImage('');
   };
 
   const fadeInUp = {
@@ -47,7 +106,7 @@ const Stats = () => {
       <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
       
       {/* Content Container */}
-      <div className="relative z-10 px-4 py-20 mx-auto max-w-4xl">
+      <div className="relative z-10 px-4 py-20 mx-auto max-w-3xl">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -112,73 +171,178 @@ const Stats = () => {
           <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#8B4513]/20 to-transparent rounded-full blur-3xl -ml-20 -mb-20"></div>
           
           <div className="relative z-10">
-            <p className="text-lg leading-relaxed text-[#5C4033] mb-8 drop-shadow-sm">
-              עם למעלה מעשור של ניסיון מקצועי ועשייה אינטנסיבית בתחום הקוסמטיקה והרפואה המשלימה, 
-              אני כאן כדי להעניק לך טיפולים מותאמים אישית שיחדשו את העור, 
-              ירגיעו את הנפש ויעניקו לגוף תחושה נפלאה של איזון ובריאות.
-            </p>
-
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <motion.div 
-                className="p-6 rounded-2xl border transition-all bg-white/10 border-white/20 hover:transform hover:-translate-y-2"
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+              {/* Experience Section */}
+              <motion.div
+                className="p-8 rounded-2xl bg-gradient-to-br from-white/30 to-white/10 border border-white/30 shadow-xl backdrop-blur-md"
                 whileHover={{ 
-                  scale: 1.03,
+                  scale: 1.02,
                   boxShadow: "0 20px 25px -5px rgba(139, 69, 19, 0.3)",
-                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05))"
+                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15))"
                 }}
               >
-                <h4 className="text-xl font-bold text-[#8B4513] mb-4 flex items-center">
-                  <span className="inline-block w-8 h-8 mr-2 bg-[#8B4513]/10 rounded-full flex items-center justify-center">
-                    <span className="w-3 h-3 bg-[#8B4513] rounded-full"></span>
+                <h4 className="text-2xl font-bold text-[#8B4513] mb-6 flex items-center">
+                  <span className="inline-block w-10 h-10 mr-3 bg-[#8B4513]/10 rounded-full flex items-center justify-center">
+                    <span className="w-4 h-4 bg-[#8B4513] rounded-full"></span>
                   </span>
-                  הניסיון שלי
+                  <span className="relative">
+                    הניסיון שלי
+                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B4513]/0 via-[#8B4513] to-[#8B4513]/0"></div>
+                  </span>
                 </h4>
-                <ul className="space-y-6 text-[#5C4033]">
-                  <li className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
-                    <span>מנהלת וקוסמטיקאית רפואית במכונים מובילים</span>
+                <ul className="space-y-8 text-[#5C4033]">
+                  <li className="flex items-start gap-5 group">
+                    <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+                    <span className="text-lg leading-relaxed font-medium">מנהלת וקוסמטיקאית רפואית במכונים מובילים</span>
                   </li>
-                  <li className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
-                    <span>The Spa במלון אינטרקונטיננטל</span>
+                  <li className="flex items-start gap-5 group">
+                    <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+                    <span className="text-lg leading-relaxed font-medium">The Spa במלון אינטרקונטיננטל</span>
                   </li>
-                  <li className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
-                    <span>Alokino בראשון לציון</span>
+                  <li className="flex items-start gap-5 group">
+                    <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+                    <span className="text-lg leading-relaxed font-medium">Alokino בראשון לציון</span>
                   </li>
                 </ul>
               </motion.div>
 
-              <motion.div 
-                className="p-6 rounded-2xl border transition-all bg-white/10 border-white/20 hover:transform hover:-translate-y-2"
+              {/* What I Offer Section */}
+              <motion.div
+                className="p-8 rounded-2xl bg-gradient-to-br from-white/30 to-white/10 border border-white/30 shadow-xl backdrop-blur-md"
                 whileHover={{ 
-                  scale: 1.03,
+                  scale: 1.02,
                   boxShadow: "0 20px 25px -5px rgba(139, 69, 19, 0.3)",
-                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05))"
+                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15))"
                 }}
               >
-                <h4 className="text-xl font-bold text-[#8B4513] mb-4 flex items-center">
-                  <span className="inline-block w-8 h-8 mr-2 bg-[#8B4513]/10 rounded-full flex items-center justify-center">
-                    <span className="w-3 h-3 bg-[#8B4513] rounded-full"></span>
+                <h4 className="text-2xl font-bold text-[#8B4513] mb-6 flex items-center">
+                  <span className="inline-block w-10 h-10 mr-3 bg-[#8B4513]/10 rounded-full flex items-center justify-center">
+                    <span className="w-4 h-4 bg-[#8B4513] rounded-full"></span>
                   </span>
-                  מה אני מציעה
+                  <span className="relative">
+                    מה אני מציעה
+                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B4513]/0 via-[#8B4513] to-[#8B4513]/0"></div>
+                  </span>
                 </h4>
-                <ul className="space-y-6 text-[#5C4033]">
-                  <li className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
-                    <span>טיפולים מותאמים אישית</span>
+                <ul className="space-y-8 text-[#5C4033]">
+                  <li className="flex items-start gap-5 group">
+                    <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+                    <span className="text-lg leading-relaxed font-medium">טיפולים מותאמים אישית</span>
                   </li>
-                  <li className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
-                    <span>טכניקות ריפוי מתקדמות</span>
+                  <li className="flex items-start gap-5 group">
+                    <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+                    <span className="text-lg leading-relaxed font-medium">טכניקות ריפוי מתקדמות</span>
                   </li>
-                  <li className="flex items-center gap-4">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
-                    <span>תוצאות ברמה הגבוהה ביותר</span>
+                  <li className="flex items-start gap-5 group">
+                    <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+                    <span className="text-lg leading-relaxed font-medium">תוצאות ברמה הגבוהה ביותר</span>
                   </li>
                 </ul>
               </motion.div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Certificates Section */}
+        <motion.div
+          variants={fadeInUp}
+          className="mb-12 overflow-hidden"
+        >
+          <div className="max-w-2xl mx-auto px-4">
+            <h3 className="text-3xl font-bold text-[#8B4513] mb-8 text-center">
+              <span className="relative inline-block">
+                התעודות שלי
+                <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B4513]/0 via-[#8B4513] to-[#8B4513]/0"></div>
+              </span>
+            </h3>
+
+            <div className="relative bg-gradient-to-br from-white/30 to-white/10 rounded-2xl p-3 shadow-xl backdrop-blur-md border border-white/30">
+              <div className="overflow-hidden" ref={emblaRef}>
+                <div className="flex">
+                  {certificates.map((cert, index) => (
+                    <div key={index} className="flex-[0_0_100%] min-w-0 relative px-2">
+                      <div 
+                        className="max-w-[160px] sm:max-w-[200px] mx-auto aspect-[3/4] relative rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300 cursor-pointer group"
+                        onClick={() => openImage(cert.src)}
+                      >
+                        <img
+                          src={cert.src}
+                          alt={cert.alt}
+                          className="absolute inset-0 w-full h-full object-contain bg-white"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                className="absolute -left-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-[#8B4513] transition-all hover:bg-white hover:scale-110 z-10"
+                onClick={scrollPrev}
+                aria-label="הקודם"
+                title="הקודם"
+              >
+                <ChevronLeft className="w-3 h-3" />
+              </button>
+              <button
+                className="absolute -right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-[#8B4513] transition-all hover:bg-white hover:scale-110 z-10"
+                onClick={scrollNext}
+                aria-label="הבא"
+                title="הבא"
+              >
+                <ChevronRight className="w-3 h-3" />
+              </button>
+
+              {/* Progress Indicator */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
+                {certificates.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className={`h-1 rounded-full transition-all ${
+                      idx === selectedIndex ? 'w-3 bg-[#8B4513]' : 'w-1 bg-[#8B4513]/40'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Fullscreen Image Modal */}
+            {isImageOpen && (
+              <div 
+                className="fixed inset-0 bg-[#fefbe8]/95 z-50 flex items-center justify-center p-4" 
+                onClick={closeImage}
+              >
+                <div 
+                  className="relative w-full max-w-[min(90vw,500px)] bg-white rounded-xl overflow-hidden"
+                  onClick={e => e.stopPropagation()}
+                >
+                  <div className="relative pt-[133%]">
+                    <img
+                      src={currentImage}
+                      alt="תעודת הסמכה במסך מלא"
+                      className="absolute inset-0 w-full h-full object-contain bg-white"
+                    />
+                  </div>
+                  <button
+                    onClick={closeImage}
+                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#fefbe8] hover:bg-[#fefbe8]/90 shadow-lg flex items-center justify-center text-[#8B4513] hover:scale-110 transition-all"
+                    aria-label="סגור תמונה"
+                    title="סגור"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
 
@@ -232,7 +396,6 @@ const StatsWrapper = styled.section`
     box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
     aspect-ratio: auto;
     margin-bottom: 20px;
-    max-height: 400px;
     border: 2px solid rgba(139, 69, 19, 0.2);
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.6);
