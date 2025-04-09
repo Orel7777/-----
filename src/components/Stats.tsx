@@ -41,19 +41,19 @@ const Stats = () => {
   };
 
   return (
-    <StatsWrapper className="relative overflow-hidden" id="stats">
+    <StatsWrapper className="overflow-hidden relative" id="stats">
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#E5D3C4] to-[#D4B5A3] opacity-30" />
       <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
       
       {/* Content Container */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 py-20">
+      <div className="relative z-10 px-4 py-20 mx-auto max-w-4xl">
         <motion.div 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
           <motion.div
             animate={{
@@ -70,7 +70,7 @@ const Stats = () => {
           </h2>
           
           <motion.div 
-            className="featured-image-container mb-10"
+            className="mb-10 featured-image-container"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
@@ -100,7 +100,7 @@ const Stats = () => {
 
         <motion.div 
           variants={fadeInUp}
-          className="bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-lg rounded-3xl p-10 mb-12 border border-white/30 shadow-2xl relative overflow-hidden"
+          className="overflow-hidden relative p-10 mb-12 bg-gradient-to-br rounded-3xl border shadow-2xl backdrop-blur-lg from-white/20 to-white/5 border-white/30"
           whileHover={{ 
             boxShadow: "0 25px 50px -12px rgba(139, 69, 19, 0.4)",
             scale: 1.01,
@@ -118,9 +118,9 @@ const Stats = () => {
               ירגיעו את הנפש ויעניקו לגוף תחושה נפלאה של איזון ובריאות.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <motion.div 
-                className="bg-white/10 rounded-2xl p-6 border border-white/20 hover:transform hover:-translate-y-2 transition-all"
+                className="p-6 rounded-2xl border transition-all bg-white/10 border-white/20 hover:transform hover:-translate-y-2"
                 whileHover={{ 
                   scale: 1.03,
                   boxShadow: "0 20px 25px -5px rgba(139, 69, 19, 0.3)",
@@ -134,23 +134,23 @@ const Stats = () => {
                   הניסיון שלי
                 </h4>
                 <ul className="space-y-6 text-[#5C4033]">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full mr-5 flex-shrink-0" />
-                    מנהלת וקוסמטיקאית רפואית במכונים מובילים
+                  <li className="flex items-center gap-4">
+                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
+                    <span>מנהלת וקוסמטיקאית רפואית במכונים מובילים</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full mr-5 flex-shrink-0" />
-                    The Spa במלון אינטרקונטיננטל
+                  <li className="flex items-center gap-4">
+                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
+                    <span>The Spa במלון אינטרקונטיננטל</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full mr-5 flex-shrink-0" />
-                    Alokino בראשון לציון
+                  <li className="flex items-center gap-4">
+                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
+                    <span>Alokino בראשון לציון</span>
                   </li>
                 </ul>
               </motion.div>
 
               <motion.div 
-                className="bg-white/10 rounded-2xl p-6 border border-white/20 hover:transform hover:-translate-y-2 transition-all"
+                className="p-6 rounded-2xl border transition-all bg-white/10 border-white/20 hover:transform hover:-translate-y-2"
                 whileHover={{ 
                   scale: 1.03,
                   boxShadow: "0 20px 25px -5px rgba(139, 69, 19, 0.3)",
@@ -164,17 +164,17 @@ const Stats = () => {
                   מה אני מציעה
                 </h4>
                 <ul className="space-y-6 text-[#5C4033]">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full mr-5 flex-shrink-0" />
-                    טיפולים מותאמים אישית
+                  <li className="flex items-center gap-4">
+                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
+                    <span>טיפולים מותאמים אישית</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full mr-5 flex-shrink-0" />
-                    טכניקות ריפוי מתקדמות
+                  <li className="flex items-center gap-4">
+                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
+                    <span>טכניקות ריפוי מתקדמות</span>
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-[#8B4513] rounded-full mr-5 flex-shrink-0" />
-                    תוצאות ברמה הגבוהה ביותר
+                  <li className="flex items-center gap-4">
+                    <span className="w-2 h-2 bg-[#8B4513] rounded-full flex-shrink-0" />
+                    <span>תוצאות ברמה הגבוהה ביותר</span>
                   </li>
                 </ul>
               </motion.div>
@@ -184,13 +184,13 @@ const Stats = () => {
 
         <motion.div 
           variants={fadeInUp}
-          className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl"
+          className="p-8 text-center rounded-2xl border shadow-xl backdrop-blur-md bg-white/10 border-white/20"
         >
           <h4 className="text-2xl font-bold text-[#8B4513] mb-4">
             צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!
           </h4>
           
-          <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="flex gap-4 justify-center items-center mb-6">
             <span className="text-2xl font-bold text-[#8B4513]">053-3353203</span>
             {phoneAnimation && (
               <Lottie animationData={phoneAnimation} style={{ width: 40, height: 40 }} />
@@ -208,8 +208,8 @@ const Stats = () => {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white/10 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white/10 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b to-transparent from-white/10" />
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t to-transparent from-white/10" />
       
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </StatsWrapper>
