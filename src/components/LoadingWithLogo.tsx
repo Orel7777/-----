@@ -98,7 +98,7 @@ const StyledWrapper = styled.div`
       font-family: 'Assistant', sans-serif;
       font-size: 2.2rem;
       font-weight: bold;
-      color: rgb(173, 139, 114);
+      color: #fefbe8;
       text-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
       margin-bottom: 0.5rem;
       line-height: 1.2;
@@ -108,6 +108,7 @@ const StyledWrapper = styled.div`
       font-size: 1.2rem;
       color: #5c4f47;
       font-weight: 500;
+      color: #fefbe8;
     }
   }
   

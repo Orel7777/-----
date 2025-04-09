@@ -131,19 +131,19 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 relative" id="testimonials" ref={ref}>
+    <section className="relative py-16" id="testimonials" ref={ref}>
       {/* רקע גרדיאנט */}
-      <div className="absolute inset-0  opacity-40"></div>
+      <div className="absolute inset-0 opacity-40"></div>
       
       {/* עיטורים */}
-      <div className="absolute top-0 left-0 right-0 h-10 overflow-hidden">
+      <div className="overflow-hidden absolute top-0 right-0 left-0 h-10">
         <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] opacity-30"
              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 75% 0, 50% 100%, 25% 0, 0 100%)' }}></div>
       </div>
       
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
+      <div className="relative z-10 px-4 mx-auto max-w-6xl">
         <motion.div 
-          className="flex flex-col items-center gap-4 mb-12"
+          className="flex flex-col gap-4 items-center mb-12"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
@@ -167,7 +167,7 @@ const Testimonials = () => {
             </svg>
           </motion.div>
           <div className="relative">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#ad8b72] relative mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#fefbe8] relative mb-6">
               המלצות מלקוחות מרוצים
             </h2>
             <motion.span 
@@ -177,13 +177,13 @@ const Testimonials = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
             />
           </div>
-          <p className="text-[#ad8b72] text-lg max-w-3xl mx-auto text-center mb-8">
+          <p className="text-[#fefbe8] text-lg max-w-3xl mx-auto text-center mb-8">
             לקוחותינו מספרים על החוויה המיוחדת שחוו בקליניקה, על התוצאות המרשימות והטיפול המסור שקיבלו
           </p>
         </motion.div>
 
         {/* כפתורי ניווט */}
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex gap-4 justify-center mb-8">
           <motion.button
             onClick={scrollPrev}
             className="p-3 rounded-full transition-all"
@@ -217,7 +217,7 @@ const Testimonials = () => {
         </div>
 
         <div 
-          className="embla overflow-hidden relative mb-12 rounded-xl w-full" 
+          className="overflow-hidden relative mb-12 w-full rounded-xl embla" 
           ref={emblaRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -235,7 +235,7 @@ const Testimonials = () => {
             marginRight: '-50vw'
           }}
         >
-          <div className="embla__container flex pt-4 pb-8">
+          <div className="flex pt-4 pb-8 embla__container">
             {imageUrls.map((src, index) => (
               <motion.div 
                 className="embla__slide flex-[0_0_80%] sm:flex-[0_0_50%] md:flex-[0_0_33.33%] lg:flex-[0_0_25%] min-w-0 px-2 flex justify-center" 
@@ -272,7 +272,7 @@ const Testimonials = () => {
                       <img 
                         src={src}
                         alt={`המלצת לקוח ${index + 1}`}
-                        className="w-full h-full object-contain bg-white"
+                        className="object-contain w-full h-full bg-white"
                         loading={index === 0 ? "eager" : "lazy"}
                         style={{
                           WebkitFilter: "contrast(1.05) brightness(1.05)",
@@ -281,7 +281,7 @@ const Testimonials = () => {
                       />
                       
                       {/* Simple reflection effect */}
-                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br to-transparent pointer-events-none from-white/30" />
                     </motion.div>
                   </motion.div>
                   
@@ -299,7 +299,7 @@ const Testimonials = () => {
                     }}
                   >
                     {/* דירוג כוכבים עם אנימציה */}
-                    <div className="flex items-center justify-center mb-2">
+                    <div className="flex justify-center items-center mb-2">
                       {[0, 1, 2, 3, 4].map((starIndex) => (
                         <motion.div
                           key={starIndex}
@@ -320,7 +320,7 @@ const Testimonials = () => {
           </div>
 
           {/* Pagination dots */}
-          <div className="flex justify-center gap-3 mt-6">
+          <div className="flex gap-3 justify-center mt-6">
             {imageUrls.map((_, index) => (
               <motion.button
                 key={index}
@@ -343,7 +343,7 @@ const Testimonials = () => {
         </div>
 
         {/* Call to action button */}
-        <div className="text-center mt-10">
+        <div className="mt-10 text-center">
            <motion.button
              whileHover={{ 
                scale: 1.05, 
@@ -351,7 +351,7 @@ const Testimonials = () => {
                backgroundPosition: '100%'
              }}
              whileTap={{ scale: 0.95 }}
-             className="text-white font-semibold py-4 px-10 rounded-full shadow-lg transition-all duration-300 text-lg"
+             className="px-10 py-4 text-lg font-semibold text-white rounded-full shadow-lg transition-all duration-300"
              initial={{ opacity: 0, y: 20 }}
              animate={controls}
              variants={{
@@ -378,7 +378,7 @@ const Testimonials = () => {
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
 
       {/* עיטורים בתחתית */}
-      <div className="absolute bottom-0 left-0 right-0 h-10 overflow-hidden">
+      <div className="overflow-hidden absolute right-0 bottom-0 left-0 h-10">
         <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] opacity-30"
              style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 75% 100%, 50% 0, 25% 100%, 0 0)' }}></div>
       </div>
@@ -386,7 +386,7 @@ const Testimonials = () => {
       <AnimatePresence>
         {selectedImage && (
           <motion.div 
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            className="flex fixed inset-0 z-50 justify-center items-center p-4 bg-black/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -406,7 +406,7 @@ const Testimonials = () => {
                 className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl border-4 border-[#ceac93]"
               />
               <motion.button 
-                className="absolute top-3 left-3 p-3 rounded-full transition-colors shadow-md z-10"
+                className="absolute top-3 left-3 z-10 p-3 rounded-full shadow-md transition-colors"
                 onClick={closeImage}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

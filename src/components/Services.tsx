@@ -85,9 +85,9 @@ const Services = () => {
         <div className="decorative-shape shape-3"></div>
         <div className="decorative-shape shape-4"></div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
+      <div className="relative z-10 px-4 mx-auto max-w-6xl">
         <motion.div 
-          className="flex flex-col items-center gap-4 mb-12"
+          className="flex flex-col gap-4 items-center mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -95,14 +95,14 @@ const Services = () => {
         > 
           <motion.div
             animate={floatAnimation}
-            className="text-gray-800 mb-4"
+            className="mb-4 text-gray-800"
           >
             {serviceAnimation && (
               <Lottie animationData={serviceAnimation} style={{ width: 200, height: 200 }} />
             )}
           </motion.div>
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="mb-6 text-4xl font-bold md:text-5xl"
             style={{ 
               fontFamily: 'Assistant, sans-serif',
               color: 'rgb(173, 139, 114)',
@@ -110,7 +110,7 @@ const Services = () => {
               lineHeight: 1.2
             }}
           >
-            שירותי הקליניקה
+             הטיפולים שלנו 
           </h2>
           <div className="w-32 h-1 bg-[#8B4513] rounded-full mb-6"></div>
           <p className="text-xl md:text-2xl text-[#5C4033] text-center max-w-2xl mb-8">
@@ -119,7 +119,7 @@ const Services = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 gap-8 mb-16 md:grid-cols-3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
