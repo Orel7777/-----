@@ -16,9 +16,15 @@ const LoadingWithLogo = () => {
           className="logo-container"
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ 
+            duration: 0.8, 
+            delay: 0.3,
+            type: "spring",
+            stiffness: 100
+          }}
         >
           <img src="/logo.jpeg" alt="דקלה מדואלה" className="logo" />
+          <span className="logo-text">מדואלה - דקלה שליט</span>
         </motion.div>
         <motion.div 
           className="loader-container"
@@ -34,7 +40,6 @@ const LoadingWithLogo = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.9 }}
         >
-          <h1>מדואלה - דקלה שליט</h1>
           <p>מרכז לרפואה משלימה ועיסויים לנשים</p>
         </motion.div>
       </motion.div>
@@ -73,6 +78,8 @@ const StyledWrapper = styled.div`
   
   .logo-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     position: relative;
     z-index: 2;
@@ -84,6 +91,18 @@ const StyledWrapper = styled.div`
       object-fit: cover;
       border: 3px solid #8B4513;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1rem;
+    }
+    
+    .logo-text {
+      font-family: 'Assistant', sans-serif;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #fefbe8;
+      text-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 0.5rem;
     }
   }
   
@@ -94,21 +113,10 @@ const StyledWrapper = styled.div`
   .title {
     text-align: center;
     
-    h1 {
-      font-family: 'Assistant', sans-serif;
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #fefbe8;
-      text-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-    
     p {
       font-size: 1.2rem;
-      color: #5c4f47;
-      font-weight: 500;
       color: #fefbe8;
+      font-weight: 500;
     }
   }
   
@@ -118,13 +126,15 @@ const StyledWrapper = styled.div`
       gap: 1.5rem;
     }
     
-    .logo-container .logo {
-      width: 120px;
-      height: 120px;
-    }
-    
-    .title h1 {
-      font-size: 1.8rem;
+    .logo-container {
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .logo-text {
+        font-size: 1.8rem;
+      }
     }
     
     .title p {
