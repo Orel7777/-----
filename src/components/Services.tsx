@@ -101,7 +101,15 @@ const Services = () => {
               <Lottie animationData={serviceAnimation} style={{ width: 200, height: 200 }} />
             )}
           </motion.div>
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-[#8B4513] mb-3">
+          <h2 
+            className="text-4xl md:text-5xl font-bold mb-6"
+            style={{ 
+              fontFamily: 'Assistant, sans-serif',
+              color: 'rgb(173, 139, 114)',
+              textShadow: 'rgba(0, 0, 0, 0.1) 0px 2px 4px',
+              lineHeight: 1.2
+            }}
+          >
             שירותי הקליניקה
           </h2>
           <div className="w-32 h-1 bg-[#8B4513] rounded-full mb-6"></div>
@@ -149,7 +157,7 @@ const Services = () => {
                 <li>
                   <span className="service-bullet"></span>
                   עיסוי לימפטי
-              
+                
                 </li>
                 <li>
                   <span className="service-bullet"></span>
