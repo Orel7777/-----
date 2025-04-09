@@ -80,7 +80,7 @@ const Modaah = () => {
             className="video-card"
             style={{
               // backgroundColor: '#8B4513',
-              padding: '20px',
+              // padding: '20px',
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -123,7 +123,7 @@ const Modaah = () => {
             className="video-card"
             style={{
               // backgroundColor: '#8B4513',
-              padding: '20px',
+              // padding: '20px',
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -159,7 +159,7 @@ const Modaah = () => {
             className="video-card"
             style={{
               // backgroundColor: '#8B4513',
-              padding: '20px',
+              // padding: '20px',
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
