@@ -265,11 +265,9 @@ const Services = () => {
 };
 
 const StyledServices = styled.section`
-  padding: 100px 0;
-  // margin-bottom: 40px;
-  // background: linear-gradient(135deg, #fefbe8 0%, #ceac93 50%, #ad8b72 100%);
   position: relative;
-  overflow: hidden;
+  padding: 100px 0;
+  overflow-x: hidden;
 
   .service-bg-pattern {
     position: absolute;
@@ -280,27 +278,29 @@ const StyledServices = styled.section`
     overflow: hidden;
   }
 
-  .gradient-overlay {
+  .gradient-overlay,
+  .pattern-dots,
+  .pattern-lines,
+  .decorative-shape {
     position: absolute;
     inset: 0;
     width: 100vw;
-    background: linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(220, 193, 166, 0.9));
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(193, 166, 147, 0.9));
     z-index: 2;
   }
 
   .pattern-dots {
-    position: absolute;
-    inset: 0;
-    width: 100vw;
     background-image: radial-gradient(rgba(139, 69, 19, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
     z-index: 1;
   }
 
   .pattern-lines {
-    position: absolute;
-    inset: 0;
-    width: 100vw;
     background-image: repeating-linear-gradient(
       -45deg,
       rgba(139, 69, 19, 0.05) 0px,
@@ -312,64 +312,24 @@ const StyledServices = styled.section`
   }
 
   .decorative-shape {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(254, 251, 232, 0.3), rgba(206, 172, 147, 0.2));
-    z-index: 2;
-    filter: blur(50px);
+    opacity: 0.1;
+    z-index: 1;
   }
 
   .shape-1 {
-    width: 400px;
-    height: 400px;
-    top: -100px;
-    left: -100px;
-    animation: float 20s infinite ease-in-out;
+    background: radial-gradient(circle at 0% 0%, #8B4513 0%, transparent 50%);
   }
 
   .shape-2 {
-    width: 500px;
-    height: 500px;
-    bottom: -200px;
-    right: -100px;
-    animation: float 25s infinite ease-in-out reverse;
-    background: linear-gradient(135deg, rgba(173, 139, 114, 0.2), rgba(206, 172, 147, 0.15));
+    background: radial-gradient(circle at 100% 0%, #8B4513 0%, transparent 50%);
   }
 
   .shape-3 {
-    width: 300px;
-    height: 300px;
-    top: 40%;
-    right: 15%;
-    animation: float 18s infinite ease-in-out 2s;
-    background: linear-gradient(135deg, rgba(254, 251, 232, 0.15), rgba(206, 172, 147, 0.1));
+    background: radial-gradient(circle at 100% 100%, #8B4513 0%, transparent 50%);
   }
 
   .shape-4 {
-    width: 250px;
-    height: 250px;
-    bottom: 30%;
-    left: 10%;
-    animation: float 15s infinite ease-in-out 1s;
-    background: linear-gradient(135deg, rgba(173, 139, 114, 0.15), rgba(206, 172, 147, 0.1));
-  }
-
-  @keyframes float {
-    0% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-      transform: translate(10px, 15px) rotate(2deg);
-    }
-    50% {
-      transform: translate(5px, -5px) rotate(1deg);
-    }
-    75% {
-      transform: translate(-10px, 10px) rotate(-1deg);
-    }
-    100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
+    background: radial-gradient(circle at 0% 100%, #8B4513 0%, transparent 50%);
   }
 
   .cta-button {
