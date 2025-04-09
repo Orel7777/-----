@@ -50,8 +50,8 @@ const Modaah = () => {
       {/* רקע גרדיאנט יפה */}
       <div className="absolute inset-0  to-[#ad8b72] opacity-50"></div>
       
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
+      <div className="relative z-10 px-4 mx-auto max-w-6xl">
+        <div className="mb-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ const Modaah = () => {
         </div>
 
         {/* Videos Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 gap-8 mb-16 md:grid-cols-3">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ const Modaah = () => {
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
             className="video-card"
             style={{
-              backgroundColor: '#8B4513',
+              // backgroundColor: '#8B4513',
               padding: '20px',
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
@@ -122,7 +122,7 @@ const Modaah = () => {
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
             className="video-card"
             style={{
-              backgroundColor: '#8B4513',
+              // backgroundColor: '#8B4513',
               padding: '20px',
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
@@ -158,7 +158,7 @@ const Modaah = () => {
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
             className="video-card"
             style={{
-              backgroundColor: '#8B4513',
+              // backgroundColor: '#8B4513',
               padding: '20px',
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
@@ -187,7 +187,7 @@ const Modaah = () => {
           </motion.div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="mt-12 text-center">
           <Button 
             onClick={handleOpenForm}
           >
@@ -198,7 +198,7 @@ const Modaah = () => {
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
       
       {/* יצירת אפקט של עיטורים */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 overflow-hidden">
+      <div className="overflow-hidden absolute right-0 bottom-0 left-0 h-16">
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] opacity-20"
              style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 75% 100%, 50% 0, 25% 100%, 0 0)' }}></div>
       </div>
