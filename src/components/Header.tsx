@@ -2,10 +2,30 @@ import { useState } from 'react';
 import { FaWaze, FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { AiOutlineTikTok } from "react-icons/ai";
-import { RiMenuUnfoldFill, RiMenuUnfold4Fill } from "react-icons/ri";
+import { RiMenuUnfoldFill, RiMenuFoldFill } from "react-icons/ri";
 import Form from './Form';
 import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
+import styled from 'styled-components';
+
+const StyledMenuItem = styled(motion.a)`
+  border: 1px solid rgba(254, 251, 232, 0.5);
+`;
+
+const StyledMenu = styled.div`
+  .menu-item {
+    &:hover {
+      scale: 1.05;
+      background-color: rgba(254, 251, 232, 0.7);
+      box-shadow: 0 4px 10px rgba(173, 139, 114, 0.2);
+    }
+  }
+`;
+
+const StyledSocialIcon = styled(motion.a)`
+  box-shadow: 0 4px 12px rgba(173, 139, 114, 0.2);
+  border: 1px solid rgba(254, 251, 232, 0.8);
+`;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -117,8 +137,8 @@ const Header = () => {
                     <motion.a 
                       key={href}
                       href={href} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
@@ -137,7 +157,7 @@ const Header = () => {
                         boxShadow: '0 4px 12px rgba(173, 139, 114, 0.2)',
                         border: '1px solid rgba(254, 251, 232, 0.8)'
                       }}
-                  >
+                    >
                       <Icon className="w-5 h-5" />
                     </motion.a>
                   ))}
@@ -226,45 +246,39 @@ const Header = () => {
                         background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))'
                       }}
                 />
-                    <span className="text-base font-semibold text-[#ad8b72] mt-2">מדואלה - דקלה שליט</span>
+                    <span className="text-base font-semibold text-[#ad8b72] mt-2">
+                      מדואלה - דקלה שליט
+                    </span>
               </div>
 
                   <div className="flex items-center justify-center gap-2 mb-6">
-                    <RiMenuUnfold4Fill className="w-6 h-6 text-[#ad8b72]" />
+                    <RiMenuUnfoldFill className="w-6 h-6 text-[#ad8b72]" />
                     <div className="text-2xl font-bold text-[#ad8b72]">תפריט</div>
                     <RiMenuUnfoldFill className="w-6 h-6 text-[#ad8b72]" />
-              </div>
+                  </div>
 
-                  <div className="space-y-4 mb-8">
+                  <StyledMenu className="space-y-4 mb-8">
                     {[
                       { name: "שירותים", href: "#services" },
                       { name: "המלצות", href: "#testimonials" },
                       { name: "שיטת הטיפול", href: "#methodology" },
                       { name: "אודות", href: "#stats" }
                     ].map((item, index) => (
-                      <motion.a 
+                      <StyledMenuItem 
                         key={item.name}
                         href={item.href} 
-                        className="block text-xl font-semibold transition-all text-[#ad8b72] py-2.5 px-4 rounded-xl"
-                  onClick={() => setIsMenuOpen(false)}
+                        className="block text-xl font-semibold transition-all text-[#ad8b72] py-2.5 px-4 rounded-xl menu-item"
+                        onClick={() => setIsMenuOpen(false)}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 * index, duration: 0.3 }}
-                        whileHover={{ 
-                          scale: 1.05, 
-                          backgroundColor: 'rgba(254, 251, 232, 0.7)',
-                          boxShadow: '0 4px 10px rgba(173, 139, 114, 0.2)'
-                        }}
-                        style={{
-                          border: '1px solid rgba(254, 251, 232, 0.5)'
-                        }}
                       >
                         {item.name}
-                      </motion.a>
+                      </StyledMenuItem>
                     ))}
-              </div>
+                  </StyledMenu>
               
-              {/* Mobile Social Icons */}
+                  {/* Mobile Social Icons */}
                   <div className="flex justify-center space-x-6 rtl:space-x-reverse mb-6">
                     {[
                       { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
@@ -275,8 +289,8 @@ const Header = () => {
                       <motion.a 
                         key={href}
                         href={href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ 
@@ -295,7 +309,7 @@ const Header = () => {
                           boxShadow: '0 4px 12px rgba(173, 139, 114, 0.2)',
                           border: '1px solid rgba(254, 251, 232, 0.8)'
                         }}
-                >
+                      >
                         <Icon className="w-5 h-5" />
                       </motion.a>
                     ))}

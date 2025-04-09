@@ -100,7 +100,7 @@ const Stats = () => {
   };
 
   return (
-    <StatsWrapper className="overflow-hidden relative" id="stats">
+    <StyledStats className="overflow-hidden relative" id="stats">
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#E5D3C4] to-[#D4B5A3] opacity-30" />
       <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
@@ -124,7 +124,7 @@ const Stats = () => {
             <FaBattleNet className="w-16 h-16 text-[#8B4513]" />
           </motion.div>
           
-          <h2 className="text-4xl font-bold text-[#8B4513] mb-4">
+          <h2 className="mb-4">
             נעים להכיר – מדואלה דקלה
           </h2>
           
@@ -376,11 +376,11 @@ const Stats = () => {
       <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t to-transparent from-white/10" />
       
       <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
-    </StatsWrapper>
+    </StyledStats>
   );
 };
 
-const StatsWrapper = styled.section`
+const StyledStats = styled.section`
   .featured-image-container {
     width: 100%;
     max-width: 500px;
@@ -462,6 +462,20 @@ const StatsWrapper = styled.section`
     .image-overlay span {
       font-size: 1.2rem;
       padding: 0.4rem 1.2rem;
+    }
+  }
+
+  h2 {
+    font-family: 'Rubik', 'Assistant', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: #8B4513;
+    text-shadow: 0 2px 4px rgba(139, 69, 19, 0.1);
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
     }
   }
 `;

@@ -152,7 +152,9 @@ const Footer = () => {
           className="mt-10 pt-6 border-t border-[#8B4513]/20 text-center"
         >
           <p className="text-[#5C4033] mb-6">
-            כל הזכויות שמורות לאוראל בוקריס מפתח אתרים ואפליקציות בתלת מימד
+            כל הזכויות שמורות ל
+            <span className="font-bold text-[#8B4513]">אוראל בוקריס</span>
+            {' '}מפתח אתרים ואפליקציות בתלת מימד
           </p>
           
           {/* Developer Card */}
