@@ -7,6 +7,7 @@ import Stats from './components/Stats';
 import Footer from './components/Footer';
 import Modaah from './components/Modaah';
 import { useEffect, useState } from 'react';
+import LoadingWithLogo from './components/LoadingWithLogo';
 
 // יצירת קומפוננטת שלג
 const Snowflake = ({ style }: { style: React.CSSProperties }) => {
@@ -15,6 +16,7 @@ const Snowflake = ({ style }: { style: React.CSSProperties }) => {
 
 function App() {
   const [snowflakes, setSnowflakes] = useState<React.CSSProperties[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // יצירת פתיתי שלג
   useEffect(() => {
@@ -32,7 +34,18 @@ function App() {
     }
     
     setSnowflakes(flakes);
+    
+    // סימולציה של טעינת העמוד
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+    
+    return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return <LoadingWithLogo />;
+  }
 
   return (
     <div 
