@@ -217,7 +217,7 @@ const Testimonials = () => {
         </div>
 
         <div 
-          className="embla overflow-hidden relative mb-12 rounded-xl" 
+          className="embla overflow-hidden relative mb-12 rounded-xl w-full" 
           ref={emblaRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -225,7 +225,14 @@ const Testimonials = () => {
             background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.7), rgba(206, 172, 147, 0.5))',
             padding: '30px 20px',
             boxShadow: '0 10px 30px rgba(173, 139, 114, 0.2), inset 0 0 20px rgba(254, 251, 232, 0.5)',
-            border: '1px solid rgba(254, 251, 232, 0.7)'
+            border: '1px solid rgba(254, 251, 232, 0.7)',
+            margin: '0 -50vw',
+            width: '100vw',
+            position: 'relative',
+            left: '50%',
+            right: '50%',
+            marginLeft: '-50vw',
+            marginRight: '-50vw'
           }}
         >
           <div className="embla__container flex pt-4 pb-8">
@@ -306,7 +313,6 @@ const Testimonials = () => {
                         </motion.div>
                       ))}
                     </div>
-                    <p className="text-sm text-center text-[#fefbe8] font-medium">המלצה מ{index + 1} מתוך {imageUrls.length}</p>
                   </motion.div>
                 </motion.div>
               </motion.div>
