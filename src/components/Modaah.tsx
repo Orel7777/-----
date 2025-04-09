@@ -59,7 +59,15 @@ const Modaah = () => {
           className="flex flex-col items-center gap-4 mb-12"
         >
           <div className="text-gray-800 mb-4" style={{ transform: 'translateY(-4.57191px)' }}>
-            <h2 className="text-4xl md:text-6xl font-extrabold text-[#8B4513] mb-4 relative z-10 font-['Assistant']">
+            <h2 
+              className="text-4xl md:text-5xl font-bold mb-6"
+              style={{ 
+                fontFamily: 'Assistant, sans-serif',
+                color: 'rgb(173, 139, 114)',
+                textShadow: 'rgba(0, 0, 0, 0.1) 0px 2px 4px',
+                lineHeight: 1.2
+              }}
+            >
               שירותי הקליניקה
             </h2>
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] rounded-full transform translate-y-2"></div>
