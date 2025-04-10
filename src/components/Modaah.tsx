@@ -19,7 +19,7 @@ const slideshowImages = [
 const Modaah = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // פונקציה למעבר לתמונה הבאה
   const nextImage = () => {
