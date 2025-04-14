@@ -49,19 +49,14 @@ const StyledWrapper = styled.div`
     position: relative;
     width: 90%;
     max-width: 420px;
-    background: linear-gradient(135deg, rgba(173, 139, 114, 0.95), rgba(92, 64, 51, 0.95));
-    border-radius: 16px;
-    padding: 16px;
-    font-family: inherit;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    animation: slideIn 0.3s ease-out;
-    border: 2px solid rgba(254, 251, 232, 0.3);
+    background: linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8));
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.4s ease-out;
     overflow: hidden;
+    border: 1px solid rgba(211, 198, 190, 0.5);
+    backdrop-filter: blur(10px);
   }
   
   /* אפקט רקע מנצנץ */
@@ -101,36 +96,36 @@ const StyledWrapper = styled.div`
 
   .close-button {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: linear-gradient(135deg, #ceac93, #ad8b72);
-    border: 2px solid rgba(254, 251, 232, 0.8);
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    color: #fefbe8;
-    cursor: pointer;
-    padding: 0;
-    width: 36px;
-    height: 36px;
+    background: #85846f;
+    color: white;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
-    z-index: 10;
     font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
   }
 
   .close-button:hover {
-    transform: scale(1.1) rotate(90deg);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+    background: #656d55;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   }
 
   .form-group label {
-    color: #fefbe8;
     font-size: 14px;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    margin-bottom: 4px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 5px;
   }
 
   .form-group input,
@@ -139,21 +134,21 @@ const StyledWrapper = styled.div`
     width: 100%;
     padding: 8px 12px;
     border-radius: 10px;
-    border: 2px solid rgba(254, 251, 232, 0.3);
+    border: 2px solid rgba(211, 198, 190, 0.3);
     background: rgba(254, 251, 232, 0.95);
     font-size: 14px;
     text-align: right;
     direction: rtl;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    color: #5C4033;
+    color: #656d55;
     font-weight: 500;
   }
 
   .form-group input:hover,
   .form-group textarea:hover,
   .form-group select:hover {
-    border-color: rgba(254, 251, 232, 0.7);
+    border-color: rgba(211, 198, 190, 0.7);
     background: #fff;
   }
 
@@ -165,7 +160,7 @@ const StyledWrapper = styled.div`
   .form-group input::placeholder,
   .form-group textarea::placeholder,
   .form-group select::placeholder {
-    color: #ad8b72;
+    color: #656d55;
     opacity: 0.8;
     font-weight: 500;
   }
@@ -181,16 +176,16 @@ const StyledWrapper = styled.div`
 
   .form-group select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ad8b72' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23656d55' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: 12px center;
     padding-left: 30px;
-    color: #ad8b72;
+    color: #656d55;
     font-weight: 500;
   }
 
   .form-group select option {
-    color: #ad8b72;
+    color: #656d55;
     font-weight: 500;
     padding: 12px;
     background-color: #fff;
@@ -198,11 +193,11 @@ const StyledWrapper = styled.div`
 
   .form-group select option:hover,
   .form-group select option:focus {
-    background-color: rgba(206, 172, 147, 0.2);
+    background-color: rgba(211, 198, 190, 0.2);
   }
 
   .form-note {
-    color: rgba(254, 251, 232, 0.7);
+    color: rgba(211, 198, 190, 0.7);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
     font-size: 13px;
@@ -223,14 +218,14 @@ const StyledWrapper = styled.div`
     text-decoration: none;
     padding: 6px 15px;
     border-radius: 20px;
-    background: linear-gradient(135deg, rgba(173, 139, 114, 0.7), rgba(139, 69, 19, 0.6));
+    background: linear-gradient(135deg, rgba(101, 109, 85, 0.7), rgba(152, 162, 125, 0.6));
     transition: all 0.3s ease;
-    border: 1px solid rgba(254, 251, 232, 0.3);
+    border: 1px solid rgba(211, 198, 190, 0.3);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
   .privacy-policy-link:hover {
-    background: linear-gradient(135deg, rgba(173, 139, 114, 0.8), rgba(139, 69, 19, 0.7));
+    background: linear-gradient(135deg, rgba(101, 109, 85, 0.8), rgba(152, 162, 125, 0.7));
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -243,29 +238,32 @@ const StyledWrapper = styled.div`
   }
 
   .privacy-policy-link-inline:hover {
-    color: rgba(254, 251, 232, 0.8);
+    color: rgba(211, 198, 190, 0.8);
   }
 
   .form-submit-btn {
-    background: linear-gradient(90deg, #ad8b72, #ceac93, #ad8b72);
+    background: linear-gradient(90deg, #656d55, #98a27d, #656d55);
     background-size: 200% auto;
     color: white;
-    border: 2px solid rgba(254, 251, 232, 0.7);
-    padding: 10px;
+    border: none;
     border-radius: 50px;
-    font-size: 14px;
-    font-weight: bold;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-    margin-top: 8px;
-    width: 100%;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(101, 109, 85, 0.4);
+    animation: gradient 3s ease infinite;
+    border: 1px solid rgba(211, 198, 190, 0.5);
   }
 
   .form-submit-btn:hover {
     background-position: right center;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(101, 109, 85, 0.5);
   }
 
   .logo {
@@ -273,7 +271,7 @@ const StyledWrapper = styled.div`
     height: 60px;
     margin: 0 auto;
     border-radius: 50%;
-    border: 3px solid rgba(254, 251, 232, 0.8);
+    border: 3px solid rgba(211, 198, 190, 0.8);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
   }
@@ -342,13 +340,13 @@ const StyledWrapper = styled.div`
     }
     
     .form-container::-webkit-scrollbar-thumb {
-      background: rgba(254, 251, 232, 0.3);
+      background: rgba(211, 198, 190, 0.3);
       border-radius: 10px;
     }
     
     .close-button {
       top: 8px;
-      left: 8px;
+      right: 8px;
       width: 32px;
       height: 32px;
     }
@@ -415,7 +413,6 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
     const phone = formData.get('phone') as string;
     const email = formData.get('email') as string;
     const treatmentType = formData.get('treatmentType') as string;
-    const medicalIssues = formData.get('medicalIssues') as string;
     
     // בניית הודעת וואטסאפ
     const whatsappMessage = `
@@ -424,7 +421,6 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
 טלפון: ${phone}
 אימייל: ${email}
 סוג טיפול: ${treatmentType}
-מידע רפואי: ${medicalIssues}
     `.trim();
     
     // קידוד ההודעה לשימוש ב-URL
@@ -466,7 +462,6 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
           phone: formData.get('phone'),
           email: formData.get('email'),
           treatmentType: formData.get('treatmentType'),
-          medicalIssues: formData.get('medicalIssues')
         }),
       })
       .then(response => response.json())
@@ -503,8 +498,10 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
             <motion.button 
               className="close-button" 
               onClick={handleClose}
-              whileHover={{ scale: 1.1, rotate: 90 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="סגור טופס"
+              title="סגור טופס"
             >×</motion.button>
             
             <motion.div 
@@ -514,7 +511,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
               transition={{ delay: 0.2 }}
             >
           <img src="/לוגו_גדול.jpeg" alt="דקלה מדואלה" className="logo" />
-          <span className="logo-text">נעים להכיר - מדואלה דקלה שליט</span>
+          <span className="logo-text">מדואלה דקלה שליט</span>
             </motion.div>
             
             {formSubmitted ? (
@@ -644,17 +641,6 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     <option value="פיסול פנים טבעי">פיסול פנים טבעי</option>
                     <option value="אחר">אחר</option>
                   </select>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="medicalIssues">האם יש בעיות רפואיות? *</label>
-                  <textarea 
-                    name="medicalIssues" 
-                    id="medicalIssues" 
-                    rows={4} 
-                    required
-                    placeholder="אנא פרט/י אם יש בעיות רפואיות שעלינו לדעת עליהן. אם אין, אנא כתוב/י 'אין' או 'לא'"
-                    minLength={2}
-                  />
                 </div>
                 <div className="form-note">
                   <small>* שדות חובה</small>

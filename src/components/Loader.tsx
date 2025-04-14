@@ -24,15 +24,15 @@ const Loader = () => {
 }
 
 const StyledWrapper = styled.div`
-  --primary1: #dcc1a6;
-  --primary2: #5c4f47;
-  --bg: #5c4f47;
-  --fg: #dcc1a6;
-  --fg-t: rgba(220, 193, 166, 0.1);
+  --primary1: #d3c6be;
+  --primary2: #656d55;
+  --bg: #656d55;
+  --fg: #d3c6be;
+  --fg-t: rgba(211, 198, 190, 0.1);
   --trans-dur: 0.3s;
   
   .pl {
-    box-shadow: 2em 0 2em rgba(92, 79, 71, 0.2) inset, -2em 0 2em rgba(220, 193, 166, 0.1) inset;
+    box-shadow: 2em 0 2em rgba(101, 109, 85, 0.2) inset, -2em 0 2em rgba(211, 198, 190, 0.1) inset;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@ const StyledWrapper = styled.div`
     transform: rotateX(30deg) rotateZ(45deg);
     width: 14em;
     height: 14em;
-    color: #dcc1a6;
+    color: #d3c6be;
   }
 
   .pl, .pl__dot {

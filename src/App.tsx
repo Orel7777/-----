@@ -51,7 +51,7 @@ function App() {
     <div 
       className="min-h-screen text-foreground font-assistant relative overflow-hidden"
       style={{
-        background: `linear-gradient(135deg, #fefbe8 0%, #ceac93 50%, #ad8b72 100%)`,
+        background: `linear-gradient(135deg, #c3c8c1 0%, #98a27d 50%, #656d55 100%)`,
       }}
     >
       {/* אפקט שלג */}
@@ -76,13 +76,13 @@ function App() {
           position: absolute;
           width: 8px;
           height: 8px;
-          background: rgba(255, 255, 255, 0.8);
+          background: rgba(211, 198, 190, 0.8);
           border-radius: 50%;
           top: -10px;
           animation-name: snowfall;
           animation-iteration-count: infinite;
           animation-timing-function: linear;
-          box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+          box-shadow: 0 0 5px rgba(177, 177, 153, 0.7);
         }
         
         @keyframes snowfall {

@@ -46,13 +46,13 @@ const Hero = () => {
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{
           fontFamily: "'Assistant', sans-serif",
-          color: '#ad8b72',
+          color: 'white',
           textShadow: '0 2px 4px rgba(0,0,0,0.1)',
           lineHeight: '1.2'
         }}>
           מרכז לרפואה משלימה ועיסויים לנשים
         </h1>
-        <p className="text-xl mb-8 text-[#5C4033]">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
+        <p className="text-xl mb-8 text-white">חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
         <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
       </motion.div>
       <motion.div 

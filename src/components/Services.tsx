@@ -105,15 +105,15 @@ const Services = () => {
             className="mb-6 text-4xl font-bold md:text-5xl"
             style={{ 
               fontFamily: 'Assistant, sans-serif',
-              color: 'rgb(173, 139, 114)',
+              color: 'white',
               textShadow: 'rgba(0, 0, 0, 0.1) 0px 2px 4px',
               lineHeight: 1.2
             }}
           >
              הטיפולים שלנו 
           </h2>
-          <div className="w-32 h-1 bg-[#8B4513] rounded-full mb-6"></div>
-          <p className="text-xl md:text-2xl text-[#5C4033] text-center max-w-2xl mb-8">
+          <div className="w-32 h-1 bg-white rounded-full mb-6"></div>
+          <p className="text-xl md:text-2xl text-white text-center max-w-2xl mb-8">
             מגוון טיפולים מקצועיים המותאמים לצרכים הייחודיים שלך
           </p>
         </motion.div>
@@ -133,9 +133,9 @@ const Services = () => {
             <div className="card-gradient-overlay"></div>
             <div className="card-inner">
               <div className="service-icon-container">
-                <FaDove className="service-icon" />
+                <FaDove className="service-icon" style={{ color: '#d3c6be' }} />
               </div>
-              <h3 className="service-title">עיסויים רפואיים וטיפוליים</h3>
+              <h3 className="service-title" style={{ color: 'white' }}>עיסויים רפואיים וטיפוליים</h3>
               <div className="service-divider"></div>
               <ul className="service-list">
                 <li>
@@ -179,9 +179,9 @@ const Services = () => {
             <div className="card-gradient-overlay"></div>
             <div className="card-inner">
               <div className="service-icon-container">
-                <FaBluesky className="service-icon" />
+                <FaBluesky className="service-icon" style={{ color: '#d3c6be' }} />
               </div>
-              <h3 className="service-title">עיסויים מסורתיים ומרגיעים</h3>
+              <h3 className="service-title" style={{ color: 'white' }}>עיסויים מסורתיים ומרגיעים</h3>
               <div className="service-divider"></div>
               <ul className="service-list">
                 <li>
@@ -217,9 +217,9 @@ const Services = () => {
             <div className="card-gradient-overlay"></div>
             <div className="card-inner">
               <div className="service-icon-container">
-                <TbMassage className="service-icon" />
+                <TbMassage className="service-icon" style={{ color: '#d3c6be' }} />
               </div>
-              <h3 className="service-title">שיטות מיוחדות ועיסויים משולבים</h3>
+              <h3 className="service-title" style={{ color: 'white' }}>שיטות מיוחדות ועיסויים משולבים</h3>
               <div className="service-divider"></div>
               <ul className="service-list">
                 <li>
@@ -347,7 +347,7 @@ const StyledServices = styled.section`
 
   .service-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+    background: #85846f;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -430,13 +430,13 @@ const StyledServices = styled.section`
 
   .service-icon {
     font-size: 35px;
-    color: #ffffff;
+    color: #d3c6be;
   }
 
   .service-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #8B4513;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -444,7 +444,7 @@ const StyledServices = styled.section`
   .service-divider {
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #8B4513, transparent);
+    background: linear-gradient(90deg, transparent, white, transparent);
     margin-bottom: 25px;
   }
 
@@ -460,7 +460,7 @@ const StyledServices = styled.section`
     align-items: flex-start;
     font-size: 18px;
     font-weight: 500;
-    color: #5C4033;
+    color: white;
     line-height: 1.4;
     position: relative;
     padding-right: 25px;
@@ -472,15 +472,15 @@ const StyledServices = styled.section`
     top: 10px;
     width: 10px;
     height: 10px;
-    background-color: #8B4513;
+    background-color: white;
     border-radius: 50%;
     transform: translateY(-50%);
-    box-shadow: 0 2px 4px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .service-note {
     font-size: 15px;
-    color: #8B4513;
+    color: white;
     opacity: 0.8;
     margin-right: 5px;
   }

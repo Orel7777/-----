@@ -9,22 +9,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 
 const StyledMenuItem = styled(motion.a)`
-  border: 1px solid rgba(254, 251, 232, 0.5);
+  border: 1px solid rgba(211, 198, 190, 0.5);
 `;
 
 const StyledMenu = styled.div`
   .menu-item {
     &:hover {
       scale: 1.05;
-      background-color: rgba(254, 251, 232, 0.7);
-      box-shadow: 0 4px 10px rgba(173, 139, 114, 0.2);
+      background-color: rgba(211, 198, 190, 0.7);
+      box-shadow: 0 4px 10px rgba(101, 109, 85, 0.2);
     }
   }
 `;
 
 const StyledSocialIcon = styled(motion.a)`
-  box-shadow: 0 4px 12px rgba(173, 139, 114, 0.2);
-  border: 1px solid rgba(254, 251, 232, 0.8);
+  box-shadow: 0 4px 12px rgba(101, 109, 85, 0.2);
+  border: 1px solid rgba(211, 198, 190, 0.8);
 `;
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
     <>
       <header className="fixed w-full top-0 z-40">
         <div className="backdrop-blur-md shadow-md" style={{
-          background: 'linear-gradient(to bottom, rgba(254, 251, 232, 0.95), rgba(206, 172, 147, 0.9))'
+          background: 'linear-gradient(to bottom, rgba(211, 198, 190, 0.95), rgba(152, 162, 125, 0.9))'
         }}>
           <div className="max-w-6xl mx-auto">
             <nav className="flex items-center justify-between px-4 py-3 md:py-2 lg:px-0">
@@ -58,12 +58,12 @@ const Header = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   style={{
-                    boxShadow: '0 8px 20px rgba(173, 139, 114, 0.3)',
-                    border: '2px solid rgba(254, 251, 232, 0.9)',
-                    background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))'
+                    boxShadow: '0 8px 20px rgba(101, 109, 85, 0.3)',
+                    border: '2px solid rgba(211, 198, 190, 0.9)',
+                    background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
                   }}
                 />
-                <span className="text-sm font-semibold text-[#ad8b72] mt-1">נעים להכיר - מדואלה דקלה שליט</span>
+                <span className="text-sm font-semibold text-white mt-1">נעים להכיר - מדואלה דקלה שליט</span>
               </motion.div>
 
               {/* Desktop Menu */}
@@ -72,7 +72,7 @@ const Header = () => {
                   <motion.a 
                     key={item}
                     href={`#${item === "שירותים" ? "services" : item === "המלצות" ? "testimonials" : item === "שיטת הטיפול" ? "methodology" : "stats"}`}
-                    className="relative text-[#ad8b72] font-medium text-lg"
+                    className="relative text-white font-medium text-lg"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 * index }}
@@ -80,7 +80,7 @@ const Header = () => {
                   >
                     {item}
                     <motion.span 
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#ad8b72] to-[#ceac93] rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-white to-[#98a27d] rounded-full"
                       initial={{ width: 0 }}
                       variants={{
                         hover: { width: "100%" }
@@ -93,7 +93,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <motion.button
-                className="md:hidden relative w-10 h-10 text-[#ad8b72]"
+                className="md:hidden relative w-10 h-10 text-white"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -150,12 +150,12 @@ const Header = () => {
                       whileHover={{ 
                         scale: 1.2, 
                         rotate: 10,
-                        color: "#ceac93" 
+                        color: "#98a27d" 
                       }}
-                      className="text-[#ad8b72] transition-all p-2 bg-[#fefbe8]/40 rounded-full shadow-md"
+                      className="text-white transition-all p-2 bg-[#fefbe8]/40 rounded-full shadow-md"
                       style={{
-                        boxShadow: '0 4px 12px rgba(173, 139, 114, 0.2)',
-                        border: '1px solid rgba(254, 251, 232, 0.8)'
+                        boxShadow: '0 4px 12px rgba(101, 109, 85, 0.2)',
+                        border: '1px solid rgba(211, 198, 190, 0.8)'
                       }}
                     >
                       <Icon className="w-5 h-5" />
@@ -189,7 +189,7 @@ const Header = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
           style={{
-                background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.95), rgba(206, 172, 147, 0.95), rgba(173, 139, 114, 0.95))'
+                background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.95), rgba(152, 162, 125, 0.95), rgba(101, 109, 85, 0.95))'
           }}
         >
               <motion.div 
@@ -202,21 +202,21 @@ const Header = () => {
                 <motion.div 
                   className="text-center space-y-5 p-6 rounded-2xl w-full max-w-md relative"
                   style={{
-                    background: 'linear-gradient(to bottom, rgba(254, 251, 232, 0.5), rgba(206, 172, 147, 0.5))',
-                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(254, 251, 232, 0.7)',
-                    border: '2px solid rgba(254, 251, 232, 0.7)',
+                    background: 'linear-gradient(to bottom, rgba(211, 198, 190, 0.5), rgba(152, 162, 125, 0.5))',
+                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(211, 198, 190, 0.7)',
+                    border: '2px solid rgba(211, 198, 190, 0.7)',
                     backdropFilter: 'blur(10px)'
                   }}
                 >
                   <motion.button
                 onClick={() => setIsMenuOpen(false)}
-                    className="absolute top-3 right-3 p-2 rounded-full shadow-lg text-[#ad8b72]"
+                    className="absolute top-3 right-3 p-2 rounded-full shadow-lg text-white"
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     style={{
-                      background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))',
+                      background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))',
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                      border: '1px solid rgba(254, 251, 232, 0.7)'
+                      border: '1px solid rgba(211, 198, 190, 0.7)'
                     }}
               >
                 <svg 
@@ -241,20 +241,20 @@ const Header = () => {
                       className="w-20 h-20 rounded-full p-1"
                       whileHover={{ scale: 1.1 }}
                       style={{
-                        boxShadow: '0 8px 20px rgba(173, 139, 114, 0.3)',
-                        border: '2px solid rgba(254, 251, 232, 0.9)',
-                        background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))'
+                        boxShadow: '0 8px 20px rgba(101, 109, 85, 0.3)',
+                        border: '2px solid rgba(211, 198, 190, 0.9)',
+                        background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
                       }}
                 />
-                    <span className="text-base font-semibold text-[#ad8b72] mt-2">
+                    <span className="text-base font-semibold text-white mt-2">
                       נעים להכיר - מדואלה דקלה שליט
                     </span>
               </div>
 
                   <div className="flex items-center justify-center gap-2 mb-6">
-                    <RiMenuUnfoldFill className="w-6 h-6 text-[#ad8b72]" />
-                    <div className="text-2xl font-bold text-[#ad8b72]">תפריט</div>
-                    <RiMenuUnfoldFill className="w-6 h-6 text-[#ad8b72]" />
+                    <RiMenuUnfoldFill className="w-6 h-6 text-white" />
+                    <div className="text-2xl font-bold text-white">תפריט</div>
+                    <RiMenuUnfoldFill className="w-6 h-6 text-white" />
               </div>
 
                   <StyledMenu className="space-y-4 mb-8">
@@ -267,7 +267,7 @@ const Header = () => {
                       <StyledMenuItem 
                         key={item.name}
                         href={item.href} 
-                        className="block text-xl font-semibold transition-all text-[#ad8b72] py-2.5 px-4 rounded-xl menu-item"
+                        className="block text-xl font-semibold transition-all text-white py-2.5 px-4 rounded-xl menu-item"
                   onClick={() => setIsMenuOpen(false)}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -302,12 +302,12 @@ const Header = () => {
                         whileHover={{ 
                           scale: 1.2, 
                           rotate: 10,
-                          color: "#ceac93" 
+                          color: "#98a27d" 
                         }}
-                        className="text-[#ad8b72] transition-all p-2.5 bg-[#fefbe8]/40 rounded-full shadow-md"
+                        className="text-white transition-all p-2.5 bg-[#fefbe8]/40 rounded-full shadow-md"
                         style={{
-                          boxShadow: '0 4px 12px rgba(173, 139, 114, 0.2)',
-                          border: '1px solid rgba(254, 251, 232, 0.8)'
+                          boxShadow: '0 4px 12px rgba(101, 109, 85, 0.2)',
+                          border: '1px solid rgba(211, 198, 190, 0.8)'
                         }}
                       >
                         <Icon className="w-5 h-5" />

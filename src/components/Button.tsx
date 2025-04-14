@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       className={`${className}`}
       onClick={onClick}
-      whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(173, 139, 114, 0.4)' }}
+      whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(195, 200, 193, 0.4)' }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
@@ -34,14 +34,14 @@ const StyledButton = styled(motion.button)`
   position: relative;
   cursor: pointer;
   padding: 12px 24px;
-  border: 2px solid rgba(254, 251, 232, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 50px;
-  background: linear-gradient(90deg, #ad8b72, #ceac93, #ad8b72);
+  background: linear-gradient(90deg, #c3c8c1, #98a27d, #c3c8c1);
   background-size: 200% auto;
   color: white;
   transition: all 0.3s ease;
   font-weight: 600;
-  box-shadow: 0 5px 15px rgba(173, 139, 114, 0.3);
+  box-shadow: 0 5px 15px rgba(195, 200, 193, 0.3);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
   &:hover {

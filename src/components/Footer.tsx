@@ -58,12 +58,12 @@ const Footer = () => {
             variants={fadeInUp}
             className="text-center md:text-right"
           >
-            <h3 className="text-2xl font-bold text-[#8B4513] mb-6">שעות פעילות</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">שעות פעילות</h3>
             <div className="space-y-3">
-              <p className="text-[#5C4033] transition-colors hover:text-[#8B4513]">
+              <p className="text-white transition-colors hover:text-white">
                 א' - ה' 10:00 - 20:00
               </p>
-              <p className="font-bold text-[#5C4033]">בתיאום מראש!</p>
+              <p className="font-bold text-white">בתיאום מראש!</p>
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${
                 isBusinessOpen ? 'text-green-800 bg-green-100' : 'text-red-800 bg-red-100'
               }`}>
@@ -85,12 +85,12 @@ const Footer = () => {
             variants={fadeInUp}
             className="text-center md:text-right"
           >
-            <h3 className="text-2xl font-bold text-[#8B4513] mb-6">המיקום שלנו</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">המיקום שלנו</h3>
             <a 
               href="https://waze.com/ul?q=נס ציונה, ישראל" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 text-[#5C4033] hover:text-[#8B4513] transition-colors"
+              className="inline-flex items-center gap-3 text-white hover:text-white transition-colors"
             >
               <FaMapMarkerAlt className="text-xl" />
               <span className="text-lg">נס ציונה, ישראל</span>
@@ -105,7 +105,7 @@ const Footer = () => {
             variants={fadeInUp}
             className="text-center md:text-right"
           >
-            <h3 className="text-2xl font-bold text-[#8B4513] mb-6">עקבו אחרינו</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">עקבו אחרינו</h3>
             <div className="flex gap-6 justify-center md:justify-start">
               {[
                 { 
@@ -129,7 +129,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#8B4513] to-[#5C4033] text-white shadow-lg hover:shadow-xl transition-all"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-[#7c7b67] text-white shadow-lg hover:shadow-xl transition-all"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -151,9 +151,9 @@ const Footer = () => {
           variants={fadeInUp}
           className="mt-10 pt-6 border-t border-[#8B4513]/20 text-center"
         >
-          <p className="text-[#5C4033] mb-6">
+          <p className="text-white mb-6">
             כל הזכויות שמורות ל
-            <span className="font-bold text-[#8B4513]">אוראל בוקריס</span>
+            <span className="font-bold text-white">אוראל בוקריס</span>
             {' '}מפתח אתרים ואפליקציות בתלת מימד
           </p>
           
@@ -180,13 +180,13 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-row justify-between items-center">
                   <div className="flex flex-col gap-1">
-                    <p className="font-semibold text-lg text-[#8B4513] relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#8B4513] after:scale-x-0 after:origin-bottom-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+                    <p className="font-semibold text-lg text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:scale-x-0 after:origin-bottom-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
                       אתרים בתלת מימד
                     </p>
-                    <p className="text-sm text-[#5C4033]">עיצוב, פיתוח</p>
+                    <p className="text-sm text-white">עיצוב, פיתוח</p>
                   </div>
                   <motion.div 
-                    className="text-[#8B4513]"
+                    className="text-white"
                     whileHover={{ rotate: 45 }}
                   >
                     <svg className="w-9 h-9" viewBox="0 0 24 24">
