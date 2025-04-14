@@ -125,7 +125,7 @@ const Stats = () => {
             </motion.div>
           
           <h2 className="mb-4">
-            נעים להכיר – מדואלה דקלה
+             נעים להכיר -מדואלה דקלה שליט
           </h2>
           
           <motion.div 

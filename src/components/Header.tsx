@@ -63,7 +63,7 @@ const Header = () => {
                     background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.9), rgba(206, 172, 147, 0.8))'
                   }}
                 />
-                <span className="text-sm font-semibold text-[#ad8b72] mt-1">מדואלה - דקלה שליט</span>
+                <span className="text-sm font-semibold text-[#ad8b72] mt-1">נעים להכיר - מדואלה דקלה שליט</span>
               </motion.div>
 
               {/* Desktop Menu */}
@@ -137,8 +137,8 @@ const Header = () => {
                     <motion.a 
                       key={href}
                       href={href} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
@@ -247,7 +247,7 @@ const Header = () => {
                       }}
                 />
                     <span className="text-base font-semibold text-[#ad8b72] mt-2">
-                      מדואלה - דקלה שליט
+                      נעים להכיר - מדואלה דקלה שליט
                     </span>
               </div>
 
@@ -255,7 +255,7 @@ const Header = () => {
                     <RiMenuUnfoldFill className="w-6 h-6 text-[#ad8b72]" />
                     <div className="text-2xl font-bold text-[#ad8b72]">תפריט</div>
                     <RiMenuUnfoldFill className="w-6 h-6 text-[#ad8b72]" />
-                  </div>
+              </div>
 
                   <StyledMenu className="space-y-4 mb-8">
                     {[
@@ -268,7 +268,7 @@ const Header = () => {
                         key={item.name}
                         href={item.href} 
                         className="block text-xl font-semibold transition-all text-[#ad8b72] py-2.5 px-4 rounded-xl menu-item"
-                        onClick={() => setIsMenuOpen(false)}
+                  onClick={() => setIsMenuOpen(false)}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 * index, duration: 0.3 }}
@@ -278,7 +278,7 @@ const Header = () => {
                     ))}
                   </StyledMenu>
               
-                  {/* Mobile Social Icons */}
+              {/* Mobile Social Icons */}
                   <div className="flex justify-center space-x-6 rtl:space-x-reverse mb-6">
                     {[
                       { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
@@ -289,8 +289,8 @@ const Header = () => {
                       <motion.a 
                         key={href}
                         href={href} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ 

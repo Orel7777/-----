@@ -476,7 +476,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
               transition={{ delay: 0.2 }}
             >
           <img src="/logo.jpeg" alt="דקלה מדואלה" className="logo" />
-          <span className="logo-text">מדואלה - דקלה שליט</span>
+          <span className="logo-text">נעים להכיר - מדואלה דקלה שליט</span>
             </motion.div>
             
             {formSubmitted ? (

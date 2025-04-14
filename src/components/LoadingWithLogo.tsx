@@ -24,7 +24,7 @@ const LoadingWithLogo = () => {
           }}
         >
           <img src="/logo.jpeg" alt="דקלה מדואלה" className="logo" />
-          <span className="logo-text">מדואלה - דקלה שליט</span>
+          <span className="logo-text"> מדואלה-דקלה שליט</span>
         </motion.div>
         <motion.div 
           className="loader-container"
