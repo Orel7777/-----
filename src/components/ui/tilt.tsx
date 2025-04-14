@@ -87,16 +87,12 @@ export function Tilt({
       className={className}
       style={{
         transformStyle: "preserve-3d",
-        ...style,
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transformStyle: "preserve-3d",
         rotateX,
         rotateY,
         ...style,
       }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       {children}
     </motion.div>

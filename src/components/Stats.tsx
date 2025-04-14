@@ -145,7 +145,6 @@ const Stats = () => {
             <div className="image-frame">
               <video
                 src="/images/video_24.mp4"
-                alt="דקלה מדואלה"
                 className="featured-image"
                 autoPlay
                 loop
