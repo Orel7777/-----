@@ -201,6 +201,51 @@ const StyledWrapper = styled.div`
     background-color: rgba(206, 172, 147, 0.2);
   }
 
+  .form-note {
+    color: rgba(254, 251, 232, 0.7);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .privacy-policy-container {
+    text-align: center;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .privacy-policy-link {
+    color: #fefbe8;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(173, 139, 114, 0.7), rgba(139, 69, 19, 0.6));
+    transition: all 0.3s ease;
+    border: 1px solid rgba(254, 251, 232, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .privacy-policy-link:hover {
+    background: linear-gradient(135deg, rgba(173, 139, 114, 0.8), rgba(139, 69, 19, 0.7));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .privacy-policy-link-inline {
+    color: #fefbe8;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+  }
+
+  .privacy-policy-link-inline:hover {
+    color: rgba(254, 251, 232, 0.8);
+  }
+
   .form-submit-btn {
     background: linear-gradient(90deg, #ad8b72, #ceac93, #ad8b72);
     background-size: 200% auto;
@@ -251,13 +296,6 @@ const StyledWrapper = styled.div`
     color: #fefbe8;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  }
-
-  .form-note {
-    color: rgba(254, 251, 232, 0.8);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-size: 13px;
   }
 
   .form-success {
@@ -620,6 +658,22 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                 </div>
                 <div className="form-note">
                   <small>* שדות חובה</small>
+                </div>
+                <div className="privacy-policy-container">
+                  <a 
+                    href="/images/תעודות_2/פרטיות.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="privacy-policy-link"
+                  >
+                    מדיניות פרטיות
+                  </a>
+                  <small>בשליחת הטופס הנך מאשר/ת את <a 
+                    href="/images/תעודות_2/פרטיות.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="privacy-policy-link-inline"
+                  >מדיניות הפרטיות</a> שלנו</small>
                 </div>
                 <button 
                   className="form-submit-btn" 
