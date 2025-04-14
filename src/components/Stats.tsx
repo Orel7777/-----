@@ -25,19 +25,54 @@ const Stats = () => {
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    // Prevent scrolling of the body when the image modal is open
+    if (isImageOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    // Cleanup function to restore scrolling when component unmounts
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isImageOpen]);
 
   const certificates = [
     {
-      src: "/images/תעודות/2 (2).jpeg",
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.44.28 (1).jpeg",
       alt: "תעודת הסמכה 1"
     },
     {
-      src: "/images/תעודות/2 (4).jpeg",
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.44.28.jpeg",
       alt: "תעודת הסמכה 2"
     },
     {
-      src: "/images/תעודות/2.1.jpeg",
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.45.24.jpeg",
       alt: "תעודת הסמכה 3"
+    },
+    {
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.47.12.jpeg",
+      alt: "תעודת הסמכה 4"
+    },
+    {
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.50.00.jpeg",
+      alt: "תעודת הסמכה 5"
+    },
+    {
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.55.01.jpeg",
+      alt: "תעודת הסמכה 6"
+    },
+    {
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.56.19.jpeg",
+      alt: "תעודת הסמכה 7"
+    },
+    {
+      src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.57.12.jpeg",
+      alt: "תעודת הסמכה 8"
     }
   ];
 
@@ -78,14 +113,27 @@ const Stats = () => {
     setIsFormOpen(true);
   };
 
-  const openImage = (src: string) => {
+  const openImage = (src: string, index: number) => {
     setCurrentImage(src);
+    setCurrentImageIndex(index);
     setIsImageOpen(true);
   };
 
   const closeImage = () => {
     setIsImageOpen(false);
     setCurrentImage('');
+  };
+
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (direction === 'prev') {
+      const newIndex = currentImageIndex === 0 ? certificates.length - 1 : currentImageIndex - 1;
+      setCurrentImageIndex(newIndex);
+      setCurrentImage(certificates[newIndex].src);
+    } else {
+      const newIndex = currentImageIndex === certificates.length - 1 ? 0 : currentImageIndex + 1;
+      setCurrentImageIndex(newIndex);
+      setCurrentImage(certificates[newIndex].src);
+    }
   };
 
   const fadeInUp = {
@@ -266,7 +314,7 @@ const Stats = () => {
                     <div key={index} className="flex-[0_0_100%] min-w-0 relative px-2">
                       <div 
                         className="max-w-[160px] sm:max-w-[200px] mx-auto aspect-[3/4] relative rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300 cursor-pointer group"
-                        onClick={() => openImage(cert.src)}
+                        onClick={() => openImage(cert.src, index)}
                       >
                         <img
                           src={cert.src}
@@ -319,23 +367,50 @@ const Stats = () => {
             {/* Fullscreen Image Modal */}
             {isImageOpen && (
               <div 
-                className="fixed inset-0 bg-[#fefbe8]/95 z-50 flex items-center justify-center p-4" 
+                className="fixed inset-0 bg-gradient-to-br from-[#E5D3C4]/90 to-[#D4B5A3]/90 backdrop-blur-md z-[100] flex items-center justify-center p-4 overflow-hidden" 
                 onClick={closeImage}
+                style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
               >
                 <div 
-                  className="relative w-full max-w-[min(90vw,500px)] bg-white rounded-xl overflow-hidden"
+                  className="relative w-full max-w-[90vw] max-h-[90vh] bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm rounded-xl overflow-hidden border border-white/30 shadow-xl"
                   onClick={e => e.stopPropagation()}
                 >
-                  <div className="relative pt-[133%]">
+                  <div className="relative h-full flex items-center justify-center">
                     <img
                       src={currentImage}
                       alt="תעודת הסמכה במסך מלא"
-                      className="absolute inset-0 w-full h-full object-contain bg-white"
+                      className="max-w-full max-h-[80vh] object-contain bg-gradient-to-br from-white/90 to-white/80 p-4"
                     />
                   </div>
+                  
+                  {/* Navigation buttons */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateImage('prev');
+                    }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] hover:from-[#ad8b72] hover:to-[#8B4513] shadow-lg flex items-center justify-center text-white hover:scale-110 transition-all"
+                    aria-label="התמונה הקודמת"
+                    title="הקודם"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateImage('next');
+                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] hover:from-[#ad8b72] hover:to-[#8B4513] shadow-lg flex items-center justify-center text-white hover:scale-110 transition-all"
+                    aria-label="התמונה הבאה"
+                    title="הבא"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                  
                   <button
                     onClick={closeImage}
-                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#fefbe8] hover:bg-[#fefbe8]/90 shadow-lg flex items-center justify-center text-[#8B4513] hover:scale-110 transition-all"
+                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] hover:from-[#ad8b72] hover:to-[#8B4513] shadow-lg flex items-center justify-center text-white hover:scale-110 transition-all"
                     aria-label="סגור תמונה"
                     title="סגור"
                   >

@@ -52,9 +52,9 @@ const Header = () => {
                 transition={{ duration: 0.5 }}
               >
                 <motion.img 
-                  src="/logo.jpeg" 
+                  src="/לוגו_גדול.jpeg" 
                   alt="דקלה מדואלה" 
-                  className="h-14 w-auto rounded-full p-1"
+                  className="h-16 w-auto rounded-full p-1"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   style={{
@@ -236,9 +236,9 @@ const Header = () => {
 
                   <div className="flex flex-col items-center justify-center mb-6">
                     <motion.img 
-                  src="/logo.jpeg" 
+                  src="/לוגו_גדול.jpeg" 
                   alt="דקלה מדואלה" 
-                      className="w-16 h-16 rounded-full p-1"
+                      className="w-20 h-20 rounded-full p-1"
                       whileHover={{ scale: 1.1 }}
                       style={{
                         boxShadow: '0 8px 20px rgba(173, 139, 114, 0.3)',

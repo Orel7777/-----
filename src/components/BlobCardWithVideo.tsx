@@ -160,7 +160,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     border-radius: 50px;
     max-width: 90%;
     transform: translateY(0);
-    opacity: 1;
+    opacity: 0;
     transition: all 0.5s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
@@ -170,6 +170,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
   }
 
   .card:hover .video-overlay span {
+    opacity: 1;
     transform: scale(1.05);
   }
 

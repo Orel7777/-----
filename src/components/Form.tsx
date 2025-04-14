@@ -224,8 +224,8 @@ const StyledWrapper = styled.div`
   }
 
   .logo {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto;
     border-radius: 50%;
     border: 3px solid rgba(254, 251, 232, 0.8);
@@ -316,8 +316,8 @@ const StyledWrapper = styled.div`
     }
     
     .logo {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
     }
     
     .logo-text {
@@ -475,7 +475,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-          <img src="/logo.jpeg" alt="דקלה מדואלה" className="logo" />
+          <img src="/לוגו_גדול.jpeg" alt="דקלה מדואלה" className="logo" />
           <span className="logo-text">נעים להכיר - מדואלה דקלה שליט</span>
             </motion.div>
             

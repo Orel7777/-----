@@ -23,7 +23,7 @@ const LoadingWithLogo = () => {
             stiffness: 100
           }}
         >
-          <img src="/logo.jpeg" alt="דקלה מדואלה" className="logo" />
+          <img src="/לוגו_גדול.jpeg" alt="דקלה מדואלה" className="logo" />
           <span className="logo-text"> מדואלה-דקלה שליט</span>
         </motion.div>
         <motion.div 
@@ -85,8 +85,8 @@ const StyledWrapper = styled.div`
     z-index: 2;
     
     .logo {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #8B4513;
@@ -128,8 +128,8 @@ const StyledWrapper = styled.div`
     
     .logo-container {
       .logo {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
       }
       
       .logo-text {
