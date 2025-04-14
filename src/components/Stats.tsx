@@ -7,6 +7,7 @@ import Lottie from "lottie-react";
 import styled from 'styled-components';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import BlobCardWithVideo from './BlobCardWithVideo';
 
 const Stats = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -142,19 +143,14 @@ const Stats = () => {
               transition: { duration: 0.3 }
             }}
           >
-            <div className="image-frame">
-              <video
-                src="/images/video_24.mp4"
-                className="featured-image"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-              <div className="image-overlay">
-                <span>מקצועיות ואיכות ללא פשרות</span>
-              </div>
-            </div>
+            <BlobCardWithVideo
+              videoSrc="/images/video_24.mp4"
+              blobColor="#ad8b72"
+              width="100%"
+              height="450px"
+              overlay={true}
+              overlayText="מקצועיות ואיכות ללא פשרות"
+            />
           </motion.div>
           
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-[#8B4513] to-transparent mx-auto mb-6" />
@@ -193,10 +189,10 @@ const Stats = () => {
                     <span className="w-4 h-4 bg-[#8B4513] rounded-full"></span>
                   </span>
                   <span className="relative">
-                    הניסיון שלי
+              הניסיון שלי
                     <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#8B4513]/0 via-[#8B4513] to-[#8B4513]/0"></div>
                   </span>
-                </h4>
+            </h4>
                 <ul className="space-y-8 text-[#5C4033]">
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
@@ -235,16 +231,16 @@ const Stats = () => {
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
                     <span className="text-lg leading-relaxed font-medium">טיפולים מותאמים אישית</span>
-                  </li>
+                      </li>
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
                     <span className="text-lg leading-relaxed font-medium">טכניקות ריפוי מתקדמות</span>
-                  </li>
+              </li>
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#8B4513] to-[#A0522D] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
                     <span className="text-lg leading-relaxed font-medium">תוצאות ברמה הגבוהה ביותר</span>
-                  </li>
-                </ul>
+              </li>
+            </ul>
               </motion.div>
             </div>
           </div>
@@ -390,10 +386,9 @@ const Stats = () => {
 const StyledStats = styled.section`
   .featured-image-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     margin-bottom: 40px;
-    padding: 10px;
   }
 
   .image-frame {
