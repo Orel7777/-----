@@ -393,7 +393,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
     // יצירת קישור וואטסאפ עם המספר הנכון (972 במקום 0 בהתחלה)
-    const phoneNumber = "972548119221"; // המספר בפורמט בינלאומי
+    const phoneNumber = "972533353203"; // המספר של דקלה בפורמט בינלאומי
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
     console.log("פתיחת וואטסאפ:", whatsappUrl);
@@ -417,7 +417,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
     if (form) {
       // שליחה בשיטה הסטנדרטית
       // שימוש ב-FormSubmit בדרך סטנדרטית דרך action ו-method
-      fetch("https://formsubmit.co/ajax/orelbukris7777@gmail.com", {
+      fetch("https://formsubmit.co/ajax/Dikla.spa@gmail.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

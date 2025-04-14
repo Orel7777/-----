@@ -159,7 +159,7 @@ const Modaah = () => {
                 muted
                 playsInline
               >
-                <source src="/video_2.mp4" type="video/mp4" />
+                <source src="/שתיים.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="text-overlay" style={{
@@ -195,7 +195,7 @@ const Modaah = () => {
                 muted
                 playsInline
               >
-                <source src="/video_10.mp4" type="video/mp4" />
+                <source src="/פנים.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="text-overlay" style={{

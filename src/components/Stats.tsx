@@ -143,7 +143,15 @@ const Stats = () => {
             }}
           >
             <div className="image-frame">
-              <img src="/5.jpg" alt="דקלה מדואלה" className="featured-image" />
+              <video
+                src="/images/video_24.mp4"
+                alt="דקלה מדואלה"
+                className="featured-image"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
               <div className="image-overlay">
                 <span>מקצועיות ואיכות ללא פשרות</span>
               </div>
@@ -383,7 +391,7 @@ const Stats = () => {
 const StyledStats = styled.section`
   .featured-image-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
     margin-bottom: 40px;
     padding: 10px;
@@ -403,8 +411,9 @@ const StyledStats = styled.section`
 
   .featured-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
     border-radius: 15px;
     transition: all 0.3s ease;
   }
@@ -451,12 +460,14 @@ const StyledStats = styled.section`
 
   @media (max-width: 768px) {
     .featured-image-container {
-      max-width: 350px;
+      max-width: 100%;
+      padding: 0 10px;
     }
 
     .image-frame,
     .featured-image {
-      max-height: 300px;
+      height: auto;
+      max-height: none;
     }
 
     .image-overlay span {

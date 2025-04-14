@@ -225,14 +225,14 @@ const Testimonials = () => {
             background: 'linear-gradient(135deg, rgba(254, 251, 232, 0.7), rgba(206, 172, 147, 0.5))',
             padding: '30px 20px',
             boxShadow: '0 10px 30px rgba(173, 139, 114, 0.2), inset 0 0 20px rgba(254, 251, 232, 0.5)',
-            border: '1px solid rgba(254, 251, 232, 0.7)',
             margin: '0 -50vw',
             width: '100vw',
             position: 'relative',
             left: '50%',
             right: '50%',
             marginLeft: '-50vw',
-            marginRight: '-50vw'
+            marginRight: '-50vw',
+            border: '1px solid rgba(254, 251, 232, 0.7)'
           }}
         >
           <div className="flex pt-4 pb-8 embla__container">
@@ -287,16 +287,10 @@ const Testimonials = () => {
                   
                   {/* כרטיס דירוג וביקורת מתחת לכל תמונה */}
                   <motion.div 
-                    className="mt-4 rounded-lg p-3 w-full max-w-[250px] relative z-10"
+                    className="mt-4 w-full max-w-[250px] relative z-10"
                     initial="hidden"
                     animate={controls}
                     variants={fadeInUp}
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(206, 172, 147, 0.9), rgba(173, 139, 114, 0.9))',
-                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
-                      border: '2px solid rgba(254, 251, 232, 0.7)',
-                      borderRadius: '12px'
-                    }}
                   >
                     {/* דירוג כוכבים עם אנימציה */}
                     <div className="flex justify-center items-center mb-2">
@@ -309,7 +303,7 @@ const Testimonials = () => {
                           variants={starAnimation}
                           whileHover={{ scale: 1.2, color: "#FFD700", transition: { duration: 0.2 } }}
                         >
-                          <FaStar className="w-6 h-6 text-[#fefbe8] mx-1 drop-shadow-md" />
+                          <FaStar className="w-6 h-6 text-[#FFD700] mx-1 drop-shadow-md" />
                         </motion.div>
                       ))}
                     </div>

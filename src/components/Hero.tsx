@@ -64,14 +64,13 @@ const Hero = () => {
         <div className="card">
           <div className="video-container">
             <video 
-              className="hero-video" 
-              autoPlay 
-              loop 
-              muted 
+              src="/WhatsApp Video 2025-04-11 at 21.20.32.mp4" 
+              className="hero-video"
+              autoPlay
+              loop
+              muted
               playsInline
-            >
-              <source src="/dd.mp4" type="video/mp4" />
-            </video>
+            />
           </div>
           <div className="text">
             <p>חוויית טיפול ייחודית לגוף ולנפש</p>
@@ -154,15 +153,15 @@ const StyledHero = styled.section`
     .hero-video {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: cover;
       object-position: center;
       transition: all 0.5s ease;
-      transform: scale(1.05);
+      transform: scale(1);
     }
   }
 
   .card:hover .video-container .hero-video {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   .card:hover .video-container {
