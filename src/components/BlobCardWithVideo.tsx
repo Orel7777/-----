@@ -127,7 +127,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
     transition: transform 0.3s ease;
   }
 
