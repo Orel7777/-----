@@ -392,7 +392,7 @@ const Stats = () => {
                       e.stopPropagation();
                       navigateImage('prev');
                     }}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] hover:from-[#ad8b72] hover:to-[#656d55] shadow-lg flex items-center justify-center text-white hover:scale-110 transition-all"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#c3c8c1] to-[#98a27d] hover:from-[#98a27d] hover:to-[#656d55] shadow-lg flex items-center justify-center text-[#fefbe8] hover:scale-110 transition-all"
                     aria-label="התמונה הקודמת"
                     title="הקודם"
                   >
@@ -404,7 +404,7 @@ const Stats = () => {
                       e.stopPropagation();
                       navigateImage('next');
                     }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] hover:from-[#ad8b72] hover:to-[#656d55] shadow-lg flex items-center justify-center text-white hover:scale-110 transition-all"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#c3c8c1] to-[#98a27d] hover:from-[#98a27d] hover:to-[#656d55] shadow-lg flex items-center justify-center text-[#fefbe8] hover:scale-110 transition-all"
                     aria-label="התמונה הבאה"
                     title="הבא"
                   >
@@ -413,11 +413,11 @@ const Stats = () => {
                   
                   <button
                     onClick={closeImage}
-                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] hover:from-[#ad8b72] hover:to-[#656d55] shadow-lg flex items-center justify-center text-white hover:scale-110 transition-all"
+                    className="absolute top-20 right-10 w-12 h-12 rounded-full bg-gradient-to-br from-[#c3c8c1] to-[#98a27d] hover:from-[#98a27d] hover:to-[#656d55] shadow-lg flex items-center justify-center text-[#fefbe8] hover:scale-110 transition-all z-50 border-2 border-[#fefbe8]"
                     aria-label="סגור תמונה"
                     title="סגור"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
