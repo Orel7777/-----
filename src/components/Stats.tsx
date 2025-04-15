@@ -368,14 +368,24 @@ const Stats = () => {
                 style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
               >
                 <div 
-                  className="relative w-full max-w-[90vw] max-h-[90vh] bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm rounded-xl overflow-hidden border border-white/30 shadow-xl"
+                  className="relative w-full max-w-[95vw] md:max-w-[90vw] max-h-[80vh] md:max-h-[90vh] bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm rounded-xl overflow-hidden border border-white/30 shadow-xl flex flex-col items-center justify-center"
                   onClick={e => e.stopPropagation()}
                 >
-                  <div className="relative h-full flex items-center justify-center">
+                  <button
+                    onClick={closeImage}
+                    className="absolute top-12 right-2 md:top-16 md:right-4 z-50 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
+                    aria-label="סגור תעודה"
+                    title="סגור"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-7 md:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                  <div className="w-full h-full flex items-center justify-center">
                     <img
                       src={currentImage}
                       alt="תעודת הסמכה במסך מלא"
-                      className="max-w-full max-h-[80vh] object-contain bg-gradient-to-br from-white/90 to-white/80 p-4"
+                      className="max-w-[95vw] max-h-[70vh] p-1 md:max-w-full md:max-h-[80vh] md:p-4 object-contain bg-gradient-to-br from-white/90 to-white/80"
                     />
                   </div>
                   
@@ -385,7 +395,7 @@ const Stats = () => {
                       e.stopPropagation();
                       navigateImage('prev');
                     }}
-                    className="absolute left-4 top-[38%] -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
+                    className="absolute left-2 top-1/2 md:left-4 md:top-[38%] -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
                     aria-label="התמונה הקודמת"
                     title="הקודם"
                   >
@@ -397,22 +407,11 @@ const Stats = () => {
                       e.stopPropagation();
                       navigateImage('next');
                     }}
-                    className="absolute right-4 top-[38%] -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
+                    className="absolute right-2 top-1/2 md:right-4 md:top-[38%] -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
                     aria-label="התמונה הבאה"
                     title="הבא"
                   >
                     <ChevronRight className="w-8 h-8 md:w-10 md:h-10 font-extrabold" />
-                  </button>
-                  
-                  <button
-                    onClick={closeImage}
-                    className="absolute top-20 right-10 w-12 h-12 rounded-full bg-gradient-to-br from-[#c3c8c1] to-[#98a27d] hover:from-[#98a27d] hover:to-[#656d55] shadow-lg flex items-center justify-center text-[#fefbe8] hover:scale-110 transition-all z-50 border-2 border-[#fefbe8]"
-                    aria-label="סגור תמונה"
-                    title="סגור"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
                   </button>
                 </div>
               </div>
