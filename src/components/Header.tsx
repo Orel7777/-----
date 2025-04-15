@@ -38,12 +38,12 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed w-full top-0 z-40">
-        <div className="backdrop-blur-md shadow-md" style={{
+      <header className="fixed top-0 z-40 w-full">
+        <div className="shadow-md backdrop-blur-md" style={{
           background: 'linear-gradient(to bottom, rgba(211, 198, 190, 0.95), rgba(152, 162, 125, 0.9))'
         }}>
-          <div className="max-w-6xl mx-auto">
-            <nav className="flex items-center justify-between px-4 py-3 md:py-2 lg:px-0">
+          <div className="mx-auto max-w-6xl">
+            <nav className="flex justify-between items-center px-4 py-3 md:py-2 lg:px-0">
               {/* Logo */}
               <motion.div 
                 className="flex flex-col items-center"
@@ -54,7 +54,7 @@ const Header = () => {
                 <motion.img 
                   src="/לוגו_גדול.jpeg" 
                   alt="דקלה מדואלה" 
-                  className="h-16 w-auto rounded-full p-1"
+                  className="p-1 w-auto h-16 rounded-full"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   style={{
@@ -63,16 +63,16 @@ const Header = () => {
                     background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
                   }}
                 />
-                <span className="text-sm font-semibold text-white mt-1">נעים להכיר - מדואלה דקלה שליט</span>
+                <span className="mt-1 text-sm font-semibold text-white">נעים מאוד - מדואלה דקלה שליט</span>
               </motion.div>
 
               {/* Desktop Menu */}
-              <div className="hidden md:flex items-center gap-8">
+              <div className="hidden gap-8 items-center md:flex">
                 {["שירותים", "המלצות", "שיטת הטיפול", "אודות"].map((item, index) => (
                   <motion.a 
                     key={item}
                     href={`#${item === "שירותים" ? "services" : item === "המלצות" ? "testimonials" : item === "שיטת הטיפול" ? "methodology" : "stats"}`}
-                    className="relative text-white font-medium text-lg"
+                    className="relative text-lg font-medium text-white"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 * index }}
@@ -93,12 +93,12 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <motion.button
-                className="md:hidden relative w-10 h-10 text-white"
+                className="relative w-10 h-10 text-white md:hidden"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="absolute left-1/2 top-1/2 block w-5 transform -translate-x-1/2 -translate-y-1/2">
+                <span className="block absolute top-1/2 left-1/2 w-5 transform -translate-x-1/2 -translate-y-1/2">
                   <motion.span 
                     className="absolute top-0 left-0 w-5 h-0.5 bg-current transform"
                     animate={{ 
@@ -126,7 +126,7 @@ const Header = () => {
               </motion.button>
 
               {/* Desktop Social Icons and CTA */}
-              <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+              <div className="hidden items-center space-x-4 md:flex rtl:space-x-reverse">
                 <div className="flex space-x-4 rtl:space-x-reverse">
                   {[
                     { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
@@ -193,14 +193,14 @@ const Header = () => {
           }}
         >
               <motion.div 
-                className="flex flex-col items-center justify-center min-h-screen px-4 py-2"
+                className="flex flex-col justify-center items-center px-4 py-2 min-h-screen"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
                 <motion.div 
-                  className="text-center space-y-5 p-6 rounded-2xl w-full max-w-md relative"
+                  className="relative p-6 space-y-5 w-full max-w-md text-center rounded-2xl"
                   style={{
                     background: 'linear-gradient(to bottom, rgba(211, 198, 190, 0.5), rgba(152, 162, 125, 0.5))',
                     boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(211, 198, 190, 0.7)',
@@ -210,7 +210,7 @@ const Header = () => {
                 >
                   <motion.button
                 onClick={() => setIsMenuOpen(false)}
-                    className="absolute top-3 right-3 p-2 rounded-full shadow-lg text-white"
+                    className="absolute top-3 right-3 p-2 text-white rounded-full shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     style={{
@@ -234,11 +234,11 @@ const Header = () => {
                 </svg>
                   </motion.button>
 
-                  <div className="flex flex-col items-center justify-center mb-6">
+                  <div className="flex flex-col justify-center items-center mb-6">
                     <motion.img 
                   src="/לוגו_גדול.jpeg" 
                   alt="דקלה מדואלה" 
-                      className="w-20 h-20 rounded-full p-1"
+                      className="p-1 w-20 h-20 rounded-full"
                       whileHover={{ scale: 1.1 }}
                       style={{
                         boxShadow: '0 8px 20px rgba(101, 109, 85, 0.3)',
@@ -246,18 +246,18 @@ const Header = () => {
                         background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
                       }}
                 />
-                    <span className="text-base font-semibold text-white mt-2">
-                      נעים להכיר - מדואלה דקלה שליט
+                    <span className="mt-2 text-base font-semibold text-white">
+                      נעים מאוד - מדואלה דקלה שליט
                     </span>
               </div>
 
-                  <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="flex gap-2 justify-center items-center mb-6">
                     <RiMenuUnfoldFill className="w-6 h-6 text-white" />
                     <div className="text-2xl font-bold text-white">תפריט</div>
                     <RiMenuUnfoldFill className="w-6 h-6 text-white" />
               </div>
 
-                  <StyledMenu className="space-y-4 mb-8">
+                  <StyledMenu className="mb-8 space-y-4">
                     {[
                       { name: "שירותים", href: "#services" },
                       { name: "המלצות", href: "#testimonials" },
@@ -279,7 +279,7 @@ const Header = () => {
                   </StyledMenu>
               
               {/* Mobile Social Icons */}
-                  <div className="flex justify-center space-x-6 rtl:space-x-reverse mb-6">
+                  <div className="flex justify-center mb-6 space-x-6 rtl:space-x-reverse">
                     {[
                       { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
                       { Icon: FaWhatsapp, href: "https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" },

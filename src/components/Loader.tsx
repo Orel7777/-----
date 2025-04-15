@@ -17,7 +17,7 @@ const Loader = () => {
         <div className="pl__dot" />
         <div className="pl__dot" />
         <div className="pl__dot" />
-        <div className="pl__text">טוען...</div>
+        <div className="pl__text" style={{ color: '#fff' }}>טוען...</div>
       </div>
     </StyledWrapper>
   );

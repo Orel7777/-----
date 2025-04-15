@@ -632,23 +632,21 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                   </select>
                 </div>
                 <div className="form-note">
-                  <small>* שדות חובה</small>
+                  <StyledRequiredSmall>* שדות חובה</StyledRequiredSmall>
                 </div>
                 <div className="privacy-policy-container">
-                  <a 
-                    href="/images/תעודות_2/פרטיות.pdf" 
-                    target="_blank" 
+                  <StyledPrivacyLink
+                    href="/images/תעודות_2/פרטיות.pdf"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="privacy-policy-link"
                   >
                     מדיניות פרטיות
-                  </a>
-                  <small>בשליחת הטופס הנך מאשר/ת את <a 
-                    href="/images/תעודות_2/פרטיות.pdf" 
-                    target="_blank" 
+                  </StyledPrivacyLink>
+                  <StyledPrivacySmall>בשליחת הטופס הנך מאשר/ת את <StyledPrivacyLink
+                    href="/images/תעודות_2/פרטיות.pdf"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="privacy-policy-link-inline"
-                  >מדיניות הפרטיות</a> שלנו</small>
+                  >מדיניות הפרטיות</StyledPrivacyLink> שלנו</StyledPrivacySmall>
                 </div>
                 <button 
                   className="form-submit-btn" 
@@ -665,5 +663,29 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
     </AnimatePresence>
   );
 };
+
+
+const StyledRequiredSmall = styled.small`
+  color: #fff;
+  font-size: 1.18em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3em;
+  display: block;
+`;
+
+const StyledPrivacyLink = styled.a`
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
+  &:hover {
+    color: #d3c6be;
+  }
+`;
+
+const StyledPrivacySmall = styled.small`
+  color: #fff;
+  font-size: 1em;
+`;
 
 export default Form;
