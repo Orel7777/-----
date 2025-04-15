@@ -78,7 +78,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px rgba(101, 109, 85, 0.15), -20px -20px 60px rgba(255, 255, 255, 0.8);
   }
 
   .bg {
@@ -92,7 +92,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     backdrop-filter: blur(24px);
     border-radius: 10px;
     overflow: hidden;
-    outline: 2px solid rgba(255, 255, 255, 0.2);
+    outline: 2px solid rgba(101, 109, 85, 0.3);
   }
 
   .blob {
@@ -141,7 +141,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(173, 139, 114, 0.3), rgba(173, 139, 114, 0.2));
+    background: linear-gradient(135deg, rgba(101, 109, 85, 0.3), rgba(152, 162, 125, 0.2));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +155,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     font-weight: 700;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    background-color: rgba(139, 69, 19, 0.7);
+    background-color: rgba(101, 109, 85, 0.7);
     padding: 0.5rem clamp(1rem, 3vw, 1.5rem);
     border-radius: 50px;
     max-width: 90%;

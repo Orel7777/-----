@@ -114,14 +114,14 @@ const StyledHero = styled.section`
 
   .card {
     position: relative;
-    background: rgba(220, 193, 166, 0.8);
+    background: rgba(195, 200, 193, 0.8);
     width: 400px;
     height: 400px;
     border-radius: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    box-shadow: 0px 15px 45px rgba(139, 69, 19, 0.2);
+    box-shadow: 0px 15px 45px rgba(195, 200, 193, 0.3);
 
     &:hover {
       transform: rotateY(10deg) translateY(-10px);
@@ -134,7 +134,7 @@ const StyledHero = styled.section`
       left: 0;
       width: 100%;
       height: 100%;
-      box-shadow: inset 0px 0px 50px 10px rgba(220, 193, 166, 0.5);
+      box-shadow: inset 0px 0px 50px 10px rgba(195, 200, 193, 0.6);
       z-index: 1;
       pointer-events: none;
     }
@@ -174,8 +174,9 @@ const StyledHero = styled.section`
     left: 0;
     width: 100%;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(139, 69, 19, 0.8), transparent);
-    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease;
     text-align: center;
     
@@ -187,8 +188,9 @@ const StyledHero = styled.section`
     }
 
     p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+      font-size: 1.4rem;
+      font-weight: 700;
+      opacity: 1;
     }
   }
 
