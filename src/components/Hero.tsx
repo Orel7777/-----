@@ -122,6 +122,7 @@ const StyledHero = styled.section`
     transition: all 0.3s ease;
     overflow: hidden;
     box-shadow: 0px 15px 45px rgba(195, 200, 193, 0.3);
+    border: 3px solid #fefbe8;
 
     &:hover {
       transform: rotateY(10deg) translateY(-10px);
@@ -149,6 +150,7 @@ const StyledHero = styled.section`
     transition: all 0.5s ease;
     border-radius: 12px;
     overflow: hidden;
+    border: 2px solid rgba(254, 251, 232, 0.7);
 
     .hero-video {
       width: 100%;

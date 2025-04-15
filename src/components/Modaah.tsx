@@ -102,7 +102,8 @@ const Modaah = () => {
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(166, 165, 144, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              border: '3px solid #fefbe8'
             }}
           >
             <div className="slideshow-wrapper">
@@ -142,7 +143,8 @@ const Modaah = () => {
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(166, 165, 144, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              border: '3px solid #fefbe8'
             }}
           >
             <div className="video-container">
@@ -175,7 +177,8 @@ const Modaah = () => {
               borderRadius: '16px',
               boxShadow: '0 10px 30px rgba(166, 165, 144, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              border: '3px solid #fefbe8'
             }}
           >
             <div className="video-container">

@@ -92,7 +92,7 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
     backdrop-filter: blur(24px);
     border-radius: 10px;
     overflow: hidden;
-    outline: 2px solid rgba(101, 109, 85, 0.3);
+    outline: 2px solid #fefbe8;
   }
 
   .blob {
