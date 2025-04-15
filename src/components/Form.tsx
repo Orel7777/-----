@@ -59,7 +59,7 @@ const StyledWrapper = styled.div`
     backdrop-filter: blur(10px);
   }
   
-  /* אפקט רקע מנצנץ */
+  /* רקע סטטי ללא תנועה */
   .form-container::before {
     content: '';
     position: absolute;
@@ -69,17 +69,6 @@ const StyledWrapper = styled.div`
     bottom: -10px;
     background: linear-gradient(45deg, rgba(254, 251, 232, 0.05), rgba(254, 251, 232, 0), rgba(254, 251, 232, 0.05));
     z-index: -1;
-    animation: shimmer 3s infinite linear;
-    transform: translateX(-100%);
-  }
-  
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
   }
 
   .form-container .form {
