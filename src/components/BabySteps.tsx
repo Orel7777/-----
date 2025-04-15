@@ -114,7 +114,7 @@ const BabySteps = () => {
 };
 
 const StyledBabySteps = styled.section`
-  padding: 80px 0;
+  padding: 100px 0;
   background: linear-gradient(135deg, #c3c8c1, #98a27d);
   position: relative;
   overflow: hidden;
@@ -124,6 +124,8 @@ const StyledBabySteps = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 8px solid rgba(255, 255, 255, 0.2);
 
   &::before {
     content: '';
@@ -132,7 +134,18 @@ const StyledBabySteps = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, transparent 0%, rgba(101, 109, 85, 0.1) 100%);
+    background: radial-gradient(circle at center, transparent 0%, rgba(101, 109, 85, 0.2) 100%);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), transparent);
     pointer-events: none;
   }
 

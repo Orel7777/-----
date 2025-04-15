@@ -44,7 +44,7 @@ const Footer = () => {
   return (
     <footer className="relative">
       {/* Decorative Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#E5D3C4]/30 to-[#D4B5A3]/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#7f7e6a] to-[#9b9a85] opacity-80" />
       <div className="absolute inset-0 backdrop-blur-md" />
       
       {/* Content */}

@@ -151,11 +151,14 @@ const Stats = () => {
   return (
     <StyledStats className="overflow-hidden relative" id="stats">
       {/* Decorative Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#d3c6be] to-[#98a27d] opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#7f7e6a] to-[#9b9a85] opacity-80" />
       <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
       
+      {/* Top Decorative Border */}
+      <div className="absolute top-0 left-0 w-full h-16 bg-white/10 top-border" />
+      
       {/* Content Container */}
-      <div className="relative z-10 px-4 py-20 mx-auto max-w-3xl">
+      <div className="relative z-10 px-4 py-32 mx-auto max-w-3xl">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -459,6 +462,20 @@ const Stats = () => {
 };
 
 const StyledStats = styled.section`
+  position: relative;
+  overflow: hidden;
+  margin: 0 -50vw;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  .top-border {
+    border-top: 8px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+  }
+
   .featured-image-container {
     width: 100%;
     max-width: 500px;

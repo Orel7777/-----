@@ -63,7 +63,7 @@ const Modaah = () => {
               className="text-4xl md:text-5xl font-bold mb-6"
               style={{ 
                 fontFamily: 'Assistant, sans-serif',
-                color: 'white',
+                color: '#fefbe8',
                 textShadow: 'rgba(0, 0, 0, 0.1) 0px 2px 4px',
                 lineHeight: 1.2
               }}
@@ -72,7 +72,7 @@ const Modaah = () => {
             </h2>
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-white via-[#98a27d] to-[#656d55] rounded-full transform translate-y-2"></div>
           </div>
-          <p className="text-white text-lg max-w-2xl mx-auto text-center">
+          <p className="text-lg max-w-2xl mx-auto text-center" style={{ color: '#fefbe8' }}>
             מגוון טיפולים מותאמים אישית לצרכים שלך, בסביבה מרגיעה ומקצועית
           </p>
         </motion.div>

@@ -105,7 +105,7 @@ const Services = () => {
             className="mb-6 text-4xl font-bold md:text-5xl"
             style={{ 
               fontFamily: 'Assistant, sans-serif',
-              color: 'white',
+              color: '#fefbe8',
               textShadow: 'rgba(0, 0, 0, 0.1) 0px 2px 4px',
               lineHeight: 1.2
             }}
@@ -113,7 +113,7 @@ const Services = () => {
              הטיפולים שלנו 
           </h2>
           <div className="w-32 h-1 bg-white rounded-full mb-6"></div>
-          <p className="text-xl md:text-2xl text-white text-center max-w-2xl mb-8">
+          <p className="text-xl md:text-2xl text-center max-w-2xl mb-8" style={{ color: '#fefbe8' }}>
             מגוון טיפולים מקצועיים המותאמים לצרכים הייחודיים שלך
           </p>
         </motion.div>
