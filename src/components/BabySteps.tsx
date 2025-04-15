@@ -114,7 +114,7 @@ const BabySteps = () => {
 };
 
 const StyledBabySteps = styled.section`
-  padding: 80px 0;
+  padding: 80px 0 120px;
   background: linear-gradient(135deg, #c3c8c1, #98a27d);
   position: relative;
   overflow: hidden;
@@ -124,6 +124,18 @@ const StyledBabySteps = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-bottom: 60px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2));
+    pointer-events: none;
+  }
 
   &::before {
     content: '';
