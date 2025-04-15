@@ -151,8 +151,8 @@ const Stats = () => {
   return (
     <StyledStats className="overflow-hidden relative" id="stats">
       {/* Decorative Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#7f7e6a] to-[#9b9a85] opacity-80" />
-      <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#d3c6be] to-[#98a27d] opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-black/5 opacity-5" />
       
       {/* Top Decorative Border */}
       <div className="absolute top-0 left-0 w-full h-16 bg-white/10 top-border" />
@@ -220,7 +220,7 @@ const Stats = () => {
             transition: { duration: 0.3 }
           }}
         >
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/pattern.png')] opacity-5 z-0"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-black/5 opacity-5 z-0"></div>
           <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#656d55]/20 to-transparent rounded-full blur-3xl -mr-20 -mt-20"></div>
           <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#656d55]/20 to-transparent rounded-full blur-3xl -ml-20 -mb-20"></div>
           

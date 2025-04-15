@@ -4,14 +4,9 @@ import { useState } from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
 
-const Hero = () => {
-  const [isFormOpen, setIsFormOpen] = useState(false);
-
-  const handleOpenForm = () => {
-    setIsFormOpen(true);
-  };
-
-  const fadeInUp = {
+// אנימציות
+const animations = {
+  fadeInUp: {
     hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
@@ -21,9 +16,8 @@ const Hero = () => {
         ease: "easeOut"
       }
     }
-  };
-
-  const fadeInRight = {
+  },
+  fadeInRight: {
     hidden: { opacity: 0, x: -20 },
     visible: { 
       opacity: 1, 
@@ -33,55 +27,163 @@ const Hero = () => {
         ease: "easeOut"
       }
     }
+  }
+};
+
+const Hero = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const handleOpenForm = () => {
+    setIsFormOpen(true);
   };
 
   return (
     <StyledHero>
-    <div className="hero-content">
-      <motion.div 
-        className="text-content"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{
-          fontFamily: "'Assistant', sans-serif",
-          color: '#fefbe8',
-          textShadow: '0 2px 4px rgba(0,0,0,0.1)',
-          lineHeight: '1.2'
-        }}>
-          מרכז לרפואה משלימה ועיסויים לנשים
-        </h1>
-        <p className="text-xl mb-8" style={{ color: '#fefbe8' }}>חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</p>
-        <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
-      </motion.div>
-      <motion.div 
-        className="image-card"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="card">
-          <div className="video-container">
-            <video 
-              src="/WhatsApp Video 2025-04-11 at 21.20.32.mp4" 
-              className="hero-video"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-          </div>
-          <div className="text">
-            <p>חוויית טיפול ייחודית לגוף ולנפש</p>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-    <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
-  </StyledHero>
-);
+      <div className="hero-content">
+        <motion.div 
+          className="text-content"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <HeroTitle>מרכז לרפואה משלימה ועיסויים לנשים</HeroTitle>
+          <HeroDescription>חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</HeroDescription>
+          <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
+        </motion.div>
+        <motion.div 
+          className="image-card"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card>
+            <VideoContainer>
+              <HeroVideo 
+                src="/WhatsApp Video 2025-04-11 at 21.20.32.mp4" 
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </VideoContainer>
+            <CardText>
+              <p>חוויית טיפול ייחודית לגוף ולנפש</p>
+            </CardText>
+          </Card>
+        </motion.div>
+      </div>
+      <Form isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+    </StyledHero>
+  );
 }
+
+// קומפוננטים מעוצבים
+const HeroTitle = styled.h1`
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  font-family: 'Assistant', sans-serif;
+  color: #fefbe8;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  line-height: 1.2;
+  
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+`;
+
+const HeroDescription = styled.p`
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #fefbe8;
+`;
+
+const Card = styled.div`
+  position: relative;
+  background: rgba(195, 200, 193, 0.8);
+  width: 400px;
+  height: 400px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0px 15px 45px rgba(195, 200, 193, 0.3);
+  border: 3px solid #fefbe8;
+
+  &:hover {
+    transform: rotateY(10deg) translateY(-10px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 50px 10px rgba(195, 200, 193, 0.6);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  @media (max-width: 768px) {
+    width: 280px;
+    height: 320px;
+    margin-top: 20px;
+  }
+`;
+
+const VideoContainer = styled.div`
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  width: 94%;
+  height: 94%;
+  transition: all 0.5s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(254, 251, 232, 0.7);
+
+  ${Card}:hover & {
+    transform: scale(1.02);
+  }
+`;
+
+const HeroVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.5s ease;
+  transform: scale(1);
+  
+  ${Card}:hover & {
+    transform: scale(1.05);
+  }
+`;
+
+const CardText = styled.div`
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+  text-align: center;
+  
+  p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    opacity: 1;
+  }
+  
+  ${Card}:hover & {
+    bottom: 0;
+  }
+`;
 
 const StyledHero = styled.section`
   min-height: 100vh;
@@ -89,7 +191,6 @@ const StyledHero = styled.section`
   align-items: center;
   position: relative;
   overflow: hidden;
-  // background-color: #dcc1a6;
 
   .hero-content {
     max-width: 1200px;
@@ -112,94 +213,6 @@ const StyledHero = styled.section`
     perspective: 1000px;
   }
 
-  .card {
-    position: relative;
-    background: rgba(195, 200, 193, 0.8);
-    width: 400px;
-    height: 400px;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0px 15px 45px rgba(195, 200, 193, 0.3);
-    border: 3px solid #fefbe8;
-
-    &:hover {
-      transform: rotateY(10deg) translateY(-10px);
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      box-shadow: inset 0px 0px 50px 10px rgba(195, 200, 193, 0.6);
-      z-index: 1;
-      pointer-events: none;
-    }
-  }
-
-  .video-container {
-    position: absolute;
-    top: 3%;
-    left: 3%;
-    width: 94%;
-    height: 94%;
-    transition: all 0.5s ease;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid rgba(254, 251, 232, 0.7);
-
-    .hero-video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transition: all 0.5s ease;
-      transform: scale(1);
-    }
-  }
-
-  .card:hover .video-container .hero-video {
-    transform: scale(1.05);
-  }
-
-  .card:hover .video-container {
-    transform: scale(1.02);
-  }
-
-  .text {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    transition: all 0.3s ease;
-    text-align: center;
-    
-    span {
-      display: block;
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1.4rem;
-      font-weight: 700;
-      opacity: 1;
-    }
-  }
-
-  .card:hover .text {
-    bottom: 0;
-  }
-
   @media (max-width: 768px) {
     padding-top: 120px;
     min-height: calc(100vh - 50px);
@@ -213,23 +226,6 @@ const StyledHero = styled.section`
     .text-content {
       text-align: center;
       width: 100%;
-      
-      h1 {
-        font-size: 2.5rem;
-        margin-top: 10px;
-        margin-bottom: 16px;
-      }
-      
-      p {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-      }
-    }
-
-    .card {
-      width: 280px;
-      height: 320px;
-      margin-top: 20px;
     }
   }
 `;
