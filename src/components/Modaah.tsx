@@ -100,7 +100,7 @@ const Modaah = () => {
             className="video-card"
             style={{
               borderRadius: '16px',
-              boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
+              boxShadow: '0 10px 30px rgba(166, 165, 144, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               overflow: 'hidden'
             }}
@@ -124,7 +124,7 @@ const Modaah = () => {
               </AnimatePresence>
             </div>
             <div className="text-overlay" style={{
-              background: 'linear-gradient(to top, rgba(173, 139, 114, 0.95), rgba(173, 139, 114, 0.5), transparent)',
+              background: 'linear-gradient(to top, rgba(166, 165, 144, 0.95), rgba(166, 165, 144, 0.5), transparent)',
             }}>
               <h3 className="text-xl font-semibold">עיסוי מקצועי</h3>
               <p>מגוון טיפולי עיסוי מותאמים אישית, כולל עיסוי מותאם לנשים בהריון</p>
@@ -140,7 +140,7 @@ const Modaah = () => {
             className="video-card"
             style={{
               borderRadius: '16px',
-              boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
+              boxShadow: '0 10px 30px rgba(166, 165, 144, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               overflow: 'hidden'
             }}
@@ -157,7 +157,7 @@ const Modaah = () => {
               </video>
             </div>
             <div className="text-overlay" style={{
-              background: 'linear-gradient(to top, rgba(173, 139, 114, 0.95), rgba(173, 139, 114, 0.5), transparent)',
+              background: 'linear-gradient(to top, rgba(166, 165, 144, 0.95), rgba(166, 165, 144, 0.5), transparent)',
             }}>
               <h3 className="text-xl font-semibold">חוויה מרגיעה ומרפאת</h3>
               <p>טיפול עדין ומותאם במיוחד</p>
@@ -173,7 +173,7 @@ const Modaah = () => {
             className="video-card"
             style={{
               borderRadius: '16px',
-              boxShadow: '0 10px 30px rgba(92, 64, 51, 0.5)',
+              boxShadow: '0 10px 30px rgba(166, 165, 144, 0.5)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               overflow: 'hidden'
             }}
@@ -190,7 +190,7 @@ const Modaah = () => {
               </video>
             </div>
             <div className="text-overlay" style={{
-              background: 'linear-gradient(to top, rgba(173, 139, 114, 0.95), rgba(173, 139, 114, 0.5), transparent)',
+              background: 'linear-gradient(to top, rgba(166, 165, 144, 0.95), rgba(166, 165, 144, 0.5), transparent)',
             }}>
               <h3 className="text-xl font-semibold">פיסול פנים טבעי</h3>
               <p>מיניליפט ויוגה פייס</p>
@@ -210,7 +210,7 @@ const Modaah = () => {
       
       {/* יצירת אפקט של עיטורים */}
       <div className="overflow-hidden absolute right-0 bottom-0 left-0 h-16">
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] opacity-20"
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-r from-[#c3c8c1] via-[#98a27d] to-[#656d55] opacity-20"
              style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 75% 100%, 50% 0, 25% 100%, 0 0)' }}></div>
       </div>
     </StyledModaah>
@@ -222,7 +222,7 @@ const StyledModaah = styled.section`
   .slideshow-wrapper {
     height: 100%;
     width: 100%;
-    background: rgba(254, 251, 232, 0.3);
+    background: rgba(195, 200, 193, 0.3);
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -257,7 +257,7 @@ const StyledModaah = styled.section`
   }
 
   .control-button {
-    background-color: rgba(173, 139, 114, 0.5);
+    background-color: rgba(166, 165, 144, 0.5);
     color: white;
     border: none;
     width: 32px;
@@ -271,7 +271,7 @@ const StyledModaah = styled.section`
     z-index: 20;
 
     &:hover {
-      background-color: rgba(173, 139, 114, 0.8);
+      background-color: rgba(166, 165, 144, 0.8);
       transform: scale(1.1);
     }
   }
@@ -323,13 +323,13 @@ const StyledModaah = styled.section`
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0px 10px 30px rgba(173, 139, 114, 0.2);
+    box-shadow: 0px 10px 30px rgba(166, 165, 144, 0.2);
     transition: all 0.3s ease;
     padding: 8px;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 15px 35px rgba(173, 139, 114, 0.4);
+      box-shadow: 0px 15px 35px rgba(166, 165, 144, 0.4);
 
       .service-video, .slideshow-image {
         transform: scale(1.03);
@@ -344,7 +344,7 @@ const StyledModaah = styled.section`
   .video-container {
     height: 100%;
     width: 100%;
-    background: rgba(254, 251, 232, 0.3);
+    background: rgba(195, 200, 193, 0.3);
     border-radius: 12px;
     overflow: hidden;
 

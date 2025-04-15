@@ -118,6 +118,12 @@ const StyledBabySteps = styled.section`
   background: linear-gradient(135deg, #c3c8c1, #98a27d);
   position: relative;
   overflow: hidden;
+  margin: 0 -50vw;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 
   &::before {
     content: '';

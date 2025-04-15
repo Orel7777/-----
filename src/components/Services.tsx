@@ -70,7 +70,7 @@ const Services = () => {
 
   const hoverScale = {
     scale: 1.03,
-    boxShadow: "0 15px 30px rgba(139, 69, 19, 0.3)",
+    boxShadow: "0 15px 30px rgba(166, 165, 144, 0.3)",
     transition: { duration: 0.3 }
   };
 
@@ -133,7 +133,7 @@ const Services = () => {
             <div className="card-gradient-overlay"></div>
             <div className="card-inner">
               <div className="service-icon-container">
-                <FaDove className="service-icon" style={{ color: '#d3c6be' }} />
+                <FaDove className="service-icon" style={{ color: 'white' }} />
               </div>
               <h3 className="service-title" style={{ color: 'white' }}>עיסויים רפואיים וטיפוליים</h3>
               <div className="service-divider"></div>
@@ -179,7 +179,7 @@ const Services = () => {
             <div className="card-gradient-overlay"></div>
             <div className="card-inner">
               <div className="service-icon-container">
-                <FaBluesky className="service-icon" style={{ color: '#d3c6be' }} />
+                <FaBluesky className="service-icon" style={{ color: 'white' }} />
               </div>
               <h3 className="service-title" style={{ color: 'white' }}>עיסויים מסורתיים ומרגיעים</h3>
               <div className="service-divider"></div>
@@ -217,7 +217,7 @@ const Services = () => {
             <div className="card-gradient-overlay"></div>
             <div className="card-inner">
               <div className="service-icon-container">
-                <TbMassage className="service-icon" style={{ color: '#d3c6be' }} />
+                <TbMassage className="service-icon" style={{ color: 'white' }} />
               </div>
               <h3 className="service-title" style={{ color: 'white' }}>שיטות מיוחדות ועיסויים משולבים</h3>
               <div className="service-divider"></div>
@@ -336,25 +336,25 @@ const StyledServices = styled.section`
     font-size: 1.25rem;
     padding: 1rem 2.5rem;
     border-radius: 50px;
-    box-shadow: 0 10px 20px rgba(139, 69, 19, 0.25);
+    box-shadow: 0 10px 20px rgba(166, 165, 144, 0.25);
     transition: all 0.3s ease;
     
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 25px rgba(139, 69, 19, 0.3);
+      box-shadow: 0 15px 25px rgba(166, 165, 144, 0.3);
     }
   }
 
   .service-card {
     position: relative;
-    background: #85846f;
+    background: #a6a590;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     overflow: hidden;
     padding: 2px;
     height: 100%;
-    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+    box-shadow: 0 10px 30px rgba(166, 165, 144, 0.25);
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -366,7 +366,7 @@ const StyledServices = styled.section`
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(135deg, #8B4513, transparent);
+    background: linear-gradient(135deg, #656d55, transparent);
     opacity: 0.1;
     border-radius: 20px;
     z-index: 0;
@@ -378,7 +378,7 @@ const StyledServices = styled.section`
   }
 
   .card-inner {
-    background: rgba(220, 193, 166, 0.5);
+    background: rgba(195, 200, 193, 0.5);
     border-radius: 19px;
     height: 100%;
     padding: 40px 30px;
@@ -390,7 +390,7 @@ const StyledServices = styled.section`
   }
 
   .service-icon-container {
-    background: linear-gradient(135deg, #8B4513, #5C4033);
+    background: linear-gradient(135deg, #656d55, #98a27d);
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -398,7 +398,7 @@ const StyledServices = styled.section`
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 5px 15px rgba(166, 165, 144, 0.3);
     position: relative;
     z-index: 2;
     
@@ -408,7 +408,7 @@ const StyledServices = styled.section`
       width: 90px;
       height: 90px;
       border-radius: 50%;
-      border: 2px solid rgba(139, 69, 19, 0.3);
+      border: 2px solid rgba(166, 165, 144, 0.3);
       animation: pulse 2s infinite;
     }
   }
@@ -430,7 +430,7 @@ const StyledServices = styled.section`
 
   .service-icon {
     font-size: 35px;
-    color: #d3c6be;
+    color: white;
   }
 
   .service-title {

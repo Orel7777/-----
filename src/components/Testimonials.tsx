@@ -149,7 +149,7 @@ const Testimonials = () => {
           variants={fadeInUp}
         >
           <motion.div
-            className="inline-block p-3 rounded-full bg-gradient-to-br from-[#ceac93] to-[#ad8b72] mb-4 shadow-lg"
+            className="inline-block p-3 rounded-full bg-gradient-to-br from-[#c3c8c1] to-[#98a27d] mb-4 shadow-lg"
             animate={{ y: [-5, 5, -5] }}
             transition={{ 
               duration: 3, 
@@ -161,7 +161,7 @@ const Testimonials = () => {
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 24 24" 
               fill="currentColor" 
-              className="w-8 h-8 text-[#fefbe8]"
+              className="w-8 h-8 text-white"
             >
               <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
             </svg>
@@ -171,7 +171,7 @@ const Testimonials = () => {
               המלצות מלקוחות מרוצים
             </h2>
             <motion.span 
-              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-2 bg-gradient-to-r from-[#fefbe8] via-[#ceac93] to-[#ad8b72] rounded-full"
+              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-2 bg-gradient-to-r from-white via-[#98a27d] to-[#656d55] rounded-full"
               initial={{ width: 0 }}
               animate={{ width: 200 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -190,12 +190,12 @@ const Testimonials = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             style={{
-              background: 'linear-gradient(135deg, #ceac93, #ad8b72)',
-              boxShadow: '0 4px 10px rgba(173, 139, 114, 0.3)',
-              border: '2px solid rgba(254, 251, 232, 0.5)'
+              background: 'linear-gradient(135deg, #c3c8c1, #98a27d)',
+              boxShadow: '0 4px 10px rgba(166, 165, 144, 0.3)',
+              border: '2px solid rgba(255, 255, 255, 0.5)'
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#fefbe8" className="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           </motion.button>
@@ -205,12 +205,12 @@ const Testimonials = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             style={{
-              background: 'linear-gradient(135deg, #ceac93, #ad8b72)',
-              boxShadow: '0 4px 10px rgba(173, 139, 114, 0.3)',
-              border: '2px solid rgba(254, 251, 232, 0.5)'
+              background: 'linear-gradient(135deg, #c3c8c1, #98a27d)',
+              boxShadow: '0 4px 10px rgba(166, 165, 144, 0.3)',
+              border: '2px solid rgba(255, 255, 255, 0.5)'
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#fefbe8" className="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </motion.button>
@@ -318,7 +318,7 @@ const Testimonials = () => {
             {imageUrls.map((_, index) => (
               <motion.button
                 key={index}
-                className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#ad8b72]' : 'bg-[#ceac93]/40'}`}
+                className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#656d55]' : 'bg-[#98a27d]/40'}`}
                 onClick={() => emblaApi?.scrollTo(index)}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
@@ -327,9 +327,9 @@ const Testimonials = () => {
                 transition={{ delay: 0.8 + index * 0.1 }}
                 style={{
                   boxShadow: currentIndex === index ? 
-                    '0 0 5px rgba(173, 139, 114, 0.5)' : 
+                    '0 0 5px rgba(166, 165, 144, 0.5)' : 
                     '0 0 0 rgba(0, 0, 0, 0)',
-                  border: '1px solid rgba(254, 251, 232, 0.7)'
+                  border: '1px solid rgba(255, 255, 255, 0.7)'
                 }}
               />
             ))}
@@ -397,7 +397,7 @@ const Testimonials = () => {
               <img 
                 src={selectedImage} 
                 alt="המלצה מוגדלת" 
-                className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl border-4 border-[#ceac93]"
+                className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl border-4 border-[#98a27d]"
               />
               <motion.button 
                 className="absolute top-3 left-3 z-10 p-3 rounded-full shadow-md transition-colors"
@@ -408,11 +408,11 @@ const Testimonials = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
                 style={{
-                  background: 'linear-gradient(135deg, #ceac93, #ad8b72)',
-                  border: '2px solid rgba(254, 251, 232, 0.7)'
+                  background: 'linear-gradient(135deg, #c3c8c1, #98a27d)',
+                  border: '2px solid rgba(255, 255, 255, 0.7)'
                 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#fefbe8" className="w-6 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </motion.button>
