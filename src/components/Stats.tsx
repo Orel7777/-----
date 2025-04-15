@@ -373,7 +373,12 @@ const Stats = () => {
                 >
                   <button
                     onClick={closeImage}
-                    className="absolute top-12 right-2 md:top-16 md:right-4 z-50 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
+                    className={
+                      `absolute z-50 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 ` +
+                      (currentImage === '/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.50.00.jpeg'
+                        ? 'top-2 right-2 md:top-4 md:right-4'
+                        : 'top-12 right-2 md:top-16 md:right-4')
+                    }
                     aria-label="סגור תעודה"
                     title="סגור"
                   >
