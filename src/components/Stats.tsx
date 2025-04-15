@@ -173,10 +173,10 @@ const Stats = () => {
             }}
             className="inline-block mb-6"
           >
-            <FaBattleNet className="w-16 h-16 text-white" />
+            <FaBattleNet className="w-16 h-16" style={{ color: 'white' }} />
             </motion.div>
           
-          <h2 className="mb-4 text-white">
+          <h2 className="mb-4" style={{ color: 'white' }}>
              נעים להכיר -מדואלה דקלה שליט
           </h2>
           
@@ -206,7 +206,7 @@ const Stats = () => {
           
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-[#656d55] to-transparent mx-auto mb-6" />
           
-          <h3 className="text-2xl font-semibold text-white mb-8">
+          <h3 className="text-2xl font-semibold mb-8" style={{ color: 'white' }}>
             מומחית בטיפולי מגע, קוסמטיקה רפואית ורפואה משלימה
           </h3>
         </motion.div>
@@ -228,52 +228,45 @@ const Stats = () => {
             <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
               {/* Experience Section */}
               <motion.div
-                className="p-8 rounded-2xl bg-gradient-to-br from-white/30 to-white/10 border border-white/30 shadow-xl backdrop-blur-md"
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(101, 109, 85, 0.3)",
-                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15))"
-                }}
-              >
-                <h4 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <span className="inline-block w-10 h-10 mr-3 bg-[#656d55]/10 rounded-full flex items-center justify-center">
-                    <span className="w-4 h-4 bg-[#656d55] rounded-full"></span>
-                  </span>
-                  <span className="relative">
-              הניסיון שלי
-                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#656d55]/0 via-[#656d55] to-[#656d55]/0"></div>
-                  </span>
-            </h4>
-                <ul className="space-y-8 text-white">
-                  <li className="flex items-start gap-5 group">
-                    <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-medium">מנהלת וקוסמטיקאית רפואית במכונים מובילים</span>
-                  </li>
-                  <li className="flex items-start gap-5 group">
-                    <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-medium">The Spa במלון אינטרקונטיננטל</span>
-                  </li>
-                  <li className="flex items-start gap-5 group">
-                    <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-medium">Alokino בראשון לציון</span>
-                  </li>
+                className="p-8 rounded-2xl border border-white/30 shadow-xl backdrop-blur-md hover:bg-gradient-to-br from-[#98a27d] to-[#656d55]" style={{ background: '#d3c6be' }}>
+  <h4 className="text-3xl font-extrabold mb-6 flex items-center" style={{ color: '#333', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
+    <span className="inline-block w-10 h-10 mr-3 bg-[#656d55]/10 rounded-full flex items-center justify-center" style={{ color: '#333' }}>
+      <span className="w-4 h-4 bg-[#656d55] rounded-full" style={{ color: '#333' }}></span>
+    </span>
+    <span className="relative" style={{ color: '#333', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
+      הניסיון שלי
+      <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#656d55]/0 via-[#656d55] to-[#656d55]/0"></div>
+    </span>
+  </h4>
+  <ul className="space-y-8 text-white">
+  <li className="flex items-start gap-5 group">
+    <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>מנהלת וקוסמטיקאית רפואית במכונים מובילים</span>
+  </li>
+  <li className="flex items-start gap-5 group">
+    <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>The Spa במלון אינטרקונטיננטל</span>
+  </li>
+  <li className="flex items-start gap-5 group">
+    <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
+    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>Alokino בראשון לציון</span>
+  </li>
                 </ul>
               </motion.div>
 
               {/* What I Offer Section */}
               <motion.div
-                className="p-8 rounded-2xl bg-gradient-to-br from-white/30 to-white/10 border border-white/30 shadow-xl backdrop-blur-md"
+                className="p-8 rounded-2xl border border-white/30 shadow-xl backdrop-blur-md hover:bg-gradient-to-br from-[#98a27d] to-[#656d55]" style={{ background: '#d3c6be' }}
                 whileHover={{ 
                   scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(101, 109, 85, 0.3)",
-                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15))"
+                  boxShadow: "0 20px 25px -5px rgba(101, 109, 85, 0.3)"
                 }}
               >
-                <h4 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <span className="inline-block w-10 h-10 mr-3 bg-[#656d55]/10 rounded-full flex items-center justify-center">
-                    <span className="w-4 h-4 bg-[#656d55] rounded-full"></span>
+                <h4 className="text-2xl font-bold mb-6 flex items-center" style={{ color: 'white' }}>
+                  <span className="inline-block w-10 h-10 mr-3 bg-[#656d55]/10 rounded-full flex items-center justify-center" style={{ color: 'white' }}>
+                    <span className="w-4 h-4 bg-[#656d55] rounded-full" style={{ color: 'white' }}></span>
                   </span>
-                  <span className="relative">
+                  <span className="relative" style={{ color: '#333', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
                     מה אני מציעה
                     <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#656d55]/0 via-[#656d55] to-[#656d55]/0"></div>
                   </span>
@@ -281,15 +274,15 @@ const Stats = () => {
                 <ul className="space-y-8 text-white">
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-medium">טיפולים מותאמים אישית</span>
+                    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טיפולים מותאמים אישית</span>
                   </li>
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-medium">טכניקות ריפוי מתקדמות</span>
+                    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טכניקות ריפוי מתקדמות</span>
                   </li>
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-medium">תוצאות ברמה הגבוהה ביותר</span>
+                    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>תוצאות ברמה הגבוהה ביותר</span>
                   </li>
                 </ul>
               </motion.div>
@@ -304,7 +297,7 @@ const Stats = () => {
         >
           <div className="max-w-2xl mx-auto px-4">
             <h3 className="text-3xl font-bold text-white mb-8 text-center">
-              <span className="relative inline-block">
+              <span className="relative" style={{ color: 'white' }}>
                 התעודות שלי
                 <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#656d55]/0 via-[#656d55] to-[#656d55]/0"></div>
               </span>
@@ -338,20 +331,20 @@ const Stats = () => {
               
               {/* Navigation Buttons */}
                 <button 
-                className="absolute -left-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-white transition-all hover:bg-white hover:scale-110 z-10"
+                className="absolute -left-4 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-10"
                 onClick={scrollPrev}
                 aria-label="הקודם"
                 title="הקודם"
               >
-                <ChevronLeft className="w-3 h-3" />
+                <ChevronLeft className="w-7 h-7 md:w-8 md:h-8 font-extrabold" />
                 </button>
                 <button 
-                className="absolute -right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-white transition-all hover:bg-white hover:scale-110 z-10"
+                className="absolute -right-4 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-10"
                 onClick={scrollNext}
                 aria-label="הבא"
                 title="הבא"
               >
-                <ChevronRight className="w-3 h-3" />
+                <ChevronRight className="w-7 h-7 md:w-8 md:h-8 font-extrabold" />
                 </button>
 
               {/* Progress Indicator */}
@@ -392,11 +385,11 @@ const Stats = () => {
                       e.stopPropagation();
                       navigateImage('prev');
                     }}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#c3c8c1] to-[#98a27d] hover:from-[#98a27d] hover:to-[#656d55] shadow-lg flex items-center justify-center text-[#fefbe8] hover:scale-110 transition-all"
+                    className="absolute left-4 top-[38%] -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
                     aria-label="התמונה הקודמת"
                     title="הקודם"
                   >
-                    <ChevronLeft className="w-5 h-5" />
+                    <ChevronLeft className="w-8 h-8 md:w-10 md:h-10 font-extrabold" />
                   </button>
                   
                   <button
@@ -404,11 +397,11 @@ const Stats = () => {
                       e.stopPropagation();
                       navigateImage('next');
                     }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#c3c8c1] to-[#98a27d] hover:from-[#98a27d] hover:to-[#656d55] shadow-lg flex items-center justify-center text-[#fefbe8] hover:scale-110 transition-all"
+                    className="absolute right-4 top-[38%] -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
                     aria-label="התמונה הבאה"
                     title="הבא"
                   >
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-8 h-8 md:w-10 md:h-10 font-extrabold" />
                   </button>
                   
                   <button
@@ -431,18 +424,18 @@ const Stats = () => {
           variants={fadeInUp}
           className="p-8 text-center rounded-2xl border shadow-xl backdrop-blur-md bg-white/10 border-white/20"
         >
-          <h4 className="text-2xl font-bold text-white mb-4">
+          <h4 className="text-2xl font-bold mb-4" style={{ color: 'white' }}>
             צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!
           </h4>
           
           <div className="flex gap-4 justify-center items-center mb-6">
-            <span className="text-2xl font-bold text-white">053-3353203</span>
+            <span className="text-2xl font-bold" style={{ color: 'white' }}>053-3353203</span>
             {phoneAnimation && (
               <Lottie animationData={phoneAnimation} style={{ width: 40, height: 40 }} />
             )}
           </div>
           
-          <p className="text-lg text-white mb-8">
+          <p className="text-lg mb-8" style={{ color: 'white' }}>
             אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי
           </p>
           
