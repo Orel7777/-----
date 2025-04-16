@@ -48,13 +48,15 @@ const StyledWrapper = styled.div`
   .form-container {
     position: relative;
     width: 90%;
-    max-width: 420px;
+    max-width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
     background: linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8));
     border-radius: 20px;
-    padding: 20px;
+    padding: 14px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.4s ease-out;
-    overflow: hidden;
+
     border: 1px solid rgba(211, 198, 190, 0.5);
     backdrop-filter: blur(10px);
   }
@@ -631,6 +633,20 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     <option value="אחר">אחר</option>
                   </select>
                 </div>
+                <div className="form-group">
+                  <label htmlFor="medicalIssues" style={{ fontWeight: 600 }}>
+                    האם אתה סובל מבעיות רפואיות? אם כן פרט או רשום לא *
+                  </label>
+                  <StyledMedicalTextarea
+                    id="medicalIssues"
+                    name="medicalIssues"
+                    required
+                    minLength={2}
+                    placeholder="פרט כאן או רשום לא"
+                    pattern={"^(?!\s*$).+"}
+                    title="אנא פרט או רשום לא"
+                  />
+                </div>
                 <div className="form-note">
                   <StyledRequiredSmall>* שדות חובה</StyledRequiredSmall>
                 </div>
@@ -686,6 +702,25 @@ const StyledPrivacyLink = styled.a`
 const StyledPrivacySmall = styled.small`
   color: #fff;
   font-size: 1em;
+`;
+
+const StyledMedicalTextarea = styled.textarea`
+  width: 100%;
+  min-height: 36px;
+  font-size: 1.07em;
+  color: #fff;
+  background: rgba(211,198,190,0.15);
+  border: 1px solid #d3c6be;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 0px;
+  resize: vertical;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  &::placeholder {
+    color: #fff;
+    opacity: 1;
+  }
 `;
 
 export default Form;
