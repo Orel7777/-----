@@ -9,32 +9,10 @@ import Modaah from './components/Modaah';
 import { useEffect, useState } from 'react';
 import LoadingWithLogo from './components/LoadingWithLogo';
 
-// יצירת קומפוננטת שלג
-const Snowflake = ({ style }: { style: React.CSSProperties }) => {
-  return <div className="snowflake" style={style} />;
-};
-
 function App() {
-  const [snowflakes, setSnowflakes] = useState<React.CSSProperties[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // יצירת פתיתי שלג
   useEffect(() => {
-    const flakes = [];
-    const count = window.innerWidth < 768 ? 20 : 40; // פחות פתיתים במובייל
-    
-    for (let i = 0; i < count; i++) {
-      flakes.push({
-        left: `${Math.random() * 100}%`,
-        animationDuration: `${Math.random() * 10 + 5}s`,
-        animationDelay: `${Math.random() * 5}s`,
-        opacity: Math.random() * 0.5 + 0.3,
-        fontSize: `${Math.random() * 15 + 10}px`,
-      });
-    }
-    
-    setSnowflakes(flakes);
-    
     // סימולציה של טעינת העמוד
     const timer = setTimeout(() => {
       setLoading(false);
@@ -54,47 +32,6 @@ function App() {
         background: `linear-gradient(135deg, #c3c8c1 0%, #98a27d 50%, #656d55 100%)`,
       }}
     >
-      {/* אפקט שלג */}
-      <div className="snow-container">
-        {snowflakes.map((style, index) => (
-          <Snowflake key={index} style={style} />
-        ))}
-      </div>
-
-      <style>{`
-        .snow-container {
-          position: fixed;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          pointer-events: none;
-          z-index: 1;
-        }
-        
-        .snowflake {
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          background: rgba(211, 198, 190, 0.8);
-          border-radius: 50%;
-          top: -10px;
-          animation-name: snowfall;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-          box-shadow: 0 0 5px rgba(177, 177, 153, 0.7);
-        }
-        
-        @keyframes snowfall {
-          0% {
-            transform: translateY(0) rotate(0deg);
-          }
-          100% {
-            transform: translateY(100vh) rotate(360deg);
-          }
-        }
-      `}</style>
-
       <div className="relative z-10">
         <Header />
         <main className="container mx-auto px-4 py-8">
