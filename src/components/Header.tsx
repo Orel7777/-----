@@ -27,6 +27,32 @@ const StyledSocialIcon = styled(motion.a)`
   border: 1px solid rgba(211, 198, 190, 0.8);
 `;
 
+// Logo container with enhanced styling
+const LogoContainer = styled(motion.div)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 8px;
+    bottom: -8px;
+    left: -10%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+`;
+
+// Enhanced logo image styling
+const LogoImage = styled(motion.img)`
+  border-radius: 50%;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+`;
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -44,27 +70,75 @@ const Header = () => {
         }}>
           <div className="mx-auto max-w-6xl">
             <nav className="flex justify-between items-center px-4 py-3 md:py-2 lg:px-0">
-              {/* Logo */}
-              <motion.div 
-                className="flex flex-col items-center"
-                initial={{ opacity: 0, y: -5 }}
+              {/* Enhanced Logo */}
+              <LogoContainer 
+                initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
               >
-                <motion.img 
-                  src="/לוגו_גדול.jpeg" 
-                  alt="דקלה מדואלה" 
-                  className="p-1 w-auto h-16 rounded-full"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                <motion.div
+                  className="relative"
+                  whileHover={{ rotate: [0, -5, 5, -5, 0] }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <LogoImage 
+                    src="/לוגו_גדול.jpeg" 
+                    alt="דקלה מדואלה" 
+                    className="p-1 w-auto h-20 z-10"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ 
+                      scale: 1, 
+                      opacity: 1,
+                      transition: { 
+                        type: "spring", 
+                        stiffness: 300, 
+                        damping: 15,
+                        delay: 0.2
+                      }
+                    }}
+                    whileHover={{ 
+                      scale: 1.15,
+                      boxShadow: "0 0 25px rgba(255, 255, 255, 0.5)"
+                    }}
+                    style={{
+                      boxShadow: '0 8px 25px rgba(101, 109, 85, 0.4)',
+                      border: '3px solid rgba(255, 255, 255, 0.8)',
+                      background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
+                    }}
+                  />
+                  {/* Decorative ring around logo */}
+                  <motion.div 
+                    className="absolute top-0 left-0 right-0 bottom-0 rounded-full -z-10"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ 
+                      opacity: [0.5, 0.8, 0.5], 
+                      scale: [0.9, 1.05, 0.9],
+                      transition: { 
+                        repeat: Infinity,
+                        duration: 3,
+                        ease: "easeInOut"
+                      }
+                    }}
+                    style={{
+                      background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)',
+                      transform: 'translate(-5%, -5%)',
+                      width: '110%',
+                      height: '110%'
+                    }}
+                  />
+                </motion.div>
+                <motion.span 
+                  className="mt-1 text-sm font-semibold text-white"
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
                   style={{
-                    boxShadow: '0 8px 20px rgba(101, 109, 85, 0.3)',
-                    border: '2px solid rgba(211, 198, 190, 0.9)',
-                    background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
+                    textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
                   }}
-                />
-                <span className="mt-1 text-sm font-semibold text-white">נעים מאוד - מדואלה דקלה שליט</span>
-              </motion.div>
+                >
+                  נעים מאוד - מדואלה דקלה שליט
+                </motion.span>
+              </LogoContainer>
 
               {/* Desktop Menu */}
               <div className="hidden gap-8 items-center md:flex">
