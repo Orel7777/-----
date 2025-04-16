@@ -632,6 +632,26 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     <option value="פיסול פנים טבעי">פיסול פנים טבעי</option>
                     <option value="אחר">אחר</option>
                   </select>
+                  <div className="privacy-policy-container">
+                    <StyledPrivacyLink
+                      href="/images/תעודות_2/פרטיות.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      מדיניות הפרטיות
+                    </StyledPrivacyLink>
+                    <StyledPrivacySmall>
+                      בשליחת הטופס הנך מאשר/ת את{' '}
+                      <StyledPrivacyLink
+                        href="/images/תעודות_2/פרטיות.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        מדיניות הפרטיות
+                      </StyledPrivacyLink>
+                      שלנו
+                    </StyledPrivacySmall>
+                  </div>
                 </div>
                 <div className="form-group">
                   <label htmlFor="medicalIssues" style={{ fontWeight: 600 }}>
@@ -643,26 +663,11 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     required
                     minLength={2}
                     placeholder="פרט כאן או רשום לא"
-                    pattern={"^(?!\s*$).+"}
                     title="אנא פרט או רשום לא"
                   />
                 </div>
                 <div className="form-note">
                   <StyledRequiredSmall>* שדות חובה</StyledRequiredSmall>
-                </div>
-                <div className="privacy-policy-container">
-                  <StyledPrivacyLink
-                    href="/images/תעודות_2/פרטיות.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    מדיניות פרטיות
-                  </StyledPrivacyLink>
-                  <StyledPrivacySmall>בשליחת הטופס הנך מאשר/ת את <StyledPrivacyLink
-                    href="/images/תעודות_2/פרטיות.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >מדיניות הפרטיות</StyledPrivacyLink> שלנו</StyledPrivacySmall>
                 </div>
                 <button 
                   className="form-submit-btn" 
@@ -674,7 +679,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
               </form>
             )}
           </motion.div>
-    </StyledWrapper>
+        </StyledWrapper>
       )}
     </AnimatePresence>
   );
