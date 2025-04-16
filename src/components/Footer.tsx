@@ -151,11 +151,19 @@ const Footer = () => {
           variants={fadeInUp}
           className="mt-10 pt-6 border-t border-[#8B4513]/20 text-center"
         >
-          <p className="text-white mb-6">
-            כל הזכויות שמורות ל
-            <span className="font-bold text-white">אוראל בוקריס</span>
-            {' '}מפתח אתרים ואפליקציות בתלת מימד
-          </p>
+          <div className="flex flex-col items-center gap-4 mb-6">
+            <p className="text-white">
+              כל הזכויות שמורות ל
+              <span className="font-bold text-white">אוראל בוקריס</span>
+              {' '}מפתח אתרים ואפליקציות בתלת מימד
+            </p>
+            <a 
+              href="/privacy-policy" 
+              className="text-white hover:text-gray-200 transition-colors underline"
+            >
+              מדיניות פרטיות
+            </a>
+          </div>
           
           {/* Developer Card */}
           <div className="flex justify-center">

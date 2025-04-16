@@ -1,25 +1,28 @@
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import BabySteps from './components/BabySteps';
-import Stats from './components/Stats';
 import Footer from './components/Footer';
-import Modaah from './components/Modaah';
 import { useEffect, useState } from 'react';
 import LoadingWithLogo from './components/LoadingWithLogo';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
-function App() {
+function AppContent() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+
+  // Skip loader for privacy policy page
+  const skipLoading = location.pathname === '/privacy-policy';
 
   useEffect(() => {
-    // סימולציה של טעינת העמוד
+    if (skipLoading) {
+      setLoading(false);
+      return;
+    }
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2500);
-    
     return () => clearTimeout(timer);
-  }, []);
+  }, [skipLoading]);
 
   if (loading) {
     return <LoadingWithLogo />;
@@ -34,17 +37,21 @@ function App() {
     >
       <div className="relative z-10">
         <Header />
-        <main className="container mx-auto px-4 py-8">
-          <Hero />
-          <Modaah />
-          <Services />
-          <Testimonials />
-          <BabySteps />
-          <Stats />
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
         <Footer />
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

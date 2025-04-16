@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 interface FormProps {
   isOpen: boolean;
@@ -634,22 +635,25 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                   </select>
                   <div className="privacy-policy-container">
                     <StyledPrivacyLink
-                      href="/images/תעודות_2/פרטיות.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      מדיניות הפרטיות
-                    </StyledPrivacyLink>
+  as={Link}
+  to="/privacy-policy"
+  onClick={() => {
+    if (onClose) onClose();
+  }}
+>
+  מדיניות הפרטיות
+</StyledPrivacyLink>
                     <StyledPrivacySmall>
-                      בשליחת הטופס הנך מאשר/ת את{' '}
-                      <StyledPrivacyLink
-                        href="/images/תעודות_2/פרטיות.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        מדיניות הפרטיות
-                      </StyledPrivacyLink>{' '}שלנו
-                    </StyledPrivacySmall>
+  בשליחת הטופס הנך מאשר/ת את <StyledPrivacyLink
+    as={Link}
+    to="/privacy-policy"
+    onClick={() => {
+      if (onClose) onClose();
+    }}
+  >
+    מדיניות הפרטיות
+  </StyledPrivacyLink> שלנו
+</StyledPrivacySmall>
                   </div>
                 </div>
                 <div className="form-group">
