@@ -648,8 +648,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                         rel="noopener noreferrer"
                       >
                         מדיניות הפרטיות
-                      </StyledPrivacyLink>
-                      שלנו
+                      </StyledPrivacyLink>{' '}שלנו
                     </StyledPrivacySmall>
                   </div>
                 </div>
