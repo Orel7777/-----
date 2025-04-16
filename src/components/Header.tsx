@@ -7,6 +7,7 @@ import Form from './Form';
 import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
+import { useLocation, Link } from 'react-router-dom';
 
 const StyledMenuItem = styled(motion.a)`
   border: 1px solid rgba(211, 198, 190, 0.5);
@@ -56,10 +57,21 @@ const LogoImage = styled(motion.img)`
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const handleOpenForm = () => {
     setIsFormOpen(true);
     setIsMenuOpen(false);
+  };
+
+  // הפונקציה מחזירה את הנתיב המתאים בהתאם למיקום הנוכחי
+  const getNavigationPath = (anchor: string) => {
+    if (isHomePage) {
+      return `#${anchor}`;
+    } else {
+      return `/#${anchor}`;
+    }
   };
 
   return (
@@ -76,57 +88,59 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
               >
-                <motion.div
-                  className="relative"
-                  whileHover={{ rotate: [0, -5, 5, -5, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <LogoImage 
-                    src="/לוגו_גדול.jpeg" 
-                    alt="דקלה מדואלה" 
-                    className="p-1 w-auto h-20 z-10"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ 
-                      scale: 1, 
-                      opacity: 1,
-                      transition: { 
-                        type: "spring", 
-                        stiffness: 300, 
-                        damping: 15,
-                        delay: 0.2
-                      }
-                    }}
-                    whileHover={{ 
-                      scale: 1.15,
-                      boxShadow: "0 0 25px rgba(255, 255, 255, 0.5)"
-                    }}
-                    style={{
-                      boxShadow: '0 8px 25px rgba(101, 109, 85, 0.4)',
-                      border: '3px solid rgba(255, 255, 255, 0.8)',
-                      background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
-                    }}
-                  />
-                  {/* Decorative ring around logo */}
-                  <motion.div 
-                    className="absolute top-0 left-0 right-0 bottom-0 rounded-full -z-10"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ 
-                      opacity: [0.5, 0.8, 0.5], 
-                      scale: [0.9, 1.05, 0.9],
-                      transition: { 
-                        repeat: Infinity,
-                        duration: 3,
-                        ease: "easeInOut"
-                      }
-                    }}
-                    style={{
-                      background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)',
-                      transform: 'translate(-5%, -5%)',
-                      width: '110%',
-                      height: '110%'
-                    }}
-                  />
-                </motion.div>
+                <Link to="/">
+                  <motion.div
+                    className="relative"
+                    whileHover={{ rotate: [0, -5, 5, -5, 0] }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <LogoImage 
+                      src="/לוגו_גדול.jpeg" 
+                      alt="דקלה מדואלה" 
+                      className="p-1 w-auto h-20 z-10"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ 
+                        scale: 1, 
+                        opacity: 1,
+                        transition: { 
+                          type: "spring", 
+                          stiffness: 300, 
+                          damping: 15,
+                          delay: 0.2
+                        }
+                      }}
+                      whileHover={{ 
+                        scale: 1.15,
+                        boxShadow: "0 0 25px rgba(255, 255, 255, 0.5)"
+                      }}
+                      style={{
+                        boxShadow: '0 8px 25px rgba(101, 109, 85, 0.4)',
+                        border: '3px solid rgba(255, 255, 255, 0.8)',
+                        background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
+                      }}
+                    />
+                    {/* Decorative ring around logo */}
+                    <motion.div 
+                      className="absolute top-0 left-0 right-0 bottom-0 rounded-full -z-10"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ 
+                        opacity: [0.5, 0.8, 0.5], 
+                        scale: [0.9, 1.05, 0.9],
+                        transition: { 
+                          repeat: Infinity,
+                          duration: 3,
+                          ease: "easeInOut"
+                        }
+                      }}
+                      style={{
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)',
+                        transform: 'translate(-5%, -5%)',
+                        width: '110%',
+                        height: '110%'
+                      }}
+                    />
+                  </motion.div>
+                </Link>
                 <motion.span 
                   className="mt-1 text-sm font-semibold text-white"
                   initial={{ opacity: 0, y: 5 }}
@@ -142,17 +156,22 @@ const Header = () => {
 
               {/* Desktop Menu */}
               <div className="hidden gap-8 items-center md:flex">
-                {["שירותים", "המלצות", "שיטת הטיפול", "אודות"].map((item, index) => (
+                {[
+                  { name: "שירותים", anchor: "services" },
+                  { name: "המלצות", anchor: "testimonials" },
+                  { name: "שיטת הטיפול", anchor: "methodology" },
+                  { name: "אודות", anchor: "stats" }
+                ].map((item, index) => (
                   <motion.a 
-                    key={item}
-                    href={`#${item === "שירותים" ? "services" : item === "המלצות" ? "testimonials" : item === "שיטת הטיפול" ? "methodology" : "stats"}`}
+                    key={item.name}
+                    href={getNavigationPath(item.anchor)}
                     className="relative text-lg font-medium text-white"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 * index }}
                     whileHover="hover"
                   >
-                    {item}
+                    {item.name}
                     <motion.span 
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-white to-[#98a27d] rounded-full"
                       initial={{ width: 0 }}
@@ -262,10 +281,10 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-          style={{
+              style={{
                 background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.95), rgba(152, 162, 125, 0.95), rgba(101, 109, 85, 0.95))'
-          }}
-        >
+              }}
+            >
               <motion.div 
                 className="flex flex-col justify-center items-center px-4 py-2 min-h-screen"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -283,7 +302,7 @@ const Header = () => {
                   }}
                 >
                   <motion.button
-                onClick={() => setIsMenuOpen(false)}
+                    onClick={() => setIsMenuOpen(false)}
                     className="absolute top-3 right-3 p-2 text-white rounded-full shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
@@ -292,57 +311,59 @@ const Header = () => {
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                       border: '1px solid rgba(211, 198, 190, 0.7)'
                     }}
-              >
-                <svg 
-                  className="w-5 h-5" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2.5" 
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                  >
+                    <svg 
+                      className="w-5 h-5" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth="2.5" 
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
                   </motion.button>
 
                   <div className="flex flex-col justify-center items-center mb-6">
-                    <motion.img 
-                  src="/לוגו_גדול.jpeg" 
-                  alt="דקלה מדואלה" 
-                      className="p-1 w-20 h-20 rounded-full"
-                      whileHover={{ scale: 1.1 }}
-                      style={{
-                        boxShadow: '0 8px 20px rgba(101, 109, 85, 0.3)',
-                        border: '2px solid rgba(211, 198, 190, 0.9)',
-                        background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
-                      }}
-                />
+                    <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                      <motion.img 
+                        src="/לוגו_גדול.jpeg" 
+                        alt="דקלה מדואלה" 
+                        className="p-1 w-20 h-20 rounded-full"
+                        whileHover={{ scale: 1.1 }}
+                        style={{
+                          boxShadow: '0 8px 20px rgba(101, 109, 85, 0.3)',
+                          border: '2px solid rgba(211, 198, 190, 0.9)',
+                          background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
+                        }}
+                      />
+                    </Link>
                     <span className="mt-2 text-base font-semibold text-white">
                       נעים מאוד - מדואלה דקלה שליט
                     </span>
-              </div>
+                  </div>
 
                   <div className="flex gap-2 justify-center items-center mb-6">
                     <RiMenuUnfoldFill className="w-6 h-6 text-white" />
                     <div className="text-2xl font-bold text-white">תפריט</div>
                     <RiMenuUnfoldFill className="w-6 h-6 text-white" />
-              </div>
+                  </div>
 
                   <StyledMenu className="mb-8 space-y-4">
                     {[
-                      { name: "שירותים", href: "#services" },
-                      { name: "המלצות", href: "#testimonials" },
-                      { name: "שיטת הטיפול", href: "#methodology" },
-                      { name: "אודות", href: "#stats" }
+                      { name: "שירותים", anchor: "services" },
+                      { name: "המלצות", anchor: "testimonials" },
+                      { name: "שיטת הטיפול", anchor: "methodology" },
+                      { name: "אודות", anchor: "stats" }
                     ].map((item, index) => (
                       <StyledMenuItem 
                         key={item.name}
-                        href={item.href} 
+                        href={getNavigationPath(item.anchor)} 
                         className="block text-xl font-semibold transition-all text-white py-2.5 px-4 rounded-xl menu-item"
-                  onClick={() => setIsMenuOpen(false)}
+                        onClick={() => setIsMenuOpen(false)}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 * index, duration: 0.3 }}
@@ -352,7 +373,7 @@ const Header = () => {
                     ))}
                   </StyledMenu>
               
-              {/* Mobile Social Icons */}
+                  {/* Mobile Social Icons */}
                   <div className="flex justify-center mb-6 space-x-6 rtl:space-x-reverse">
                     {[
                       { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
@@ -387,7 +408,7 @@ const Header = () => {
                         <Icon className="w-5 h-5" />
                       </motion.a>
                     ))}
-              </div>
+                  </div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}

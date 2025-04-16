@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const PageBackground = styled.div`
   min-height: 100vh;
@@ -41,7 +40,6 @@ const Title = styled.h1`
   margin-right: auto;
   text-align: center;
 `;
-
 
 const UpdateDate = styled.div`
   text-align: center;
@@ -225,14 +223,14 @@ const PrivacyPolicy = () => {
         <Section>
           <SectionTitle>מיהם הצדדים השלישיים להם יש גישה?</SectionTitle>
           <Paragraph>
-            צדדים שלישיים הם שירותים חיצוניים המקבלים גישה למידע ומסייעים לנו במתן השירות. כל אחד מהם חותם על מסמך שנקרא "הסכם עיבוד מידע" ובתרחיש אופטימלי, נערכה בדיקת נאותות לפי הנחיות הרשות להגנת הפרטיות על שימוש במיקור חוץ. במקרה שלנו,
+            צדדים שלישיים הם שירותים חיצוניים המקבלים גישה למידע ומסייעים לנו במתן השירות. כל אחד מהם חותם על מסמך שנקרא "הסכם עיבוד מידע" ובתרחיש אופטימלי, נערכה בדיקת נאותות לפי הנחיות הרשות להגנת הפרטיות על שימוש במיקור חוץ. במקרה שלנו.
           </Paragraph>
         </Section>
         <Divider />
         <Section>
           <SectionTitle>כיצד אנחנו יכול׊׉ לצור איתך קשר?</SectionTitle>
           <Paragraph>
-            ככל שאנחנו נשלח יותר פניות, כך את׌ עשוי׌ להרגיש מוטרד׮ יותר ופרטיותך תפגע. לכן, חשוב שנבהיר בדיוק מהם הצפיות שלנו ממערכת היחסים. , אנחנו עוד עשוי׊׉ לצור איתך קשר במקרה בו רשות מוסמכת תבקש שנעשה זאת.
+            ככל שאנחנו נשלח יותר פניות, כך את׌ עשוי׌ להרגיש מוטרד׮ יותר ופרטיותך תפגע. לכן, חשוב שנבהיר בדיוק מהם הצפיות שלנו ממערכת היחסים. אנחנו עוד עשוי׊׉ לצור איתך קשר במקרה בו רשות מוסמכת תבקש שנעשה זאת.
           </Paragraph>
         </Section>
         <Divider />
@@ -274,7 +272,6 @@ const PrivacyPolicy = () => {
           מדיניות פרטיות זו נוצרה על ידי מחולל מדיניות הפרטיות של יהונתן קלינגר באתר <a href="http://privacypolicy.co.il" target="_blank" rel="noopener noreferrer">privacypolicy.co.il</a>. כל הזכויות שמורות, 2021 יהונתן קלינגר. מדיניות פרטיות זו נוצרה ללא כל אחריות לטיבה ועל בסיס אוטומטי; אין במסמך זה כדי להוות ייעוץ משפטי או לחוות דעה בנוגע לחוקיות השירות.
         </Paragraph>
       </PrivacyContainer>
-      <Footer />
     </PageBackground>
   );
 };
