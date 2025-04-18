@@ -9,6 +9,21 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import BlobCardWithVideo from './BlobCardWithVideo';
 
+const StyledStatsTitle = styled.h2`
+  color: #838b70 !important;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  text-align: center;
+`;
+
+
 const Stats = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [phoneAnimation, setPhoneAnimation] = useState(null);
@@ -149,10 +164,10 @@ const Stats = () => {
   };
 
   return (
-    <StyledStats className="overflow-hidden relative" id="stats">
+    <StyledStats className="overflow-hidden relative bg-[#f1e6e2]" id="stats">
       {/* Decorative Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#d3c6be] to-[#98a27d] opacity-30" />
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-black/5 opacity-5" />
+      <div className="absolute inset-0 bg-[#f1e6e2] opacity-100" />
+      
       
       {/* Top Decorative Border */}
       <div className="absolute top-0 left-0 w-full h-16 bg-white/10 top-border" />
@@ -176,20 +191,12 @@ const Stats = () => {
             <FaBattleNet className="w-16 h-16" style={{ color: '#7b8269' }} />
             </motion.div>
           
-          <h2 className="text-5xl font-black mb-24" style={{ 
-            color: '#7b8269', 
-            background: 'transparent', 
-            textShadow: '1px 1px 0px rgba(255,255,255,0.2), -1px -1px 0px rgba(0,0,0,0.1)',
-            letterSpacing: '0.03em',
-            fontWeight: 900,
-            opacity: 1,
-            filter: 'none'
-          }}>
-             נעים להכיר- דקלה שליט מדואלה
-          </h2>
+          <StyledStatsTitle>
+  נעים להכיר- דקלה שליט מדואלה
+</StyledStatsTitle>
           
           <motion.div 
-            className="mb-10 featured-image-container mt-24"
+            className="mb-10 featured-image-container mt-40"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
