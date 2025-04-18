@@ -46,8 +46,8 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <HeroTitle>מרכז לרפואה משלימה ועיסויים לנשים</HeroTitle>
-          <HeroDescription>חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</HeroDescription>
+          <Title>מרכז לרפואה משלימה ועיסויים לנשים</Title>
+          <Subtitle>חוויית עיסוי מותאמת אישית לנשים – לשחרור, רוגע וריפוי טבעי</Subtitle>
           <Button onClick={handleOpenForm}>לחצי עכשיו לקביעת תור</Button>
         </motion.div>
         <motion.div 
@@ -59,7 +59,7 @@ const Hero = () => {
           <Card>
             <VideoContainer>
               <HeroVideo 
-                src="/WhatsApp Video 2025-04-11 at 21.20.32.mp4" 
+                src="/hero-video.mp4" 
                 autoPlay
                 loop
                 muted
@@ -78,24 +78,28 @@ const Hero = () => {
 }
 
 // קומפוננטים מעוצבים
-const HeroTitle = styled.h1`
-  font-size: 2.25rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  font-family: 'Assistant', sans-serif;
-  color: #fefbe8;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+const Title = styled.h1`
+  font-size: 3.5rem;
   line-height: 1.2;
-  
-  @media (min-width: 768px) {
-    font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: #858873;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
   }
 `;
 
-const HeroDescription = styled.p`
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: #fefbe8;
+const Subtitle = styled.h2`
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #858873;
+  
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Card = styled.div`
@@ -169,7 +173,7 @@ const CardText = styled.div`
   width: 100%;
   padding: 2rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  color: #ffffff;
+  color: #FFFFFF;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease;
   text-align: center;
@@ -178,6 +182,7 @@ const CardText = styled.div`
     font-size: 1.4rem;
     font-weight: 700;
     opacity: 1;
+    color: #FFFFFF;
   }
   
   ${Card}:hover & {

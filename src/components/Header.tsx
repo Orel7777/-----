@@ -23,9 +23,91 @@ const StyledMenu = styled.div`
   }
 `;
 
+// אייקונים חברתיים מעודכנים עם צבעים מקוריים
 const StyledSocialIcon = styled(motion.a)`
-  box-shadow: 0 4px 12px rgba(101, 109, 85, 0.2);
-  border: 1px solid rgba(211, 198, 190, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 5px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  &.waze {
+    color: #33CCFF;
+    svg { fill: #33CCFF; }
+  }
+  
+  &.whatsapp {
+    color: #25D366;
+    svg { fill: #25D366; }
+  }
+  
+  &.instagram {
+    color: #E1306C;
+    svg { fill: #E1306C; }
+  }
+  
+  &.facebook {
+    color: #4267B2;
+    svg { fill: #4267B2; }
+  }
+  
+  svg {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    
+    &::before {
+      opacity: 1;
+    }
+    
+    svg {
+      transform: scale(1.2);
+    }
+  }
+  
+  &.waze:hover {
+    background-color: rgba(51, 204, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(51, 204, 255, 0.5), 0 0 20px rgba(51, 204, 255, 0.3);
+  }
+  
+  &.whatsapp:hover {
+    background-color: rgba(37, 211, 102, 0.1);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5), 0 0 20px rgba(37, 211, 102, 0.3);
+  }
+  
+  &.instagram:hover {
+    background-color: rgba(225, 48, 108, 0.1);
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.5), 0 0 20px rgba(225, 48, 108, 0.3);
+  }
+  
+  &.facebook:hover {
+    background-color: rgba(66, 103, 178, 0.1);
+    box-shadow: 0 10px 25px rgba(66, 103, 178, 0.5), 0 0 20px rgba(66, 103, 178, 0.3);
+  }
 `;
 
 // Logo container with enhanced styling
@@ -78,7 +160,7 @@ const Header = () => {
     <>
       <header className="fixed top-0 z-40 w-full">
         <div className="shadow-md backdrop-blur-md" style={{
-          background: 'linear-gradient(to bottom, rgba(211, 198, 190, 0.95), rgba(152, 162, 125, 0.9))'
+          background: 'rgba(216, 180, 119, 0.95)'
         }}>
           <div className="mx-auto max-w-6xl">
             <nav className="flex justify-between items-center px-4 py-3 md:py-2 lg:px-0">
@@ -114,9 +196,9 @@ const Header = () => {
                         boxShadow: "0 0 25px rgba(255, 255, 255, 0.5)"
                       }}
                       style={{
-                        boxShadow: '0 8px 25px rgba(101, 109, 85, 0.4)',
+                        boxShadow: '0 8px 25px rgba(216, 180, 119, 0.4)',
                         border: '3px solid rgba(255, 255, 255, 0.8)',
-                        background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
+                        background: 'linear-gradient(135deg, rgba(216, 180, 119, 0.9), rgba(216, 180, 119, 0.8))'
                       }}
                     />
                     {/* Decorative ring around logo */}
@@ -173,7 +255,7 @@ const Header = () => {
                   >
                     {item.name}
                     <motion.span 
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-white to-[#98a27d] rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-white to-[#d8b477] rounded-full"
                       initial={{ width: 0 }}
                       variants={{
                         hover: { width: "100%" }
@@ -221,39 +303,53 @@ const Header = () => {
               {/* Desktop Social Icons and CTA */}
               <div className="hidden items-center space-x-4 md:flex rtl:space-x-reverse">
                 <div className="flex space-x-4 rtl:space-x-reverse">
-                  {[
-                    { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
-                    { Icon: FaWhatsapp, href: "https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" },
-                    { Icon: FaInstagram, href: "https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" },
-                    { Icon: FaFacebook, href: "https://www.facebook.com/profile.php?id=100058313266229" }
-                  ].map(({ Icon, href }, index) => (
-                    <motion.a 
-                      key={href}
-                      href={href} 
+                  <StyledSocialIcon 
+                    href="https://waze.com/ul?q=נס ציונה, ישראל"
                     target="_blank" 
-                    rel="noopener noreferrer" 
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        type: "spring", 
-                        stiffness: 500, 
-                        damping: 15,
-                        delay: 0.5 + (index * 0.1)
-                      }}
-                      whileHover={{ 
-                        scale: 1.2, 
-                        rotate: 10,
-                        color: "#98a27d" 
-                      }}
-                      className="text-white transition-all p-2 bg-[#fefbe8]/40 rounded-full shadow-md"
-                      style={{
-                        boxShadow: '0 4px 12px rgba(101, 109, 85, 0.2)',
-                        border: '1px solid rgba(211, 198, 190, 0.8)'
-                      }}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </motion.a>
-                  ))}
+                    rel="noopener noreferrer"
+                    className="waze"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.5 }}
+                  >
+                    <FaWaze className="w-5 h-5" />
+                  </StyledSocialIcon>
+                  
+                  <StyledSocialIcon 
+                    href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="whatsapp"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.6 }}
+                  >
+                    <FaWhatsapp className="w-5 h-5" />
+                  </StyledSocialIcon>
+                  
+                  <StyledSocialIcon 
+                    href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="instagram"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.7 }}
+                  >
+                    <FaInstagram className="w-5 h-5" />
+                  </StyledSocialIcon>
+                  
+                  <StyledSocialIcon 
+                    href="https://www.facebook.com/profile.php?id=100058313266229"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="facebook"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.8 }}
+                  >
+                    <FaFacebook className="w-5 h-5" />
+                  </StyledSocialIcon>
                 </div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
@@ -282,7 +378,7 @@ const Header = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               style={{
-                background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.95), rgba(152, 162, 125, 0.95), rgba(101, 109, 85, 0.95))'
+                background: 'linear-gradient(135deg, rgba(216, 180, 119, 0.95), rgba(216, 180, 119, 0.85), rgba(216, 180, 119, 0.95))'
               }}
             >
               <motion.div 
@@ -295,9 +391,9 @@ const Header = () => {
                 <motion.div 
                   className="relative p-6 space-y-5 w-full max-w-md text-center rounded-2xl"
                   style={{
-                    background: 'linear-gradient(to bottom, rgba(211, 198, 190, 0.5), rgba(152, 162, 125, 0.5))',
-                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(211, 198, 190, 0.7)',
-                    border: '2px solid rgba(211, 198, 190, 0.7)',
+                    background: 'linear-gradient(to bottom, rgba(216, 180, 119, 0.5), rgba(216, 180, 119, 0.5))',
+                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(216, 180, 119, 0.7)',
+                    border: '2px solid rgba(216, 180, 119, 0.7)',
                     backdropFilter: 'blur(10px)'
                   }}
                 >
@@ -307,24 +403,24 @@ const Header = () => {
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     style={{
-                      background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))',
+                      background: 'linear-gradient(135deg, rgba(216, 180, 119, 0.9), rgba(216, 180, 119, 0.8))',
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                      border: '1px solid rgba(211, 198, 190, 0.7)'
+                      border: '1px solid rgba(216, 180, 119, 0.7)'
                     }}
-                  >
-                    <svg 
-                      className="w-5 h-5" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth="2.5" 
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
+              >
+                <svg 
+                  className="w-5 h-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth="2.5" 
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
                   </motion.button>
 
                   <div className="flex flex-col justify-center items-center mb-6">
@@ -335,22 +431,22 @@ const Header = () => {
                         className="p-1 w-20 h-20 rounded-full"
                         whileHover={{ scale: 1.1 }}
                         style={{
-                          boxShadow: '0 8px 20px rgba(101, 109, 85, 0.3)',
-                          border: '2px solid rgba(211, 198, 190, 0.9)',
-                          background: 'linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8))'
+                          boxShadow: '0 8px 20px rgba(216, 180, 119, 0.3)',
+                          border: '2px solid rgba(216, 180, 119, 0.9)',
+                          background: 'linear-gradient(135deg, rgba(216, 180, 119, 0.9), rgba(216, 180, 119, 0.8))'
                         }}
                       />
                     </Link>
                     <span className="mt-2 text-base font-semibold text-white">
                       נעים מאוד - מדואלה דקלה שליט
                     </span>
-                  </div>
+              </div>
 
                   <div className="flex gap-2 justify-center items-center mb-6">
                     <RiMenuUnfoldFill className="w-6 h-6 text-white" />
                     <div className="text-2xl font-bold text-white">תפריט</div>
                     <RiMenuUnfoldFill className="w-6 h-6 text-white" />
-                  </div>
+              </div>
 
                   <StyledMenu className="mb-8 space-y-4">
                     {[
@@ -363,7 +459,7 @@ const Header = () => {
                         key={item.name}
                         href={getNavigationPath(item.anchor)} 
                         className="block text-xl font-semibold transition-all text-white py-2.5 px-4 rounded-xl menu-item"
-                        onClick={() => setIsMenuOpen(false)}
+                  onClick={() => setIsMenuOpen(false)}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 * index, duration: 0.3 }}
@@ -373,41 +469,55 @@ const Header = () => {
                     ))}
                   </StyledMenu>
               
-                  {/* Mobile Social Icons */}
+              {/* Mobile Social Icons */}
                   <div className="flex justify-center mb-6 space-x-6 rtl:space-x-reverse">
-                    {[
-                      { Icon: FaWaze, href: "https://waze.com/ul?q=נס ציונה, ישראל" },
-                      { Icon: FaWhatsapp, href: "https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" },
-                      { Icon: FaInstagram, href: "https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" },
-                      { Icon: FaFacebook, href: "https://www.facebook.com/profile.php?id=100058313266229" }
-                    ].map(({ Icon, href }, index) => (
-                      <motion.a 
-                        key={href}
-                        href={href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ 
-                          type: "spring", 
-                          stiffness: 500, 
-                          damping: 15,
-                          delay: 0.3 + (index * 0.1)
-                        }}
-                        whileHover={{ 
-                          scale: 1.2, 
-                          rotate: 10,
-                          color: "#98a27d" 
-                        }}
-                        className="text-white transition-all p-2.5 bg-[#fefbe8]/40 rounded-full shadow-md"
-                        style={{
-                          boxShadow: '0 4px 12px rgba(101, 109, 85, 0.2)',
-                          border: '1px solid rgba(211, 198, 190, 0.8)'
-                        }}
-                      >
-                        <Icon className="w-5 h-5" />
-                      </motion.a>
-                    ))}
+                    <StyledSocialIcon 
+                      href="https://waze.com/ul?q=נס ציונה, ישראל"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="waze"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.3 }}
+                    >
+                      <FaWaze className="w-5 h-5" />
+                    </StyledSocialIcon>
+                    
+                    <StyledSocialIcon 
+                      href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="whatsapp"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.4 }}
+                    >
+                      <FaWhatsapp className="w-5 h-5" />
+                    </StyledSocialIcon>
+                    
+                    <StyledSocialIcon 
+                      href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="instagram"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.5 }}
+                    >
+                      <FaInstagram className="w-5 h-5" />
+                    </StyledSocialIcon>
+                    
+                    <StyledSocialIcon 
+                      href="https://www.facebook.com/profile.php?id=100058313266229"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="facebook"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.6 }}
+                    >
+                      <FaFacebook className="w-5 h-5" />
+                    </StyledSocialIcon>
                   </div>
 
                   <motion.div

@@ -24,7 +24,7 @@ const PrivacyContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #222;
+  color: #858873;
   margin-top: 0;
   margin-bottom: 2.2rem;
   font-size: 2.9rem;
@@ -53,11 +53,11 @@ const Section = styled.section`
 `;
 
 const SectionTitle = styled.h2`
-  color: #4e7c59;
+  color: #858873;
   margin-bottom: 1rem;
   font-size: 1.35rem;
   font-weight: 700;
-  border-right: 4px solid #a3be8c;
+  border-right: 4px solid #858873;
   padding-right: 0.7rem;
   display: inline-block;
   background: linear-gradient(90deg, #e7f9ed 0%, #f6fff7 100%);

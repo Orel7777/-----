@@ -176,8 +176,8 @@ const Stats = () => {
             <FaBattleNet className="w-16 h-16" style={{ color: 'white' }} />
             </motion.div>
           
-          <h2 className="mb-4" style={{ color: 'white' }}>
-             נעים להכיר -מדואלה דקלה שליט
+          <h2 className="text-4xl font-extrabold mb-6" style={{ color: '#858873' }}>
+             דקלה מדואלה
           </h2>
           
           <motion.div 
@@ -206,7 +206,7 @@ const Stats = () => {
           
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-[#656d55] to-transparent mx-auto mb-6" />
           
-          <h3 className="text-2xl font-semibold mb-8" style={{ color: 'white' }}>
+          <h3 className="text-2xl font-semibold mb-8" style={{ color: '#858873' }}>
             מומחית בטיפולי מגע, קוסמטיקה רפואית ורפואה משלימה
           </h3>
         </motion.div>
@@ -229,15 +229,15 @@ const Stats = () => {
               {/* Experience Section */}
               <motion.div
                 className="p-8 rounded-2xl border border-white/30 shadow-xl backdrop-blur-md hover:bg-gradient-to-br from-[#98a27d] to-[#656d55]" style={{ background: '#d3c6be' }}>
-  <h4 className="text-3xl font-extrabold mb-6 flex items-center" style={{ color: '#333', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
-    <span className="inline-block w-10 h-10 mr-3 bg-[#656d55]/10 rounded-full flex items-center justify-center" style={{ color: '#333' }}>
-      <span className="w-4 h-4 bg-[#656d55] rounded-full" style={{ color: '#333' }}></span>
+  <h4 className="text-3xl font-extrabold mb-6 flex items-center" style={{ color: '#858873', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
+    <span className="inline-block w-10 h-10 mr-3 bg-[#858873]/10 rounded-full flex items-center justify-center" style={{ color: '#858873' }}>
+      <span className="w-4 h-4 bg-[#858873] rounded-full" style={{ color: '#858873' }}></span>
     </span>
-    <span className="relative" style={{ color: '#333', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
-      הניסיון שלי
-      <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#656d55]/0 via-[#656d55] to-[#656d55]/0"></div>
+    <span className="relative" style={{ color: '#858873', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
+              הניסיון שלי
+      <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#858873]/0 via-[#858873] to-[#858873]/0"></div>
     </span>
-  </h4>
+            </h4>
   <ul className="space-y-8 text-white">
   <li className="flex items-start gap-5 group">
     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
@@ -263,28 +263,28 @@ const Stats = () => {
                 }}
               >
                 <h4 className="text-2xl font-bold mb-6 flex items-center" style={{ color: 'white' }}>
-                  <span className="inline-block w-10 h-10 mr-3 bg-[#656d55]/10 rounded-full flex items-center justify-center" style={{ color: 'white' }}>
-                    <span className="w-4 h-4 bg-[#656d55] rounded-full" style={{ color: 'white' }}></span>
+                  <span className="inline-block w-10 h-10 mr-3 bg-[#858873]/10 rounded-full flex items-center justify-center" style={{ color: 'white' }}>
+                    <span className="w-4 h-4 bg-[#858873] rounded-full" style={{ color: 'white' }}></span>
                   </span>
-                  <span className="relative" style={{ color: '#333', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
+                  <span className="relative" style={{ color: '#858873', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
                     מה אני מציעה
-                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#656d55]/0 via-[#656d55] to-[#656d55]/0"></div>
+                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#858873]/0 via-[#858873] to-[#858873]/0"></div>
                   </span>
                 </h4>
                 <ul className="space-y-8 text-white">
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
                     <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טיפולים מותאמים אישית</span>
-                  </li>
+                      </li>
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
                     <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טכניקות ריפוי מתקדמות</span>
-                  </li>
+              </li>
                   <li className="flex items-start gap-5 group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
                     <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>תוצאות ברמה הגבוהה ביותר</span>
-                  </li>
-                </ul>
+              </li>
+            </ul>
               </motion.div>
             </div>
           </div>

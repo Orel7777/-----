@@ -32,7 +32,7 @@ function AppContent() {
     <div 
       className="min-h-screen text-foreground font-assistant relative overflow-hidden"
       style={{
-        background: `linear-gradient(135deg, #c3c8c1 0%, #98a27d 50%, #656d55 100%)`,
+        background: `#f1e6e2`,
       }}
     >
       <div className="relative z-10">

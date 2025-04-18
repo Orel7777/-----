@@ -46,7 +46,7 @@ const Footer = () => {
 
   // אם אנחנו בעמוד מדיניות הפרטיות, נחזיר רק את החלק התחתון של הפוטר
   if (isPrivacyPolicy) {
-    return (
+  return (
       <footer className="relative">
         {/* Decorative Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#7f7e6a] to-[#9b9a85] opacity-80" />
@@ -80,7 +80,7 @@ const Footer = () => {
               <a 
                 href="https://www.orelweb.co.il/" 
                 target="_blank" 
-                rel="noopener noreferrer" 
+                rel="noopener noreferrer"
                 className="group"
               >
                 <motion.div 
@@ -172,8 +172,8 @@ const Footer = () => {
             <h3 className="text-2xl font-bold text-white mb-6">המיקום שלנו</h3>
             <a 
               href="https://waze.com/ul?q=נס ציונה, ישראל" 
-              target="_blank" 
-              rel="noopener noreferrer"
+                target="_blank" 
+                rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-white hover:text-white transition-colors"
             >
               <FaMapMarkerAlt className="text-xl" />
@@ -285,10 +285,10 @@ const Footer = () => {
                       <path d="m12.012 1.995c-5.518 0-9.998 4.48-9.998 9.998s4.48 9.998 9.998 9.998 9.997-4.48 9.997-9.998-4.479-9.998-9.997-9.998zm0 1.5c4.69 0 8.497 3.808 8.497 8.498s-3.807 8.498-8.497 8.498-8.498-3.808-8.498-8.498 3.808-8.498 8.498-8.498zm1.528 4.715s1.502 1.505 3.255 3.259c.146.147.219.339.219.531s-.073.383-.219.53c-1.753 1.754-3.254 3.258-3.254 3.258-.145.145-.336.217-.527.217-.191-.001-.383-.074-.53-.221-.293-.293-.295-.766-.004-1.057l1.978-1.977h-6.694c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h6.694l-1.979-1.979c-.289-.289-.286-.762.006-1.054.147-.147.339-.221.531-.222.19 0 .38.071.524.215z" />
                     </svg>
                   </motion.div>
-                </div>
+        </div>
               </motion.div>
             </a>
-          </div>
+        </div>
         </motion.div>
       </div>
 

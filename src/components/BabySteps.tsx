@@ -115,7 +115,7 @@ const BabySteps = () => {
 
 const StyledBabySteps = styled.section`
   padding: 100px 0;
-  background: linear-gradient(135deg, #c3c8c1, #98a27d);
+  background: linear-gradient(135deg, #f1e6e2, #f1e6e2);
   position: relative;
   overflow: hidden;
   margin: 0 -50vw;
@@ -134,7 +134,7 @@ const StyledBabySteps = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, transparent 0%, rgba(101, 109, 85, 0.2) 100%);
+    background: radial-gradient(circle at center, transparent 0%, rgba(241, 230, 226, 0.2) 100%);
     pointer-events: none;
   }
 
@@ -166,7 +166,7 @@ const StyledBabySteps = styled.section`
     
     h2 {
       font-size: 2.5rem;
-      color: white;
+      color: #858873;
       font-weight: 700;
       margin-bottom: 20px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -175,13 +175,13 @@ const StyledBabySteps = styled.section`
     .divider {
       width: 120px;
       height: 3px;
-      background: linear-gradient(to right, transparent, white, transparent);
+      background: linear-gradient(to right, transparent, #858873, transparent);
       margin: 20px auto;
     }
 
     .subtitle {
       font-size: 1.25rem;
-      color: white;
+      color: #858873;
       font-weight: 500;
     }
   }
@@ -194,46 +194,50 @@ const StyledBabySteps = styled.section`
   }
 
   .step {
-    background: rgba(211, 198, 190, 0.15);
+    background: rgba(241, 230, 226, 0.5);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(211, 198, 190, 0.3);
+    border: 2px solid #858873;
     border-radius: 20px;
     padding: 30px;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(101, 109, 85, 0.15);
-      background: rgba(211, 198, 190, 0.2);
+      box-shadow: 0 10px 20px rgba(133, 136, 115, 0.2);
+      background: rgba(241, 230, 226, 0.7);
+      border-color: #858873;
+      border-width: 3px;
     }
 
     .step-number {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, #656d55, #7f7e6a);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #858873, #858873);
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: bold;
       margin: 0 auto 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 2px solid white;
     }
 
     h3 {
       font-size: 1.5rem;
-      color: white;
+      color: #858873;
       margin-bottom: 15px;
       font-weight: 600;
     }
 
     p {
-      color: white;
+      color: #858873;
       line-height: 1.6;
       font-size: 1.1rem;
     }
@@ -245,7 +249,7 @@ const StyledBabySteps = styled.section`
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(211, 198, 190, 0.1), transparent);
+      background: linear-gradient(135deg, rgba(241, 230, 226, 0.3), transparent);
       pointer-events: none;
     }
   }
@@ -278,7 +282,7 @@ const StyledBabySteps = styled.section`
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background-color: #d3c6be;
+    background-color: #f1e6e2;
     animation: sparkle 1.5s infinite;
     opacity: 0.5;
   }

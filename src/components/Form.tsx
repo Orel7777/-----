@@ -561,7 +561,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                 >
                   סגירה
                 </button>
-              </div>
+        </div>
             ) : (
               <form 
                 className="form" 
@@ -574,46 +574,46 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                 <input type="hidden" name="_next" value={currentUrl} />
                 <input type="text" name="_honey" style={{ display: 'none' }} />
                 
-                <div className="form-group">
+          <div className="form-group">
                   <label className="form-group-label" htmlFor="name">שם מלא *</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    required 
-                    placeholder="הכנס/י את שמך המלא" 
-                    minLength={2}
-                    pattern="^[\u0590-\u05FF\u200f\u200e a-zA-Z\s]+$"
-                    title="אנא הכנס/י שם תקין (אותיות בלבד)"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="phone">מספר טלפון *</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone" 
-                    required 
-                    placeholder="הכנס/י מספר טלפון (לדוגמה: 0501234567)" 
-                    pattern="^0(5[0-9]|[2-4]|[8-9]|7[0-9])[0-9]{7}$"
-                    title="אנא הכנס/י מספר טלפון ישראלי תקין (10 ספרות)"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">אימייל *</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required 
-                    placeholder="הכנס/י כתובת אימייל" 
-                    title="אנא הכנס/י כתובת אימייל תקינה"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="treatmentType">סוג הטיפול *</label>
-                  <select id="treatmentType" name="treatmentType" required defaultValue="">
-                    <option value="" disabled>בחר/י סוג טיפול</option>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              placeholder="הכנס/י את שמך המלא" 
+              minLength={2}
+              pattern="^[\u0590-\u05FF\u200f\u200e a-zA-Z\s]+$"
+              title="אנא הכנס/י שם תקין (אותיות בלבד)"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="phone">מספר טלפון *</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              required 
+              placeholder="הכנס/י מספר טלפון (לדוגמה: 0501234567)" 
+              pattern="^0(5[0-9]|[2-4]|[8-9]|7[0-9])[0-9]{7}$"
+              title="אנא הכנס/י מספר טלפון ישראלי תקין (10 ספרות)"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">אימייל *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              placeholder="הכנס/י כתובת אימייל" 
+              title="אנא הכנס/י כתובת אימייל תקינה"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="treatmentType">סוג הטיפול *</label>
+            <select id="treatmentType" name="treatmentType" required defaultValue="">
+              <option value="" disabled>בחר/י סוג טיפול</option>
                     <option value="עיסוי רפואי">עיסוי רפואי</option>
                     <option value="עיסוי רקמות עמוק">עיסוי רקמות עמוק</option>
                     <option value="עיסוי לנשים בהריון">עיסוי לנשים בהריון</option>
@@ -631,8 +631,8 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     <option value="עיסוי משולב">עיסוי משולב </option>
                     <option value="עיסוי קרקפת ופנים">עיסוי קרקפת ופנים</option>
                     <option value="פיסול פנים טבעי">פיסול פנים טבעי</option>
-                    <option value="אחר">אחר</option>
-                  </select>
+              <option value="אחר">אחר</option>
+            </select>
                   <div className="privacy-policy-container">
                     <StyledPrivacyLink
   as={Link}
@@ -655,23 +655,23 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
   </StyledPrivacyLink> שלנו
 </StyledPrivacySmall>
                   </div>
-                </div>
-                <div className="form-group">
+          </div>
+          <div className="form-group">
                   <label htmlFor="medicalIssues" style={{ fontWeight: 600 }}>
                     האם אתה סובל מבעיות רפואיות? אם כן פרט או רשום לא *
                   </label>
                   <StyledMedicalTextarea
                     id="medicalIssues"
-                    name="medicalIssues"
-                    required
-                    minLength={2}
+              name="medicalIssues" 
+              required
+              minLength={2}
                     placeholder="פרט כאן או רשום לא"
                     title="אנא פרט או רשום לא"
-                  />
-                </div>
-                <div className="form-note">
+            />
+          </div>
+          <div className="form-note">
                   <StyledRequiredSmall>* שדות חובה</StyledRequiredSmall>
-                </div>
+          </div>
                 <button 
                   className="form-submit-btn" 
                   type="submit"
@@ -679,10 +679,10 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                 >
                   {isSubmitting ? 'שולח...' : 'שליחה'}
                 </button>
-              </form>
+        </form>
             )}
           </motion.div>
-        </StyledWrapper>
+    </StyledWrapper>
       )}
     </AnimatePresence>
   );
