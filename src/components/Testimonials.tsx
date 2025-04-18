@@ -130,6 +130,23 @@ const Testimonials = () => {
     setIsFormOpen(true);
   };
 
+  // הוספת פונקציות ניווט בין תמונות פתוחות
+  const navigateImages = (direction: 'prev' | 'next') => {
+    if (!selectedImage) return;
+    
+    const currentIndex = imageUrls.indexOf(selectedImage);
+    if (currentIndex === -1) return;
+    
+    let newIndex;
+    if (direction === 'prev') {
+      newIndex = currentIndex === 0 ? imageUrls.length - 1 : currentIndex - 1;
+    } else {
+      newIndex = currentIndex === imageUrls.length - 1 ? 0 : currentIndex + 1;
+    }
+    
+    setSelectedImage(imageUrls[newIndex]);
+  };
+
   return (
     <section className="relative py-16" id="testimonials" ref={ref}>
       {/* רקע גרדיאנט */}
@@ -414,6 +431,50 @@ const Testimonials = () => {
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </motion.button>
+
+              {/* חץ לתמונה הקודמת */}
+              <motion.button 
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full shadow-2xl z-10"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImages('prev');
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                style={{
+                  background: 'linear-gradient(135deg, #c3c8c1, #98a27d)',
+                  border: '2px solid rgba(255, 255, 255, 0.7)'
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-8 h-8">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </motion.button>
+
+              {/* חץ לתמונה הבאה */}
+              <motion.button 
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full shadow-2xl z-10"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImages('next');
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                style={{
+                  background: 'linear-gradient(135deg, #c3c8c1, #98a27d)',
+                  border: '2px solid rgba(255, 255, 255, 0.7)'
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-8 h-8">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </motion.button>
             </motion.div>

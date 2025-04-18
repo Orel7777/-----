@@ -382,7 +382,7 @@ const Stats = () => {
                   {/* Close Button - Made much more prominent */}
                   <button
                     onClick={closeImage}
-                    className="fixed top-6 right-6 md:top-8 md:right-8 lg:top-10 lg:right-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#d3c6be] border-2 border-[#333] shadow-xl flex items-center justify-center text-[#333] hover:bg-[#98a27d] hover:text-white hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-[500]"
+                    className="fixed top-14 right-14 md:top-16 md:right-16 lg:top-20 lg:right-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#d3c6be] border-2 border-[#333] shadow-xl flex items-center justify-center text-[#333] hover:bg-[#98a27d] hover:text-white hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-[500]"
                     aria-label="סגור תעודה"
                     title="סגור"
                   >
