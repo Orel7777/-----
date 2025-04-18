@@ -173,15 +173,23 @@ const Stats = () => {
             }}
             className="inline-block mb-6"
           >
-            <FaBattleNet className="w-16 h-16" style={{ color: 'white' }} />
+            <FaBattleNet className="w-16 h-16" style={{ color: '#7b8269' }} />
             </motion.div>
           
-          <h2 className="text-4xl font-extrabold mb-6" style={{ color: '#858873' }}>
-             דקלה מדואלה
+          <h2 className="text-5xl font-black mb-24" style={{ 
+            color: '#7b8269', 
+            background: 'transparent', 
+            textShadow: '1px 1px 0px rgba(255,255,255,0.2), -1px -1px 0px rgba(0,0,0,0.1)',
+            letterSpacing: '0.03em',
+            fontWeight: 900,
+            opacity: 1,
+            filter: 'none'
+          }}>
+             נעים להכיר- דקלה שליט מדואלה
           </h2>
           
           <motion.div 
-            className="mb-10 featured-image-container"
+            className="mb-10 featured-image-container mt-24"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
@@ -297,9 +305,9 @@ const Stats = () => {
         >
           <div className="max-w-2xl mx-auto px-4">
             <h3 className="text-3xl font-bold text-white mb-8 text-center">
-              <span className="relative" style={{ color: 'white' }}>
+              <span className="relative" style={{ color: '#838b70' }}>
                 התעודות שלי
-                <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#656d55]/0 via-[#656d55] to-[#656d55]/0"></div>
+                <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#838b70]/0 via-[#838b70] to-[#838b70]/0"></div>
               </span>
             </h3>
 
@@ -363,48 +371,47 @@ const Stats = () => {
             {/* Fullscreen Image Modal */}
             {isImageOpen && (
               <div 
-                className="fixed inset-0 bg-gradient-to-br from-[#d3c6be]/90 to-[#98a27d]/90 backdrop-blur-md z-[100] flex items-center justify-center p-4 overflow-hidden" 
+                className="fixed inset-0 bg-gradient-to-br from-[#d3c6be]/90 to-[#98a27d]/90 backdrop-blur-md z-[100] flex items-center justify-center p-8 md:p-12 lg:p-16 overflow-hidden" 
                 onClick={closeImage}
                 style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
               >
                 <div 
-                  className="relative w-full max-w-[95vw] md:max-w-[90vw] max-h-[80vh] md:max-h-[90vh] bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm rounded-xl overflow-hidden border border-white/30 shadow-xl flex flex-col items-center justify-center"
+                  className="relative w-full max-w-[85vw] md:max-w-[70vw] lg:max-w-[60vw] max-h-[80vh] md:max-h-[85vh] bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-sm rounded-xl overflow-hidden border border-white/30 shadow-xl flex flex-col items-center justify-center"
                   onClick={e => e.stopPropagation()}
                 >
+                  {/* Close Button - Made much more prominent */}
                   <button
                     onClick={closeImage}
-                    className={
-                      `absolute z-50 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 ` +
-                      (currentImage === '/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.50.00.jpeg'
-                        ? 'top-2 right-2 md:top-4 md:right-4'
-                        : 'top-12 right-2 md:top-16 md:right-4')
-                    }
+                    className="fixed top-6 right-6 md:top-8 md:right-8 lg:top-10 lg:right-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#d3c6be] border-2 border-[#333] shadow-xl flex items-center justify-center text-[#333] hover:bg-[#98a27d] hover:text-white hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-[500]"
                     aria-label="סגור תעודה"
                     title="סגור"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-7 md:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 md:w-9 md:h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
-                  <div className="w-full h-full flex items-center justify-center">
+                  
+                  {/* More Padding around the image */}
+                  <div className="w-full h-full flex items-center justify-center p-10 md:p-12 lg:p-16">
                     <img
                       src={currentImage}
                       alt="תעודת הסמכה במסך מלא"
-                      className="max-w-[95vw] max-h-[70vh] p-1 md:max-w-full md:max-h-[80vh] md:p-4 object-contain bg-gradient-to-br from-white/90 to-white/80"
+                      className="max-w-full max-h-[60vh] md:max-h-[65vh] lg:max-h-[70vh] object-contain bg-white rounded-lg shadow-md"
+                      style={{ padding: '32px' }}
                     />
                   </div>
                   
-                  {/* Navigation buttons */}
+                  {/* Navigation buttons - Moved further out */}
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       navigateImage('prev');
                     }}
-                    className="absolute left-2 top-1/2 md:left-4 md:top-[38%] -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
+                    className="absolute left-6 top-1/2 md:left-10 lg:left-20 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#d3c6be] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:bg-[#98a27d] hover:text-white hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-[300]"
                     aria-label="התמונה הקודמת"
                     title="הקודם"
                   >
-                    <ChevronLeft className="w-8 h-8 md:w-10 md:h-10 font-extrabold" />
+                    <ChevronLeft className="w-9 h-9 md:w-11 md:h-11 font-extrabold" />
                   </button>
                   
                   <button
@@ -412,11 +419,11 @@ const Stats = () => {
                       e.stopPropagation();
                       navigateImage('next');
                     }}
-                    className="absolute right-2 top-1/2 md:right-4 md:top-[38%] -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60"
+                    className="absolute right-6 top-1/2 md:right-10 lg:right-20 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#d3c6be] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:bg-[#98a27d] hover:text-white hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-[300]"
                     aria-label="התמונה הבאה"
                     title="הבא"
                   >
-                    <ChevronRight className="w-8 h-8 md:w-10 md:h-10 font-extrabold" />
+                    <ChevronRight className="w-9 h-9 md:w-11 md:h-11 font-extrabold" />
                   </button>
                 </div>
               </div>
@@ -428,18 +435,18 @@ const Stats = () => {
           variants={fadeInUp}
           className="p-8 text-center rounded-2xl border shadow-xl backdrop-blur-md bg-white/10 border-white/20"
         >
-          <h4 className="text-2xl font-bold mb-4" style={{ color: 'white' }}>
+          <h4 className="text-2xl font-bold mb-4" style={{ color: '#838b70' }}>
             צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!
           </h4>
           
           <div className="flex gap-4 justify-center items-center mb-6">
-            <span className="text-2xl font-bold" style={{ color: 'white' }}>053-3353203</span>
+            <span className="text-2xl font-bold" style={{ color: '#838b70' }}>053-3353203</span>
             {phoneAnimation && (
               <Lottie animationData={phoneAnimation} style={{ width: 40, height: 40 }} />
             )}
           </div>
           
-          <p className="text-lg mb-8" style={{ color: 'white' }}>
+          <p className="text-lg mb-8" style={{ color: '#838b70' }}>
             אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי
           </p>
           
