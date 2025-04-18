@@ -53,14 +53,14 @@ const StyledWrapper = styled.div`
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(135deg, #c3c8c1 0%, #98a27d 50%, #656d55 100%);
+  background: #f1e6e2;
   direction: rtl;
   
   .content {
-    background-color: rgba(177, 177, 153, 0.3);
+    background-color: rgba(241, 230, 226, 0.5);
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(101, 109, 85, 0.3);
+    box-shadow: 0 4px 12px rgba(133, 136, 115, 0.3);
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@ const StyledWrapper = styled.div`
     justify-content: center;
     gap: 2.5rem;
     max-width: 90%;
-    border: 1px solid #656d55;
+    border: 1px solid #858873;
     backdrop-filter: blur(8px);
     
     &:hover {
@@ -89,7 +89,7 @@ const StyledWrapper = styled.div`
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #656d55;
+      border: 3px solid #858873;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       margin-bottom: 1rem;
     }
@@ -98,7 +98,7 @@ const StyledWrapper = styled.div`
       font-family: 'Assistant', sans-serif;
       font-size: 2.2rem;
       font-weight: bold;
-      color: white;
+      color: #858873;
       text-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
       line-height: 1.2;
       text-align: center;
@@ -115,7 +115,7 @@ const StyledWrapper = styled.div`
     
     p {
       font-size: 1.2rem;
-      color: white;
+      color: #858873;
       font-weight: 500;
     }
   }

@@ -167,17 +167,17 @@ const Testimonials = () => {
             </svg>
           </motion.div>
           <div className="relative">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#fefbe8] relative mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#858873] relative mb-6">
               המלצות מלקוחות מרוצים
             </h2>
             <motion.span 
-              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-2 bg-gradient-to-r from-white via-[#98a27d] to-[#656d55] rounded-full"
+              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-2 bg-gradient-to-r from-white via-[#858873] to-[#858873] rounded-full"
               initial={{ width: 0 }}
               animate={{ width: 200 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             />
           </div>
-          <p className="text-[#fefbe8] text-lg max-w-3xl mx-auto text-center mb-8">
+          <p className="text-[#858873] text-lg max-w-3xl mx-auto text-center mb-8">
             לקוחותינו מספרים על החוויה המיוחדת שחוו בקליניקה, על התוצאות המרשימות והטיפול המסור שקיבלו
           </p>
         </motion.div>
