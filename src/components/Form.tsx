@@ -52,13 +52,12 @@ const StyledWrapper = styled.div`
     max-width: 300px;
     max-height: 80vh;
     overflow-y: auto;
-    background: linear-gradient(135deg, rgba(211, 198, 190, 0.9), rgba(152, 162, 125, 0.8));
+    background: linear-gradient(135deg, rgba(241, 230, 226, 0.95), rgba(241, 230, 226, 0.85));
     border-radius: 20px;
     padding: 14px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.4s ease-out;
-
-    border: 1px solid rgba(211, 198, 190, 0.5);
+    border: 1px solid rgba(241, 230, 226, 0.5);
     backdrop-filter: blur(10px);
   }
   
@@ -70,7 +69,7 @@ const StyledWrapper = styled.div`
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: linear-gradient(45deg, rgba(254, 251, 232, 0.05), rgba(254, 251, 232, 0), rgba(254, 251, 232, 0.05));
+    background: linear-gradient(45deg, rgba(241, 230, 226, 0.05), rgba(241, 230, 226, 0), rgba(241, 230, 226, 0.05));
     z-index: -1;
   }
 
@@ -93,8 +92,8 @@ const StyledWrapper = styled.div`
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: #85846f;
-    color: white;
+    background: #f1e6e2;
+    color: #838b70;
     border: none;
     display: flex;
     align-items: center;
@@ -102,20 +101,20 @@ const StyledWrapper = styled.div`
     font-size: 24px;
     cursor: pointer;
     z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(241, 230, 226, 0.8);
     transition: all 0.3s ease;
   }
 
   .close-button:hover {
     transform: scale(1.1);
-    background: #656d55;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background: #e6dbd7;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   }
 
   .form-group label {
     font-size: 14px;
-    color: white;
+    color: #838b70;
     font-weight: 500;
     margin-bottom: 5px;
   }
@@ -126,21 +125,21 @@ const StyledWrapper = styled.div`
     width: 100%;
     padding: 8px 12px;
     border-radius: 10px;
-    border: 2px solid rgba(211, 198, 190, 0.3);
-    background: rgba(254, 251, 232, 0.95);
+    border: 2px solid rgba(241, 230, 226, 0.6);
+    background: rgba(255, 255, 255, 0.95);
     font-size: 14px;
     text-align: right;
     direction: rtl;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    color: #656d55;
+    color: #838b70;
     font-weight: 500;
   }
 
   .form-group input:hover,
   .form-group textarea:hover,
   .form-group select:hover {
-    border-color: rgba(211, 198, 190, 0.7);
+    border-color: rgba(241, 230, 226, 0.9);
     background: #fff;
   }
 
@@ -152,32 +151,21 @@ const StyledWrapper = styled.div`
   .form-group input::placeholder,
   .form-group textarea::placeholder,
   .form-group select::placeholder {
-    color: #656d55;
-    opacity: 0.8;
-    font-weight: 500;
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus,
-  .form-group select:focus {
-    outline: none;
-    border-color: #fefbe8;
-    box-shadow: 0 0 0 3px rgba(254, 251, 232, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    background: #fff;
+    color: #b5b5b5;
   }
 
   .form-group select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23656d55' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23838b70' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: 12px center;
     padding-left: 30px;
-    color: #656d55;
+    color: #838b70;
     font-weight: 500;
   }
 
   .form-group select option {
-    color: #656d55;
+    color: #838b70;
     font-weight: 500;
     padding: 12px;
     background-color: #fff;
@@ -185,11 +173,11 @@ const StyledWrapper = styled.div`
 
   .form-group select option:hover,
   .form-group select option:focus {
-    background-color: rgba(211, 198, 190, 0.2);
+    background-color: rgba(241, 230, 226, 0.2);
   }
 
   .form-note {
-    color: rgba(211, 198, 190, 0.7);
+    color: rgba(241, 230, 226, 0.9);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
     font-size: 13px;
@@ -205,36 +193,36 @@ const StyledWrapper = styled.div`
   }
 
   .privacy-policy-link {
-    color: #fefbe8;
+    color: #838b70;
     font-weight: 600;
     text-decoration: none;
     padding: 6px 15px;
     border-radius: 20px;
-    background: linear-gradient(135deg, rgba(101, 109, 85, 0.7), rgba(152, 162, 125, 0.6));
+    background: rgba(241, 230, 226, 0.7);
     transition: all 0.3s ease;
-    border: 1px solid rgba(211, 198, 190, 0.3);
+    border: 1px solid rgba(241, 230, 226, 0.3);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
   .privacy-policy-link:hover {
-    background: linear-gradient(135deg, rgba(101, 109, 85, 0.8), rgba(152, 162, 125, 0.7));
+    background: rgba(241, 230, 226, 0.9);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .privacy-policy-link-inline {
-    color: #fefbe8;
+    color: #838b70;
     font-weight: 600;
     text-decoration: underline;
     transition: all 0.3s ease;
   }
 
   .privacy-policy-link-inline:hover {
-    color: rgba(211, 198, 190, 0.8);
+    color: #727c60;
   }
 
   .form-submit-btn {
-    background: linear-gradient(90deg, #656d55, #98a27d, #656d55);
+    background: linear-gradient(90deg, #838b70, #98a27d, #838b70);
     background-size: 200% auto;
     color: white;
     border: none;
@@ -247,15 +235,15 @@ const StyledWrapper = styled.div`
     display: block;
     width: 100%;
     margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(101, 109, 85, 0.4);
+    box-shadow: 0 4px 15px rgba(131, 139, 112, 0.4);
     animation: gradient 3s ease infinite;
-    border: 1px solid rgba(211, 198, 190, 0.5);
+    border: 1px solid rgba(241, 230, 226, 0.5);
   }
 
   .form-submit-btn:hover {
     background-position: right center;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(101, 109, 85, 0.5);
+    box-shadow: 0 6px 20px rgba(131, 139, 112, 0.5);
   }
 
   .logo {
@@ -263,7 +251,7 @@ const StyledWrapper = styled.div`
     height: 60px;
     margin: 0 auto;
     border-radius: 50%;
-    border: 3px solid rgba(211, 198, 190, 0.8);
+    border: 3px solid rgba(241, 230, 226, 0.9);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
   }
@@ -283,9 +271,9 @@ const StyledWrapper = styled.div`
   .logo-text {
     margin-top: 4px;
     font-size: 16px;
-    color: #fefbe8;
+    color: #838b70;
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   }
 
   .form-success {
@@ -299,15 +287,15 @@ const StyledWrapper = styled.div`
   }
   
   .form-success h3 {
-    color: #fefbe8;
+    color: #838b70;
     font-size: 1.8rem;
     margin-bottom: 15px;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   
   .form-success p {
-    color: #fefbe8;
+    color: #838b70;
     font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 10px;
@@ -332,7 +320,7 @@ const StyledWrapper = styled.div`
     }
     
     .form-container::-webkit-scrollbar-thumb {
-      background: rgba(211, 198, 190, 0.3);
+      background: rgba(241, 230, 226, 0.5);
       border-radius: 10px;
     }
     
@@ -526,7 +514,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)"
+                    boxShadow: "0 4px 12px rgba(37, 211, 102, 0.2)"
                   }}
                 >
                   <svg 
@@ -545,9 +533,9 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                 <button 
                   onClick={handleClose}
                   style={{
-                    background: "rgba(254, 251, 232, 0.2)",
-                    color: "white",
-                    border: "1px solid rgba(254, 251, 232, 0.5)",
+                    background: "rgba(241, 230, 226, 0.9)",
+                    color: "#838b70",
+                    border: "1px solid rgba(241, 230, 226, 0.5)",
                     padding: "8px 16px",
                     borderRadius: "50px",
                     fontWeight: "bold",
@@ -690,7 +678,7 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
 
 
 const StyledRequiredSmall = styled.small`
-  color: #fff;
+  color: #838b70;
   font-size: 1.18em;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -699,16 +687,16 @@ const StyledRequiredSmall = styled.small`
 `;
 
 const StyledPrivacyLink = styled.a`
-  color: #fff;
+  color: #838b70;
   text-decoration: underline;
   font-weight: 500;
   &:hover {
-    color: #d3c6be;
+    color: #727c60;
   }
 `;
 
 const StyledPrivacySmall = styled.small`
-  color: #fff;
+  color: #838b70;
   font-size: 1em;
 `;
 
@@ -716,9 +704,9 @@ const StyledMedicalTextarea = styled.textarea`
   width: 100%;
   min-height: 36px;
   font-size: 1.07em;
-  color: #fff;
-  background: rgba(211,198,190,0.15);
-  border: 1px solid #d3c6be;
+  color: #838b70;
+  background: rgba(241, 230, 226, 0.1);
+  border: 1px solid rgba(241, 230, 226, 0.6);
   border-radius: 10px;
   padding: 10px;
   margin-top: 0px;
@@ -726,7 +714,7 @@ const StyledMedicalTextarea = styled.textarea`
   font-weight: 500;
   letter-spacing: 0.02em;
   &::placeholder {
-    color: #fff;
+    color: rgba(131, 139, 112, 0.7);
     opacity: 1;
   }
 `;

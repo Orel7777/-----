@@ -212,7 +212,7 @@ const Header = () => {
                   >
                     <LogoImage 
                       src="/לוגו_גדול.jpeg" 
-                      alt="דקלה מדואלה" 
+                  alt="דקלה מדואלה" 
                       className="p-1 w-auto h-20 z-10"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ 
@@ -338,9 +338,9 @@ const Header = () => {
               <div className="hidden items-center space-x-4 md:flex rtl:space-x-reverse">
                 <div className="flex space-x-4 rtl:space-x-reverse">
                   <StyledSocialIcon 
-                    href="https://waze.com/ul?q=נס ציונה, ישראל"
+                    href="https://waze.com/ul?q=נס ציונה, ישראל" 
                     target="_blank" 
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer" 
                     className="waze"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -350,9 +350,9 @@ const Header = () => {
                   </StyledSocialIcon>
                   
                   <StyledSocialIcon 
-                    href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0"
+                    href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" 
                     target="_blank" 
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer" 
                     className="whatsapp"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -362,9 +362,9 @@ const Header = () => {
                   </StyledSocialIcon>
                   
                   <StyledSocialIcon 
-                    href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh"
+                    href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" 
                     target="_blank" 
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer" 
                     className="instagram"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -374,9 +374,9 @@ const Header = () => {
                   </StyledSocialIcon>
                   
                   <StyledSocialIcon 
-                    href="https://www.facebook.com/profile.php?id=100058313266229"
+                    href="https://www.facebook.com/profile.php?id=100058313266229" 
                     target="_blank" 
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer" 
                     className="facebook"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -424,15 +424,15 @@ const Header = () => {
               >
                 <motion.div 
                   className="relative p-6 space-y-5 w-full max-w-md text-center rounded-2xl"
-                  style={{
+          style={{
                     background: 'linear-gradient(to bottom, rgba(241, 230, 226, 0.8), rgba(241, 230, 226, 0.6))',
                     boxShadow: '0 20px 50px rgba(131, 139, 112, 0.2), inset 0 0 30px rgba(216, 180, 119, 0.2)',
                     border: '2px solid rgba(131, 139, 112, 0.3)',
                     backdropFilter: 'blur(10px)'
-                  }}
-                >
+          }}
+        >
                   <motion.button
-                    onClick={() => setIsMenuOpen(false)}
+                onClick={() => setIsMenuOpen(false)}
                     className="absolute top-3 right-3 p-2 text-[#838b70] rounded-full shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
@@ -461,7 +461,7 @@ const Header = () => {
                     <Link to="/" onClick={() => setIsMenuOpen(false)}>
                       <motion.img 
                         src="/לוגו_גדול.jpeg" 
-                        alt="דקלה מדואלה" 
+                  alt="דקלה מדואלה" 
                         className="p-1 w-24 h-24 rounded-full"
                         whileHover={{ scale: 1.05, rotate: 5 }}
                         style={{
@@ -525,9 +525,9 @@ const Header = () => {
               {/* Mobile Social Icons */}
                   <div className="flex justify-center mb-8 space-x-8 rtl:space-x-reverse">
                     <StyledSocialIcon 
-                      href="https://waze.com/ul?q=נס ציונה, ישראל"
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                  href="https://waze.com/ul?q=נס ציונה, ישראל" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                       className="waze"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -538,9 +538,9 @@ const Header = () => {
                     </StyledSocialIcon>
                     
                     <StyledSocialIcon 
-                      href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0"
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                  href="https://api.whatsapp.com/message/MATPQKJZYWELF1?autoload=1&app_absent=0" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                       className="whatsapp"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -551,9 +551,9 @@ const Header = () => {
                     </StyledSocialIcon>
                     
                     <StyledSocialIcon 
-                      href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh"
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                  href="https://www.instagram.com/dikla_maduel?utm_source=qr&igsh=MWRiM2JkcWowbGxh" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                       className="instagram"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -564,9 +564,9 @@ const Header = () => {
                     </StyledSocialIcon>
                     
                     <StyledSocialIcon 
-                      href="https://www.facebook.com/profile.php?id=100058313266229"
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                  href="https://www.facebook.com/profile.php?id=100058313266229" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                       className="facebook"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -575,7 +575,7 @@ const Header = () => {
                     >
                       <FaFacebook className="w-6 h-6" />
                     </StyledSocialIcon>
-                  </div>
+              </div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
