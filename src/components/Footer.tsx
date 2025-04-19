@@ -62,14 +62,15 @@ const Footer = () => {
             className="mt-10 pt-6 border-t border-[#8B4513]/20 text-center"
           >
             <div className="flex flex-col items-center gap-4 mb-6">
-              <p className="text-white">
+              <p className="text-white" style={{ color: '#111' }}>
                 כל הזכויות שמורות ל
-                <span className="font-bold text-white">אוראל בוקריס</span>
+                <span className="font-bold text-white" style={{ color: '#111' }}>אוראל בוקריס</span>
                 {' '}מפתח אתרים ואפליקציות בתלת מימד
               </p>
               <a 
                 href="/privacy-policy" 
                 className="text-white hover:text-gray-200 transition-colors underline"
+                style={{ color: '#111' }}
               >
                 מדיניות פרטיות
               </a>
@@ -98,10 +99,10 @@ const Footer = () => {
                   </div>
                   <div className="flex flex-row justify-between items-center">
                     <div className="flex flex-col gap-1">
-                      <p className="font-semibold text-lg text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:scale-x-0 after:origin-bottom-left after:transition-transform after:duration-300 group-hover:after:scale-x-100">
+                      <p className="font-semibold text-lg text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:scale-x-0 after:origin-bottom-left after:transition-transform after:duration-300 group-hover:after:scale-x-100" style={{ color: '#111' }}>
                         אתרים בתלת מימד
                       </p>
-                      <p className="text-sm text-white">עיצוב, פיתוח</p>
+                      <p className="text-sm text-white" style={{ color: '#111' }}>עיצוב, פיתוח</p>
                     </div>
                     <motion.div 
                       className="text-white"

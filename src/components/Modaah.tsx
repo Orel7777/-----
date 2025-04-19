@@ -127,8 +127,8 @@ const Modaah = () => {
             <div className="text-overlay" style={{
               background: 'linear-gradient(to top, rgba(166, 165, 144, 0.95), rgba(166, 165, 144, 0.5), transparent)',
             }}>
-              <h3 className="text-xl font-semibold">עיסוי מקצועי</h3>
-              <p>מגוון טיפולי עיסוי מותאמים אישית, כולל עיסוי מותאם לנשים בהריון</p>
+              <h3 className="text-xl font-semibold" style={{ color: '#fff' }}>עיסוי מקצועי</h3>
+              <p style={{ color: '#fff' }}>מגוון טיפולי עיסוי מותאמים אישית, כולל עיסוי מותאם לנשים בהריון</p>
             </div>
           </motion.div>
 
@@ -161,8 +161,8 @@ const Modaah = () => {
             <div className="text-overlay" style={{
               background: 'linear-gradient(to top, rgba(166, 165, 144, 0.95), rgba(166, 165, 144, 0.5), transparent)',
             }}>
-              <h3 className="text-xl font-semibold">חוויה מרגיעה ומרפאת</h3>
-              <p>טיפול עדין ומותאם במיוחד</p>
+              <h3 className="text-xl font-semibold" style={{ color: '#fff' }}>חוויה מרגיעה ומרפאת</h3>
+              <p style={{ color: '#fff' }}>טיפול עדין ומותאם במיוחד</p>
             </div>
           </motion.div>
 
@@ -195,8 +195,8 @@ const Modaah = () => {
             <div className="text-overlay" style={{
               background: 'linear-gradient(to top, rgba(166, 165, 144, 0.95), rgba(166, 165, 144, 0.5), transparent)',
             }}>
-              <h3 className="text-xl font-semibold">פיסול פנים טבעי</h3>
-              <p>מיניליפט ויוגה פייס</p>
+              <h3 className="text-xl font-semibold" style={{ color: '#fff' }}>פיסול פנים טבעי</h3>
+              <p style={{ color: '#fff' }}>מיניליפט ויוגה פייס</p>
             </div>
           </motion.div>
         </div>

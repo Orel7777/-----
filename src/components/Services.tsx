@@ -239,11 +239,7 @@ const Services = () => {
                   <span className="service-bullet"></span>
                   עיסוי קרקפת ופנים
                 </li>
-                <li>
-                  <span className="service-bullet"></span>
-                  עיסוי בשיטת טריגר פוינט
-                  <span className="service-note">(Trigger Point Therapy)</span>
-                </li>
+                
               </ul>
             </div>
           </motion.div>

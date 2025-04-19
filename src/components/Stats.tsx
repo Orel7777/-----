@@ -196,7 +196,7 @@ const Stats = () => {
 </StyledStatsTitle>
           
           <motion.div 
-            className="mb-10 featured-image-container mt-40"
+            className="mt-40 mb-10 featured-image-container"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
@@ -221,7 +221,7 @@ const Stats = () => {
           
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-[#656d55] to-transparent mx-auto mb-6" />
           
-          <h3 className="text-2xl font-semibold mb-8" style={{ color: '#858873' }}>
+          <h3 className="mb-8 text-2xl font-semibold" style={{ color: '#858873' }}>
             מומחית בטיפולי מגע, קוסמטיקה רפואית ורפואה משלימה
           </h3>
         </motion.div>
@@ -235,7 +235,7 @@ const Stats = () => {
             transition: { duration: 0.3 }
           }}
         >
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-black/5 opacity-5 z-0"></div>
+          <div className="absolute top-0 left-0 z-0 w-full h-full bg-gradient-to-br opacity-5 from-white/5 to-black/5"></div>
           <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#656d55]/20 to-transparent rounded-full blur-3xl -mr-20 -mt-20"></div>
           <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#656d55]/20 to-transparent rounded-full blur-3xl -ml-20 -mb-20"></div>
           
@@ -244,7 +244,7 @@ const Stats = () => {
               {/* Experience Section */}
               <motion.div
                 className="p-8 rounded-2xl border border-white/30 shadow-xl backdrop-blur-md hover:bg-gradient-to-br from-[#98a27d] to-[#656d55]" style={{ background: '#d3c6be' }}>
-  <h4 className="text-3xl font-extrabold mb-6 flex items-center" style={{ color: '#858873', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
+  <h4 className="flex items-center mb-6 text-3xl font-extrabold" style={{ color: '#858873', fontWeight: 900, fontFamily: 'Heebo, Assistant, Arial, sans-serif', letterSpacing: '0.03em', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>
     <span className="inline-block w-10 h-10 mr-3 bg-[#858873]/10 rounded-full flex items-center justify-center" style={{ color: '#858873' }}>
       <span className="w-4 h-4 bg-[#858873] rounded-full" style={{ color: '#858873' }}></span>
     </span>
@@ -254,17 +254,17 @@ const Stats = () => {
     </span>
             </h4>
   <ul className="space-y-8 text-white">
-  <li className="flex items-start gap-5 group">
+  <li className="flex gap-5 items-start group">
     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>מנהלת וקוסמטיקאית רפואית במכונים מובילים</span>
+    <span className="text-lg font-bold leading-relaxed" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>מנהלת וקוסמטיקאית רפואית במכונים מובילים</span>
   </li>
-  <li className="flex items-start gap-5 group">
+  <li className="flex gap-5 items-start group">
     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>The Spa במלון אינטרקונטיננטל</span>
+    <span className="text-lg font-bold leading-relaxed" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>The Spa במלון אינטרקונטיננטל</span>
   </li>
-  <li className="flex items-start gap-5 group">
+  <li className="flex gap-5 items-start group">
     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>Alokino בראשון לציון</span>
+    <span className="text-lg font-bold leading-relaxed" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>Alokino בראשון לציון</span>
   </li>
                 </ul>
               </motion.div>
@@ -277,7 +277,7 @@ const Stats = () => {
                   boxShadow: "0 20px 25px -5px rgba(101, 109, 85, 0.3)"
                 }}
               >
-                <h4 className="text-2xl font-bold mb-6 flex items-center" style={{ color: 'white' }}>
+                <h4 className="flex items-center mb-6 text-2xl font-bold" style={{ color: 'white' }}>
                   <span className="inline-block w-10 h-10 mr-3 bg-[#858873]/10 rounded-full flex items-center justify-center" style={{ color: 'white' }}>
                     <span className="w-4 h-4 bg-[#858873] rounded-full" style={{ color: 'white' }}></span>
                   </span>
@@ -287,17 +287,17 @@ const Stats = () => {
                   </span>
                 </h4>
                 <ul className="space-y-8 text-white">
-                  <li className="flex items-start gap-5 group">
+                  <li className="flex gap-5 items-start group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טיפולים מותאמים אישית</span>
+                    <span className="text-lg font-bold leading-relaxed" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טיפולים מותאמים אישית</span>
                       </li>
-                  <li className="flex items-start gap-5 group">
+                  <li className="flex gap-5 items-start group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טכניקות ריפוי מתקדמות</span>
+                    <span className="text-lg font-bold leading-relaxed" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>טכניקות ריפוי מתקדמות</span>
               </li>
-                  <li className="flex items-start gap-5 group">
+                  <li className="flex gap-5 items-start group">
                     <span className="w-3 h-3 bg-gradient-to-br from-[#656d55] to-[#a29f7c] rounded-full flex-shrink-0 mt-1.5 shadow-md group-hover:scale-110 transition-transform" />
-                    <span className="text-lg leading-relaxed font-bold" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>תוצאות ברמה הגבוהה ביותר</span>
+                    <span className="text-lg font-bold leading-relaxed" style={{ color: '#333', fontFamily: 'Heebo, Assistant, Arial, sans-serif', textShadow: '0 1px 2px rgba(0,0,0,0.07)' }}>תוצאות ברמה הגבוהה ביותר</span>
               </li>
             </ul>
               </motion.div>
@@ -308,17 +308,17 @@ const Stats = () => {
         {/* Certificates Section */}
           <motion.div 
             variants={fadeInUp}
-          className="mb-12 overflow-hidden"
+          className="overflow-hidden mb-12"
         >
-          <div className="max-w-2xl mx-auto px-4">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">
+          <div className="px-4 mx-auto max-w-2xl">
+            <h3 className="mb-8 text-3xl font-bold text-center text-white">
               <span className="relative" style={{ color: '#838b70' }}>
                 התעודות שלי
                 <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#838b70]/0 via-[#838b70] to-[#838b70]/0"></div>
               </span>
             </h3>
 
-            <div className="relative bg-gradient-to-br from-white/30 to-white/10 rounded-2xl p-3 shadow-xl backdrop-blur-md border border-white/30">
+            <div className="relative p-3 bg-gradient-to-br rounded-2xl border shadow-xl backdrop-blur-md from-white/30 to-white/10 border-white/30">
               <div className="overflow-hidden" ref={emblaRef}>
                 <div className="flex">
                   {certificates.map((cert, index) => (
@@ -330,11 +330,11 @@ const Stats = () => {
                         <img
                           src={cert.src}
                           alt={cert.alt}
-                          className="absolute inset-0 w-full h-full object-contain bg-white"
+                          className="object-contain absolute inset-0 w-full h-full bg-white"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex absolute inset-0 justify-center items-center opacity-0 transition-all bg-black/0 group-hover:bg-black/20 group-hover:opacity-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                           </svg>
                     </div>
@@ -351,7 +351,7 @@ const Stats = () => {
                 aria-label="הקודם"
                 title="הקודם"
               >
-                <ChevronLeft className="w-7 h-7 md:w-8 md:h-8 font-extrabold" />
+                <ChevronLeft className="w-7 h-7 font-extrabold md:w-8 md:h-8" />
                 </button>
                 <button 
                 className="absolute -right-4 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-10"
@@ -359,11 +359,11 @@ const Stats = () => {
                 aria-label="הבא"
                 title="הבא"
               >
-                <ChevronRight className="w-7 h-7 md:w-8 md:h-8 font-extrabold" />
+                <ChevronRight className="w-7 h-7 font-extrabold md:w-8 md:h-8" />
                 </button>
 
               {/* Progress Indicator */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
+              <div className="flex absolute -bottom-4 left-1/2 gap-1 -translate-x-1/2">
                 {certificates.map((_, idx) => (
                   <div
                     key={idx}
@@ -399,7 +399,7 @@ const Stats = () => {
                   </button>
                   
                   {/* More Padding around the image */}
-                  <div className="w-full h-full flex items-center justify-center p-10 md:p-12 lg:p-16">
+                  <div className="flex justify-center items-center p-10 w-full h-full md:p-12 lg:p-16">
                     <img
                       src={currentImage}
                       alt="תעודת הסמכה במסך מלא"
@@ -418,7 +418,7 @@ const Stats = () => {
                     aria-label="התמונה הקודמת"
                     title="הקודם"
                   >
-                    <ChevronLeft className="w-9 h-9 md:w-11 md:h-11 font-extrabold" />
+                    <ChevronLeft className="w-9 h-9 font-extrabold md:w-11 md:h-11" />
                   </button>
                   
                   <button
@@ -430,7 +430,7 @@ const Stats = () => {
                     aria-label="התמונה הבאה"
                     title="הבא"
                   >
-                    <ChevronRight className="w-9 h-9 md:w-11 md:h-11 font-extrabold" />
+                    <ChevronRight className="w-9 h-9 font-extrabold md:w-11 md:h-11" />
                   </button>
                 </div>
               </div>
@@ -442,7 +442,7 @@ const Stats = () => {
           variants={fadeInUp}
           className="p-8 text-center rounded-2xl border shadow-xl backdrop-blur-md bg-white/10 border-white/20"
         >
-          <h4 className="text-2xl font-bold mb-4" style={{ color: '#838b70' }}>
+          <h4 className="mb-4 text-2xl font-bold" style={{ color: '#838b70' }}>
             צרי קשר עוד היום וקבלי ייעוץ מותאם אישית!
           </h4>
           
@@ -453,7 +453,7 @@ const Stats = () => {
             )}
           </div>
           
-          <p className="text-lg mb-8" style={{ color: '#838b70' }}>
+          <p className="mb-8 text-lg" style={{ color: '#838b70' }}>
             אני מחכה להעניק לך את החוויה האולטימטיבית של בריאות ויופי
           </p>
           
