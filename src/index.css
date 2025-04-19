@@ -23,7 +23,8 @@ html {
 body {
   font-family: 'Assistant', sans-serif;
   background-color: var(--background);
-  background-image: url("/stone-pattern.png");
+  /* קובץ התמונה לא קיים - הסרת ההתייחסות אליו */
+  /* background-image: url("/stone-pattern.png"); */
   background-repeat: repeat;
   color: var(--foreground);
   margin: 0;
