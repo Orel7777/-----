@@ -364,6 +364,51 @@ const StyledWrapper = styled.div`
   }
 `;
 
+const StyledCalendarButton = styled(motion.a)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+  color: #838b70;
+  border: 1px solid rgba(241, 230, 226, 0.8);
+  border-radius: 40px;
+  padding: 8px 18px;
+  margin: 8px auto;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(201, 182, 174, 0.3);
+  text-decoration: none;
+  width: auto;
+  max-width: 180px;
+  
+  svg {
+    margin-left: 6px;
+    width: 16px;
+    height: 16px;
+    fill: #838b70;
+  }
+  
+  &:hover {
+    background: #efefef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 182, 174, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 6px 16px;
+    font-size: 13px;
+    max-width: 160px;
+    
+    svg {
+      width: 14px;
+      height: 14px;
+      margin-left: 5px;
+    }
+  }
+`;
+
 const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -530,6 +575,25 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                   שלח/י גם בוואטסאפ
                 </button>
                 
+                <StyledCalendarButton 
+                  href="https://calmark.io/p/MbBUZ" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="white"
+                  >
+                    <path d="M20 20h-4v-4h4v4zm-6-10h-4v4h4v-4zm6 0h-4v4h4v-4zm-12 6h-4v4h4v-4zm6 0h-4v4h4v-4zm-6-6h-4v4h4v-4zm16-8v22h-24v-22h3v1c0 1.103.897 2 2 2s2-.897 2-2v-1h10v1c0 1.103.897 2 2 2s2-.897 2-2v-1h3zm-2 6h-20v14h20v-14zm-2-7c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2zm-14 0c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2z"/>
+                  </svg>
+                  הוסף ליומן
+                </StyledCalendarButton>
+                
                 <button 
                   onClick={handleClose}
                   style={{
@@ -657,9 +721,30 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     title="אנא פרט או רשום לא"
             />
           </div>
+          
           <div className="form-note">
-                  <StyledRequiredSmall>* שדות חובה</StyledRequiredSmall>
+            <StyledRequiredSmall>* שדות חובה</StyledRequiredSmall>
           </div>
+          
+          <StyledCalendarButton 
+            href="https://calmark.io/p/MbBUZ" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="#838b70"
+            >
+              <path d="M20 20h-4v-4h4v4zm-6-10h-4v4h4v-4zm6 0h-4v4h4v-4zm-12 6h-4v4h4v-4zm6 0h-4v4h4v-4zm-6-6h-4v4h4v-4zm16-8v22h-24v-22h3v1c0 1.103.897 2 2 2s2-.897 2-2v-1h10v1c0 1.103.897 2 2 2s2-.897 2-2v-1h3zm-2 6h-20v14h20v-14zm-2-7c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2zm-14 0c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2z"/>
+            </svg>
+            הוסף ליומן
+          </StyledCalendarButton>
+          
                 <button 
                   className="form-submit-btn" 
                   type="submit"
