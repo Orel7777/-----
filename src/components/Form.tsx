@@ -682,8 +682,9 @@ const Form: React.FC<FormProps> = ({ isOpen, onClose }) => {
                     <option value="רפלקסולוגיה">רפלקסולוגיה</option>
                     <option value="עיסוי משולב">עיסוי משולב </option>
                     <option value="עיסוי קרקפת ופנים">עיסוי קרקפת ופנים</option>
+                    <option value="שיאצו">שיאצו</option>
                     <option value="פיסול פנים טבעי">פיסול פנים טבעי</option>
-              <option value="אחר">אחר</option>
+                    <option value="אחר">אחר</option>
             </select>
                   <div className="privacy-policy-container">
                     <StyledPrivacyLink

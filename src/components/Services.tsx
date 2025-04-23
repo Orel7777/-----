@@ -233,13 +233,15 @@ const Services = () => {
                 <li>
                   <span className="service-bullet"></span>
                   עיסוי משולב
-                
                 </li>
                 <li>
                   <span className="service-bullet"></span>
                   עיסוי קרקפת ופנים
                 </li>
-                
+                <li>
+                  <span className="service-bullet"></span>
+                  שיאצו
+                </li>
               </ul>
             </div>
           </motion.div>
