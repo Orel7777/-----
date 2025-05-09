@@ -328,13 +328,13 @@ const Stats = () => {
                   {certificates.map((cert, index) => (
                     <div key={index} className="flex-[0_0_100%] min-w-0 relative px-2">
                       <div 
-                        className="max-w-[160px] sm:max-w-[200px] mx-auto aspect-[3/4] relative rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform duration-300 cursor-pointer group"
+                        className="max-w-[220px] sm:max-w-[300px] mx-auto aspect-[3/4] relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.03] transition-transform duration-300 cursor-pointer group"
                         onClick={() => openImage(cert.src, index)}
                       >
                         <img
                           src={cert.src}
                           alt={cert.alt}
-                          className="object-contain absolute inset-0 w-full h-full bg-white"
+                          className="object-contain absolute inset-0 w-full h-full bg-white rounded-xl shadow-xl"
                           loading="lazy"
                         />
                         <div className="flex absolute inset-0 justify-center items-center opacity-0 transition-all bg-black/0 group-hover:bg-black/20 group-hover:opacity-100">
@@ -350,7 +350,7 @@ const Stats = () => {
               
               {/* Navigation Buttons */}
                 <button 
-                className="absolute -left-4 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-10"
+                className="absolute -left-6 top-1/2 -translate-y-1/2 w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-4 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-10"
                 onClick={scrollPrev}
                 aria-label="הקודם"
                 title="הקודם"
@@ -358,7 +358,7 @@ const Stats = () => {
                 <ChevronLeft className="w-7 h-7 font-extrabold md:w-8 md:h-8" />
                 </button>
                 <button 
-                className="absolute -right-4 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-2 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-10"
+                className="absolute -right-6 top-1/2 -translate-y-1/2 w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#e7d8b9] via-[#98a27d] to-[#c3c8c1] border-4 border-[#333] shadow-2xl flex items-center justify-center text-[#333] hover:from-[#98a27d] hover:to-[#656d55] hover:text-[#222] hover:scale-110 transition-all focus:outline-none focus:ring-4 focus:ring-[#d3c6be]/60 z-10"
                 onClick={scrollNext}
                 aria-label="הבא"
                 title="הבא"
@@ -403,12 +403,12 @@ const Stats = () => {
                   </button>
                   
                   {/* More Padding around the image */}
-                  <div className="flex justify-center items-center p-10 w-full h-full md:p-12 lg:p-16">
+                  <div className="flex justify-center items-center w-full h-full p-0 md:p-12 lg:p-16">
                     <img
                       src={currentImage}
                       alt="תעודת הסמכה במסך מלא"
-                      className="max-w-full max-h-[60vh] md:max-h-[65vh] lg:max-h-[70vh] object-contain bg-white rounded-lg shadow-md"
-                      style={{ padding: '32px' }}
+                      className="w-full h-full max-h-[85vh] md:max-h-[90vh] lg:max-h-[95vh] object-contain bg-white rounded-2xl shadow-2xl"
+                      style={{ padding: 0 }}
                     />
                   </div>
                   
