@@ -62,6 +62,10 @@ const Stats = () => {
       alt: "תעודת הסמכה 1"
     },
     {
+      src: "/t.jpg",
+      alt: "תעודה נוספת"
+    },
+    {
       src: "/images/תעודות_2/WhatsApp Image 2025-04-14 at 19.44.28.jpeg",
       alt: "תעודת הסמכה 2"
     },
